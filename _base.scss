@@ -4,6 +4,8 @@
 #Function
 >>>>>>>>>>>>>>>>*/
 
+	.sidebox.submit { display: none; } // Using links
+
 	/*
 	##Thumbnails: https://www.iconfinder.com/search/?q=iconset%3Anuvola2
 	>>>>>>>>>>>>>>>>*/
@@ -62,74 +64,18 @@
 	}
 
 
-	/*
-	##Multiple submission buttons
-	>>>>>>>>>>>>>>>>*/
-
-	.sidebox.submit { display: none; }
-
-	.titlebox .md a[href="#submit"] + a {
-		margin: 7px 0 12px 0;
-		display: block;
-		text-align: center;
-		position: relative;
-		border: 1px solid #c4dbf1;
-		background: #FFF none repeat-x scroll center left;
-		background-image: url(%%sprite-reddit%%);
-		background-position: 0px -278px;
-		background-repeat: repeat;
-		font-size: 15px;
-		font-weight: bold;
-		font-family: verdana, arial, helvetica, sans-serif;
-		font-style: normal;
-		font-variant: normal;
-		letter-spacing: -1px;
-		line-height: 29px;
-		text-decoration: none;
-		height: 29px;
-		
-		:root:not(.res-nightmode) & {
-			&:hover {
-				color: white;
-				border-color: #879eb4;
-				background-image: url(%%sprite-reddit%%);
-				background-position: 0px -243px;
-				background-repeat: repeat;
-			}
-			&:after { /* Nub */
-				content: "";
-				display: inline-block;
-				float: right;
-				position: relative;
-				top: -1px;
-				right: -1px;
-				height: 31px;
-				width: 24px;
-				background: #FFF none no-repeat scroll center left;
-				background-image: url(%%sprite-reddit%%);
-				background-position: -30px -547px;
-				background-repeat: no-repeat;
-			}
-			&:hover:after {
-				background-position: 0px -547px;
-			}
-		}
-		:root.res-nightmode & {
-			background: #393939;
-			border-radius: 6px;
-			border: 2px solid #151515;
-			color: #1B83BB; /* Multiplied with background by 0.8 */
-			border-radius: 8px;
-			&:hover {
-				color: white;
-			}
-		}
-	}
-
-
 /*
 #Style
 >>>>>>>>>>>>>>>>*/
+
+	/*
+	##Code blocks
+	>>>>>>>>>>>>>>>>*/
+
+	.md pre {
+		background: url(%%codebg%%) top left repeat;
+	}
+	
 
 	/*
 	##Reword link flair
@@ -153,24 +99,6 @@
 			background: #f5f5f5;
 			border: 0px;
 		}
-	}
-
-	/*
-	##Tooltips
-	>>>>>>>>>>>>>>>>*/
-
-	/*.titlebox */.md a[href="#submit"] + a[title]:hover:before {
-		display: block;
-		text-align: center;
-		top: 0;
-		background-color: #a00;
-		color: #fff;
-		z-index: 1000;
-		width: 100%;
-		left: 0;
-		font-size: 22px;
-		content: attr(title);
-		position: fixed;
 	}
 
 	/*
@@ -219,39 +147,4 @@
 		border-radius: 3px;
 		margin: 0 2px;
 		padding: 0px 5px
-	}
-
-
-	/*
-	##Code blocks
-	>>>>>>>>>>>>>>>>*/
-
-	.md pre {
-		background: url(%%codebg%%) top left repeat;
-		border: 1px solid #DDECFB; /* #CEE3F8 and #EFF7FF http://meyerweb.com/eric/tools/color-blend/ */
-		border-left: 31px solid #DDECFB;
-		position: relative;
-		line-height: 15px
-	}
-	.md pre code {
-		padding: 15px;
-		overflow: auto;
-		display: block;
-		line-height: 15px
-	}
-	.md pre:before {
-		color: #888;
-		$content: "#";
-		@for $i from 1 to 100 {
-			$content: $content + str-pad(#{$i}, 4);
-		}
-		content: "#{$content}";
-		height: 100%;
-		line-height: 15px;
-		position: absolute;
-		left: -28px;
-		width: 25px;
-		white-space: pre-wrap;
-		direction: rtl;
-		overflow: hidden
 	}

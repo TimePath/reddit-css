@@ -1,0 +1,493 @@
+
+	/*
+	##Multiple submission buttons
+	>>>>>>>>>>>>>>>>*/
+
+		.titlebox .md a[href="#submit"] + a {
+			margin: 7px 0 12px 0;
+			display: block;
+			text-align: center;
+			position: relative;
+			border: 1px solid #c4dbf1;
+			background: #FFF none repeat-x scroll center left;
+			background-image: url(%%sprite-reddit%%);
+			background-position: 0px -278px;
+			background-repeat: repeat;
+			font-size: 15px;
+			font-weight: bold;
+			font-family: verdana, arial, helvetica, sans-serif;
+			font-style: normal;
+			font-variant: normal;
+			letter-spacing: -1px;
+			line-height: 29px;
+			text-decoration: none;
+			height: 29px;
+			
+			&[title]:hover:before { /* Tooltips */
+				display: block;
+				text-align: center;
+				top: 0;
+				background-color: #a00;
+				color: #fff;
+				z-index: 1000;
+				width: 100%;
+				left: 0;
+				font-size: 22px;
+				content: attr(title);
+				position: fixed;
+			}
+			
+			:root:not(.res-nightmode) & {
+				&:hover {
+					color: white;
+					border-color: #879eb4;
+					background-image: url(%%sprite-reddit%%);
+					background-position: 0px -243px;
+					background-repeat: repeat;
+				}
+				&:after { /* Nub */
+					content: "";
+					display: inline-block;
+					float: right;
+					position: relative;
+					top: -1px;
+					right: -1px;
+					height: 31px;
+					width: 24px;
+					background: #FFF none no-repeat scroll center left;
+					background-image: url(%%sprite-reddit%%);
+					background-position: -30px -547px;
+					background-repeat: no-repeat;
+				}
+				&:hover:after {
+					background-position: 0px -547px;
+				}
+			}
+			:root.res-nightmode & {
+				background: #393939;
+				border-radius: 6px;
+				border: 2px solid #151515;
+				color: #1B83BB; /* Multiplied with background by 0.8 */
+				border-radius: 8px;
+				&:hover {
+					color: white;
+				}
+			}
+		}
+
+	/*
+	##Help cursor
+	>>>>>>>>>>>>>>>>*/
+		
+		.side .md blockquote a[href$="#ex"] { color: inherit; border-bottom: 1px dotted; }
+		.side .md blockquote a[href$="#ex"]:hover { cursor: help; }
+
+	/*
+	##Bind
+	>>>>>>>>>>>>>>>>*/
+
+		a[href="#bind"] {
+			font-size: 0;
+			visibility: hidden;
+			cursor: default;
+			display: inline-block;
+		}
+		a[href="#bind"] + .keyNavAnnotation { display: none !important; }
+
+		a[href="#bind"]::after {
+			/*font: normal .85em/1 "Lucida Grande", Lucida, Arial, sans-serif !important;*/
+			content: attr(title);
+
+			background: rgb(80, 80, 80) !important;
+			/*background-image: url(%%keyboard-gradient%%) !important;*/
+			color: #FAFAFA;
+			font-size: small;
+			visibility: visible;
+			text-shadow: -1px -1px 0 rgb(70, 70, 70) !important;
+			box-shadow: 0px 1px 1px #BBB !important;
+
+			padding: .2em .4em !important;
+			-moz-border-radius: .3em !important;
+			-webkit-border-radius: .3em !important;
+			border-radius: .3em !important;
+			cursor: default !important;
+		}
+		
+		a[title="capslock"]::after { content: "⇪ Caps"; }
+		a[title="shift"]::after { content: "⇧Shift"; }
+		a[title="rshift"]::after { content: "Shift⇧"; }
+		a[title="ctrl"]::after { content: "Ctrl"; }
+		a[title="rctrl"]::after { content: "Ctrl"; }
+		a[title="alt"]::after { content: "Alt"; }
+		a[title="ralt"]::after { content: "Alt"; }
+		a[title="lwin"]::after { content: "⊞"; }
+		a[title="rwin"]::after { content: "⊞"; }
+		a[title="space"]::after { content: "Spacebar"; }
+		a[title="menu"]::after { content: "≣ Menu"; }
+		a[title="backspace"]::after { content: "← Backspace"; }
+		a[title="tab"]::after { content: "Tab ↹"; }
+		a[title="app"]::after { content: "⌘"; }
+		a[title="enter"]::after { content: "↵ Enter"; }
+
+		a[title="semicolon"]::after { content: ";"; }
+
+		a[title="print"]::after { content: "PrtSc"; }
+		a[title="scrolllock"]::after { content: "ScrlLk"; }
+		a[title="pause"]::after { content: "Pause"; }
+
+		a[title="insert"]::after { content: "Ins"; }
+		a[title="home"]::after { content: "Home"; }
+		a[title="pgup"]::after { content: "PgUp"; }
+		a[title="del"]::after { content: "Del"; }
+		a[title="end"]::after { content: "End"; }
+		a[title="pgdn"]::after { content: "PgDn"; }
+
+		a[title="leftarrow"]::after { content: "←"; }
+		a[title="rightarrow"]::after { content: "→"; }
+		a[title="uparrow"]::after { content: "↑"; }
+		a[title="downarrow"]::after { content: "↓"; }
+
+		a[title="numlock"]::after { content: "N"; }
+
+		a[title="kp_slash"]::after { content: "/"; }
+		a[title="kp_multiply"]::after { content: "*"; }
+		a[title="kp_plus"]::after { content: "+"; }
+		a[title="kp_minus"]::after { content: "-"; }
+		a[title="kp_enter"]::after { content: "↵"; }
+		a[title="kp_del"]::after { content: "."; }
+		a[title="kp_ins"]::after { content: "0"; }
+		a[title="kp_end"]::after { content: "1"; }
+		a[title="kp_downarrow"]::after { content: "2"; }
+		a[title="kp_pgdn"]::after { content: "3"; }
+		a[title="kp_leftarrow"]::after { content: "4"; }
+		a[title="kp_5"]::after { content: "5"; }
+		a[title="kp_rightarrow"]::after { content: "6"; }
+		a[title="kp_home"]::after { content: "7"; }
+		a[title="kp_uparrow"]::after { content: "8"; }
+		a[title="kp_pgup"]::after { content: "9"; }
+
+	/*
+	##Color
+	>>>>>>>>>>>>>>>>*/
+
+		/* Colors / colours: http://www.w3schools.com/cssref/css_colornames.asp */
+		
+		a[href="#color"] + .keyNavAnnotation { display: none !important; }
+		a[href="#color"] { cursor: text; /*color: attr(title, color);*/ } /* Need CSS3 */
+
+		a[href="#color"][title="red"] ~ * { color: red !important; }
+		a[href="#color"][title="orange"] + * { color: orange !important; }
+		a[href="#color"][title="yellow"] + * { color: yellow !important; }
+		a[href="#color"][title="green"] + * { color: green !important; }
+		a[href="#color"][title="blue"] + * { color: blue !important; }
+		a[href="#color"][title="purple"] + * { color: purple !important; }
+		a[href="#color"][title="pink"] + * { color: pink !important; }
+		a[href="#color"][title="black"] + * { color: black !important; }
+		a[href="#color"][title="white"] + * { color: white !important; }
+		a[href="#color"][title="brown"] + * { color: brown !important; }
+		a[href="#color"][title="gold"] ~ * { color: #9A7D2E !important; }
+
+		/* Temporary / TODO wiki links */
+
+		a[href$="#todo"] { color: red !important; }
+
+	/*
+	##Code
+
+	[source](http://mo.reddit.com/r/DEADB33F/comments/rmbtg/code_test/)
+
+	http://perishablepress.com/perfect-pre-tags/
+
+
+		.md pre code[class]:after {
+			content: 'highlight: ' attr(class);
+			display: block; text-align: right;
+			font-size: smaller;
+			padding-top: 5px;
+		}
+
+	>>>>>>>>>>>>>>>>*/
+
+		.md code {
+			font-family: monospace;
+		}
+			
+		/* Block code */
+		.md pre {
+			/*overflow: auto;*/
+			border: 1px solid;
+			border-left: 31px solid;
+			border-color: #DDECFB; /* #CEE3F8 and #EFF7FF http://meyerweb.com/eric/tools/color-blend/ */
+			position: relative;
+			font-family: monospace;
+			line-height: 15px
+		}
+		
+		.md pre code {
+			padding: 0px 15px;
+			overflow: auto;
+			display: block;
+			line-height: 15px
+		}
+		.md pre::before {
+			line-height: 15px;
+			color: #888;
+			height: 100%;
+			position: absolute;
+			left: -28px;
+			width: 25px;
+			white-space: pre-wrap;
+			direction: rtl;
+			overflow: hidden;
+			$content: "#";
+			@for $i from 1 to 100 {
+				$content: $content + str-pad(#{$i}, 4);
+			}
+			content: "#{$content}";
+		}
+
+
+		html:lang(ns) .md pre {
+			border-color: #68ADAD;
+		}
+		html:lang(ns) .res-nightmode .md pre::before {
+			color: #000;
+			font-weight: bolder;
+		}
+
+		/* Fix wiki toc */
+		.wiki .toc {
+			position: relative;
+			z-index: 99;
+		}
+
+	/*
+	##Super/sub script
+
+	([source](http://www.reddit.com/r/jamt9000/comments/beuzq/subscript_and_superscript/))
+
+	Custom superscript and subscript so you can make formulae like:
+
+	NH*_4_`+`*  
+	2H*_2_*O ⇌ H*_3_*O*`+`* + OH*`-`*  
+	a*`2`* + b*`2`* = c*`2`*
+
+	*_1_`2`*D + *_1_`3`*T  → *_2_`4`*He + n*`0`*
+
+	Here's the syntax:
+
+	* *_subscript_*
+
+		*_subscript_*
+
+	* *`superscript`*
+
+		*`superscript`*
+
+	* *_sub_`sup`*
+
+		*_sub_`sup`*
+
+	* *`sup`_sub_*
+
+		*`sup`_sub_*
+
+	>>>>>>>>>>>>>>>>*/
+		
+		.md em {
+			position: relative;
+		}
+		
+		/* *_sub_* */
+		.md em em {
+			font-style: normal;
+			vertical-align: sub;
+			font-size: 80%;
+		}
+		
+		/* *`sup`* */
+		.md em code {
+			font-family: verdana, arial, helvetica, sans-serif;
+			vertical-align: super;
+			font-size: 80%;
+		}
+		
+		/* *_sub_`sup`* */
+		.md em em + code {
+			position: absolute;
+			left: 0;
+			bottom: 1em;
+			vertical-align: super;
+		}
+		
+		/* *`sup`_sub_* */
+		.md em code + em {
+			position: absolute;
+			left: 0;
+			top: 1em;
+			vertical-align: sub;
+		}
+
+	/*
+	##Menu
+	>>>>>>>>>>>>>>>>*/
+
+		/* Menu sizes */
+
+		.titlebox blockquote:last-child ul { width:140px; }
+		.titlebox blockquote:last-child ul:nth-of-type(1) { width:140px; }
+		.titlebox blockquote:last-child ul:nth-of-type(2) { width:180px; }
+		.titlebox blockquote:last-child ul:nth-of-type(3) { width:150px; }
+
+		.titlebox blockquote:last-child ol { width:120px; }
+
+		/* Turns last quote in sidebar into a menu container */
+		.titlebox blockquote:last-child {
+			top: 64px;
+			left: 0px;
+			height: 32px;
+
+			background-color: transparent !important;
+
+			border: none;
+			padding: 0px;
+			margin: 0px;
+			position: fixed;
+			z-index: 100;
+		}
+
+		/* Style paragraphs */
+
+		/*.titlebox blockquote:last-child p {
+			padding: 0px;
+			margin: 0px;
+			background: #221F1C;
+			height: 31px;
+			float: left;
+		}*/
+
+		/* Turns lists into menus */
+
+		.titlebox blockquote:last-child ul,
+		.titlebox blockquote:last-child ol
+		{
+			background-color: #221F1C;
+			border: 1px solid #403C33;
+			margin: 0;
+
+			float: left;
+			list-style: none;
+		}
+
+		/* Menu title styling */
+
+		.titlebox blockquote:last-child > ul > li:first-child,
+		.titlebox blockquote:last-child > ol > li:first-child
+		{
+			max-height: 14px;
+
+			font-family: verdana, arial, helvetica, sans-serif;
+			font-size: 12px;
+			font-weight: bold;
+			padding: 7px;
+			background-color: #393532;
+			color: #EEDB00;
+
+			cursor: default;
+			display: block;
+		}
+
+		/* Styles list items and hides them */
+
+		.titlebox blockquote:last-child li {
+			padding: 2px;
+			border-bottom: solid 1px #403C33;
+
+			display: none;
+			text-align: center;
+
+			/*min-width: 170px;*/ /* XXX: determined by the pixel length of the longest menu name */
+		}
+
+		/* Style text */
+
+		.titlebox blockquote:last-child li {
+			color: #fff;
+		}
+
+		/* Style links */
+
+		.titlebox blockquote:last-child li a {
+			color: #fa0;
+		}
+
+		/* Style hovered items */
+
+		.titlebox blockquote:last-child li:hover,
+		.titlebox blockquote:last-child li:hover > a
+		{
+			background-color: #F49500 !important;
+			color: #000 !important;
+		}
+
+		/* Style clicked items */
+
+		.titlebox blockquote:last-child li:active,
+		.titlebox blockquote:last-child li:active > a
+		{
+			background-color: orangered !important;
+			color: #000 !important;
+		}
+
+		/* Probably best not to touch this */
+
+		/* Hack to enable positioning of child elements */
+		.titlebox form { position: static }
+
+		/* Hide ordered lists for non-moderators */
+		.titlebox blockquote:last-child ol { display: none }
+		.moderator .titlebox blockquote:last-child ol { display: block }
+
+		/* Additional offset for second list item in the main menu */
+		.titlebox blockquote:last-child > ul > li:nth-child(2),
+		.titlebox blockquote:last-child > ol > li:nth-child(2)
+		{
+			border-top: solid 2px #403C33;
+		}
+
+		/* Show items on hover */
+
+		.titlebox blockquote:last-child > ul:hover > li,
+		.titlebox blockquote:last-child > ol:hover > li
+		{
+			display: block;
+		}
+
+		/* Hide submenu containers */
+
+		.titlebox blockquote:last-child li ul {
+			display: none;
+		}
+
+		/* Show submenu containers on item hover */
+
+		.titlebox blockquote:last-child li:hover > ul,
+		.titlebox blockquote:last-child li:hover > ol
+		{
+			display: inline-block;
+			position: absolute;
+		}
+
+		/* Show submenu items on hover */
+
+		.titlebox blockquote:last-child li:hover > ul > li,
+		.titlebox blockquote:last-child li:hover > ol > li
+		{
+			display: block;
+		}
+
+		.titlebox blockquote:last-child li > ul,
+		.titlebox blockquote:last-child li > ol
+		{
+			margin-top: -3px;
+		}

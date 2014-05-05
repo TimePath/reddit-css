@@ -8,340 +8,340 @@ html:not([lang="ns"]) {
 #Custom
 >>>>>>>>>>>>>>>>*/
 
-/*
-##Renamed posts
->>>>>>>>>>>>>>>>*/
+	/*
+	##Renamed posts
+	>>>>>>>>>>>>>>>>*/
 
-	@include rename('19z0dc', "Using 'toggle'");
-	@include rename('17h5n1', 'Welcome to /r/tf2scripthelp');
+		@include rename('19z0dc', "Using 'toggle'");
+		@include rename('17h5n1', 'Welcome to /r/tf2scripthelp');
 
-/*
-##User aliases
->>>>>>>>>>>>>>>>*/
+	/*
+	##User aliases
+	>>>>>>>>>>>>>>>>*/
 
-	.author[href$="/CAPSLOCK_USERNAME"] {
-		text-transform: lowercase;
-	}
+		.author[href$="/CAPSLOCK_USERNAME"] {
+			text-transform: lowercase;
+		}
 
-/*
-##Contest winners
->>>>>>>>>>>>>>>>*/
+	/*
+	##Contest winners
+	>>>>>>>>>>>>>>>>*/
 
-	a.author[href$="/TimePath"] ~ .flair-medal:after { content: "0" }
+		a.author[href$="/TimePath"] ~ .flair-medal:after { content: "0" }
 
-/*
-##Wiki images
->>>>>>>>>>>>>>>>*/
+	/*
+	##Wiki images
+	>>>>>>>>>>>>>>>>*/
 
-	@include image('viewmodel_fov_graph', '%%viewmodel-fov%%', 1231px, 556px);
-	@include image('locate_1', '%%steampipe-1%%', 457px, 518px);
-	@include image('locate_2', '%%steampipe-2%%', 616px, 400px);
-	@include image('locate_3', '%%steampipe-3%%', 616px, 400px);
+		@include image('viewmodel_fov_graph', '%%viewmodel-fov%%', 1231px, 556px);
+		@include image('locate_1', '%%steampipe-1%%', 457px, 518px);
+		@include image('locate_2', '%%steampipe-2%%', 616px, 400px);
+		@include image('locate_3', '%%steampipe-3%%', 616px, 400px);
 
-	@include image('fov_math_1', '%%fov-math-1%%', 231px, 41px) {
-		background-color: white;
-		border: 5px solid white;
-	}
-	@include image('fov_math_2', '%%fov-math-2%%', 231px, 41px) {
-		background-color: white;
-		border: 5px solid white;
-	}
-	@include image('fov_math_3', '%%fov-math-3%%', 251px, 41px) {
-		background-color: white;
-		border: 5px solid white;
-	}
+		@include image('fov_math_1', '%%fov-math-1%%', 231px, 41px) {
+			background-color: white;
+			border: 5px solid white;
+		}
+		@include image('fov_math_2', '%%fov-math-2%%', 231px, 41px) {
+			background-color: white;
+			border: 5px solid white;
+		}
+		@include image('fov_math_3', '%%fov-math-3%%', 251px, 41px) {
+			background-color: white;
+			border: 5px solid white;
+		}
 
-/*
-##Submission
->>>>>>>>>>>>>>>>*/
+	/*
+	##Submission
+	>>>>>>>>>>>>>>>>*/
 
-	/* Hide untagged submissions */
-	.link:not(.linkflair) > .entry,
-	.link.linkflair-archived > .entry { border-left: 4px solid red; padding-left: 4px; }
+		/* Hide untagged submissions */
+		.link:not(.linkflair) > .entry,
+		.link.linkflair-archived > .entry { border-left: 4px solid red; padding-left: 4px; }
 
-	.link.linkflair-archived > .entry { border-color: gray }
+		.link.linkflair-archived > .entry { border-color: gray }
 
-	.listing-page:not(.moderator) .link:not(.linkflair),
-	.listing-page:not(.moderator) .link.linkflair-archived { display: none; }
+		.listing-page:not(.moderator) .link:not(.linkflair),
+		.listing-page:not(.moderator) .link.linkflair-archived { display: none; }
 
-	.comments-page.post-submitter .link:not(.linkflair):before {
-		content: "Your post requires flair before it'll become visible on the front page";
-		display: block;
-		padding: 5px;
-		color: #fff;
-		font-weight: bold;
-		font-size: 240%;
-		background: #f00;
-		z-index: 0;
-		height: 100%;
-		line-height: 50px;
-		margin-top: 0;
-		margin-bottom: 5px;
-		text-align: center
-	}
+		.comments-page.post-submitter .link:not(.linkflair):before {
+			content: "Your post requires flair before it'll become visible on the front page";
+			display: block;
+			padding: 5px;
+			color: #fff;
+			font-weight: bold;
+			font-size: 240%;
+			background: #f00;
+			z-index: 0;
+			height: 100%;
+			line-height: 50px;
+			margin-top: 0;
+			margin-bottom: 5px;
+			text-align: center
+		}
 
-	/* Submission guidelines */
+		/* Submission guidelines */
 
-	.submit_text.enabled {
-		position: absolute;
-		top: 130px;
-	}
-	.formtabs-content {
-		padding-top: 150px;
-	}
+		.submit_text.enabled {
+			position: absolute;
+			top: 130px;
+		}
+		.formtabs-content {
+			padding-top: 150px;
+		}
 
-	.submit-page #text-desc {
-		font-size: 0px
-	}
-	.submit-page #text-desc:after {
-		display: block;
-		font-size: 14px;
-		content: "You are submitting a text-based post."
-	}
+		.submit-page #text-desc {
+			font-size: 0px
+		}
+		.submit-page #text-desc:after {
+			display: block;
+			font-size: 14px;
+			content: "You are submitting a text-based post."
+		}
 
-	/* Removes "optional" from title text field label */
-	.submit-page #text-field.roundfield span.gray {
-		display: none;
-	}
-	/* Removes other subreddits from the submission page */
-	.submit-page #reddit-field {
-		display:none;
-	}
-	.submit-page #title-field .title,
-	.submit-page #text-field .title,
-	.submit-page #reddit-field .title {
-		display: block;
-		text-transform:capitalize;
-	}
+		/* Removes "optional" from title text field label */
+		.submit-page #text-field.roundfield span.gray {
+			display: none;
+		}
+		/* Removes other subreddits from the submission page */
+		.submit-page #reddit-field {
+			display:none;
+		}
+		.submit-page #title-field .title,
+		.submit-page #text-field .title,
+		.submit-page #reddit-field .title {
+			display: block;
+			text-transform:capitalize;
+		}
 
-	.submit-page #title-field .title:after,
-	.submit-page #text-field .title:after {
-		display: block;
-		color: #FF9C05;
-		text-transform:none;
-		font-size: 0.7em;
-	}
+		.submit-page #title-field .title:after,
+		.submit-page #text-field .title:after {
+			display: block;
+			color: #FF9C05;
+			text-transform:none;
+			font-size: 0.7em;
+		}
 
-	.submit-page #title-field .title:after {
-		content:" Be as descriptive and specific in your title as possible. Avoid vague titles like 'Just a quick question' or 'I need help.'";
-	}
+		.submit-page #title-field .title:after {
+			content:" Be as descriptive and specific in your title as possible. Avoid vague titles like 'Just a quick question' or 'I need help.'";
+		}
 
-	.submit-page #text-field .title:after {
-		content:" Provide as much information about your question/problem as possible. Include the relevant parts of your script, and flair your post accordingly after submitting it.";
-	}
-
-
-/*
-##Flair
->>>>>>>>>>>>>>>>*/
-
-	/* Base */
-
-	.flair, html .res-nightmode .flair, .linkflairlabel {
-		padding: 2px 4px 6px 4px; /* tlbr */
-		text-transform: uppercase;
-		line-height: 18px;
-	}
-
-	.linkflairlabel {
-		font-size: x-small;
-		max-width: none;
-		overflow: hidden;
-		white-space: nowrap;
-	}
-
-	.flair:before, .flair:after, html .res-nightmode .flair:before, .linkflairlabel:before, div.side a[href*="#flair"]:before {
-		content: '';
-		display: inline-block;
-		margin-right: 5px;
-		background-repeat: no-repeat;
-		vertical-align: middle;
-	}
-
-	/*.entry .tagline .flair {
-		float: left;
-	}*/
-
-	/* User */
-
-	.flair-scripter:before, .flair-scripter-cs:before {
-		background-image: url(%%sprite-reddit%%);
-		width: 16px;
-		height: 16px;
-		background-position: -85px -582px !important;
-	}
-
-	.flair-scripter-cs {
-		font-family: "Comic Sans MS", cursive, sans-serif;
-	}
-
-	.flair-batman:before {
-		background-image: url(%%bat-signal%%);
-		width: 24px;
-		height: 13px;
-	}
-
-	.flair-medal:after {
-		background-image: url(%%sprite-reddit%%);
-		background-position: -65px -615px !important;
-		width: 11px;
-		height: 16px;
-		border-left: 5px solid; /* Push icon */
-		border-left-color: transparent;
-		padding-left: 15px; /* Push text */
-		content: "0";
-	}
-
-/*
-###Link flair
->>>>>>>>>>>>>>>>*/
-
-	.linkflairlabel:before, div.side a[href*="#flair"]:before {
-		background-image: url(%%sprite-reddit%%);
-		width: 16px;
-		height: 16px;
-		background-position: 0px -599px;
-	}
-
-	.linkflair-scout .linkflairlabel:before {
-		background-image: url(%%classes%%);
-		width: 20px;
-		height: 20px;
-		background-position: 0px 0px !important;
-	}
-
-	.linkflair-soldier .linkflairlabel:before {
-		background-image: url(%%classes%%);
-		width: 20px;
-		height: 20px;
-		background-position: -20px 0px !important;
-	}
-
-	.linkflair-pyro .linkflairlabel:before {
-		background-image: url(%%classes%%);
-		width: 20px;
-		height: 20px;
-		background-position: -40px 0px !important;
-	}
-
-	.linkflair-demoman .linkflairlabel:before {
-		background-image: url(%%classes%%);
-		width: 20px;
-		height: 20px;
-		background-position: -60px 0px !important;
-	}
-
-	.linkflair-heavy .linkflairlabel:before {
-		background-image: url(%%classes%%);
-		width: 20px;
-		height: 20px;
-		background-position: -80px 0px !important;
-	}
-
-	.linkflair-engineer .linkflairlabel:before {
-		background-image: url(%%classes%%);
-		width: 20px;
-		height: 20px;
-		background-position: -100px 0px !important;
-	}
-
-	.linkflair-medic .linkflairlabel:before {
-		background-image: url(%%classes%%);
-		width: 20px;
-		height: 20px;
-		background-position: -120px 0px !important;
-	}
-
-	.linkflair-sniper .linkflairlabel:before {
-		background-image: url(%%classes%%);
-		width: 20px;
-		height: 20px;
-		background-position: -140px 0px !important;
-	}
-
-	.linkflair-spy .linkflairlabel:before {
-		background-image: url(%%classes%%);
-		width: 20px;
-		height: 20px;
-		background-position: -160px 0px !important;
-	}
-
-	.linkflair-multi .linkflairlabel:before {
-		background-image: url(%%classes%%);
-		width: 20px;
-		height: 20px;
-		background-position: -180px 0px !important;
-	}
-
-	.linkflair-pending.linkflair-issue .linkflairlabel:before, div.side a[href*="=issue"]:before,
-	.linkflair-red .linkflairlabel:before
-	{
-		background-position: -102px -582px;
-	}
-	.linkflair-pending.linkflair-question .linkflairlabel:before, div.side a[href*="=question"]:before {
-		background-image: url(%%thumbs-reddit%%);
-		background-position: -16px -120px;
-	}
-	.linkflair-processed.linkflair-issue .linkflairlabel:before, div.side a[href*="=resolved"]:before,
-	.linkflair-processed.linkflair-question .linkflairlabel:before, div.side a[href*="=answered"]:before,
-	.linkflair-green .linkflairlabel:before, div.side a[href*="=green"]:before
-	{
-		background-image: url(%%sprite-reddit%%);
-		background-position: -54px -528px;
-	}
-	/* bugfix */
-	.linkflair-discussion  .linkflairlabel:before, .linkflairlabel.linkflair-discussion::before,
-	.linkflair-tutorial	.linkflairlabel:before, .linkflairlabel.linkflair-tutorial::before,
-	.linkflair-explanation .linkflairlabel:before, .linkflairlabel.linkflair-explanation::before
-	{
-		background-position: -88px -528px;
-	}
-	.linkflair-resource .linkflairlabel:before, .linkflairlabel.linkflair-resource::before
-	{
-		background-position: -17px -599px;
-	}
-	.linkflair-wiki .linkflairlabel:before, .linkflairlabel.linkflair-wiki::before
-	{
-		background-position: -52px -583px !important;
-	}
-	.linkflair-challenge .linkflairlabel:before, div.side a[href*="=challenge"]:before {
-		background-position: -65px -615px !important;
-		width: 11px;
-	}
-	.linkflair-archived .linkflairlabel:before {
-		background-position: 0px -599px !important;
-	}
-	.linkflair-meta .linkflairlabel:before, div.side a[href*="=meta"]:before {
-		background-position: -68px -599px !important;
-	}
+		.submit-page #text-field .title:after {
+			content:" Provide as much information about your question/problem as possible. Include the relevant parts of your script, and flair your post accordingly after submitting it.";
+		}
 
 
-	/* Selector */
+	/*
+	##Flair
+	>>>>>>>>>>>>>>>>*/
 
-	.flairselector {
-		box-shadow: 4px 4px 4px #403C33;
-	}
-	.flairselector h2 {
-		background-color: #393532;
-	}
-	.flairselector li:hover {
-		background-color: #403C33;
-	}
-	.flairselector title {
-		visibility: hidden;
-		font-size: 0;
-	}
+		/* Base */
 
-	/* Rename flair button */
+		.flair, html .res-nightmode .flair, .linkflairlabel {
+			padding: 2px 4px 6px 4px; /* tlbr */
+			text-transform: uppercase;
+			line-height: 18px;
+		}
 
-	.buttons a.flairselectbtn { visibility: hidden; font-size: 0; }
-	.buttons a.flairselectbtn:before {
-		content: "add tag";
-		visibility: visible;
-		font-size: 10px;
-	}
-	.linkflair .buttons a.flairselectbtn:before {
-		content: "change tag";
-		visibility: visible;
-		font-size: 10px;
-	}
+		.linkflairlabel {
+			font-size: x-small;
+			max-width: none;
+			overflow: hidden;
+			white-space: nowrap;
+		}
+
+		.flair:before, .flair:after, html .res-nightmode .flair:before, .linkflairlabel:before, div.side a[href*="#flair"]:before {
+			content: '';
+			display: inline-block;
+			margin-right: 5px;
+			background-repeat: no-repeat;
+			vertical-align: middle;
+		}
+
+		/*.entry .tagline .flair {
+			float: left;
+		}*/
+
+		/* User */
+
+		.flair-scripter:before, .flair-scripter-cs:before {
+			background-image: url(%%sprite-reddit%%);
+			width: 16px;
+			height: 16px;
+			background-position: -85px -582px !important;
+		}
+
+		.flair-scripter-cs {
+			font-family: "Comic Sans MS", cursive, sans-serif;
+		}
+
+		.flair-batman:before {
+			background-image: url(%%bat-signal%%);
+			width: 24px;
+			height: 13px;
+		}
+
+		.flair-medal:after {
+			background-image: url(%%sprite-reddit%%);
+			background-position: -65px -615px !important;
+			width: 11px;
+			height: 16px;
+			border-left: 5px solid; /* Push icon */
+			border-left-color: transparent;
+			padding-left: 15px; /* Push text */
+			content: "0";
+		}
+
+	/*
+	###Link flair
+	>>>>>>>>>>>>>>>>*/
+
+		.linkflairlabel:before, div.side a[href*="#flair"]:before {
+			background-image: url(%%sprite-reddit%%);
+			width: 16px;
+			height: 16px;
+			background-position: 0px -599px;
+		}
+
+		.linkflair-scout .linkflairlabel:before {
+			background-image: url(%%classes%%);
+			width: 20px;
+			height: 20px;
+			background-position: 0px 0px !important;
+		}
+
+		.linkflair-soldier .linkflairlabel:before {
+			background-image: url(%%classes%%);
+			width: 20px;
+			height: 20px;
+			background-position: -20px 0px !important;
+		}
+
+		.linkflair-pyro .linkflairlabel:before {
+			background-image: url(%%classes%%);
+			width: 20px;
+			height: 20px;
+			background-position: -40px 0px !important;
+		}
+
+		.linkflair-demoman .linkflairlabel:before {
+			background-image: url(%%classes%%);
+			width: 20px;
+			height: 20px;
+			background-position: -60px 0px !important;
+		}
+
+		.linkflair-heavy .linkflairlabel:before {
+			background-image: url(%%classes%%);
+			width: 20px;
+			height: 20px;
+			background-position: -80px 0px !important;
+		}
+
+		.linkflair-engineer .linkflairlabel:before {
+			background-image: url(%%classes%%);
+			width: 20px;
+			height: 20px;
+			background-position: -100px 0px !important;
+		}
+
+		.linkflair-medic .linkflairlabel:before {
+			background-image: url(%%classes%%);
+			width: 20px;
+			height: 20px;
+			background-position: -120px 0px !important;
+		}
+
+		.linkflair-sniper .linkflairlabel:before {
+			background-image: url(%%classes%%);
+			width: 20px;
+			height: 20px;
+			background-position: -140px 0px !important;
+		}
+
+		.linkflair-spy .linkflairlabel:before {
+			background-image: url(%%classes%%);
+			width: 20px;
+			height: 20px;
+			background-position: -160px 0px !important;
+		}
+
+		.linkflair-multi .linkflairlabel:before {
+			background-image: url(%%classes%%);
+			width: 20px;
+			height: 20px;
+			background-position: -180px 0px !important;
+		}
+
+		.linkflair-pending.linkflair-issue .linkflairlabel:before, div.side a[href*="=issue"]:before,
+		.linkflair-red .linkflairlabel:before
+		{
+			background-position: -102px -582px;
+		}
+		.linkflair-pending.linkflair-question .linkflairlabel:before, div.side a[href*="=question"]:before {
+			background-image: url(%%thumbs-reddit%%);
+			background-position: -16px -120px;
+		}
+		.linkflair-processed.linkflair-issue .linkflairlabel:before, div.side a[href*="=resolved"]:before,
+		.linkflair-processed.linkflair-question .linkflairlabel:before, div.side a[href*="=answered"]:before,
+		.linkflair-green .linkflairlabel:before, div.side a[href*="=green"]:before
+		{
+			background-image: url(%%sprite-reddit%%);
+			background-position: -54px -528px;
+		}
+		/* bugfix */
+		.linkflair-discussion  .linkflairlabel:before, .linkflairlabel.linkflair-discussion::before,
+		.linkflair-tutorial	.linkflairlabel:before, .linkflairlabel.linkflair-tutorial::before,
+		.linkflair-explanation .linkflairlabel:before, .linkflairlabel.linkflair-explanation::before
+		{
+			background-position: -88px -528px;
+		}
+		.linkflair-resource .linkflairlabel:before, .linkflairlabel.linkflair-resource::before
+		{
+			background-position: -17px -599px;
+		}
+		.linkflair-wiki .linkflairlabel:before, .linkflairlabel.linkflair-wiki::before
+		{
+			background-position: -52px -583px !important;
+		}
+		.linkflair-challenge .linkflairlabel:before, div.side a[href*="=challenge"]:before {
+			background-position: -65px -615px !important;
+			width: 11px;
+		}
+		.linkflair-archived .linkflairlabel:before {
+			background-position: 0px -599px !important;
+		}
+		.linkflair-meta .linkflairlabel:before, div.side a[href*="=meta"]:before {
+			background-position: -68px -599px !important;
+		}
+
+
+		/* Selector */
+
+		.flairselector {
+			box-shadow: 4px 4px 4px #403C33;
+		}
+		.flairselector h2 {
+			background-color: #393532;
+		}
+		.flairselector li:hover {
+			background-color: #403C33;
+		}
+		.flairselector title {
+			visibility: hidden;
+			font-size: 0;
+		}
+
+		/* Rename flair button */
+
+		.buttons a.flairselectbtn { visibility: hidden; font-size: 0; }
+		.buttons a.flairselectbtn:before {
+			content: "add tag";
+			visibility: visible;
+			font-size: 10px;
+		}
+		.linkflair .buttons a.flairselectbtn:before {
+			content: "change tag";
+			visibility: visible;
+			font-size: 10px;
+		}
