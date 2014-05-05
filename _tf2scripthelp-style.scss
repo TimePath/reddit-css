@@ -2,54 +2,54 @@
 ##Moderator box
 >>>>>>>>>>>>>>>>*/
 
-.side .helplink + .title:before { color: orange; }
+	.side .helplink + .title:before { color: orange; }
 
 /*
 ##Flair
 >>>>>>>>>>>>>>>>*/
 
-.flair, .res-nightmode .flair, .linkflairlabel {
-	background-color: #221F1C;
-	border: 1px solid #403C33;
-}
+	.flair, .res-nightmode .flair, .linkflairlabel {
+		background-color: #221F1C;
+		border: 1px solid #403C33;
+	}
 
 
 /*
 ##Webkit scrollbar
 >>>>>>>>>>>>>>>>*/
 
-::-webkit-scrollbar {
-	background-color: #6D655B;
-	&-thumb {
-		background-color: #988E7E;
+	::-webkit-scrollbar {
+		background-color: #6D655B;
+		&-thumb {
+			background-color: #988E7E;
+		}
+		&-button {
+			background-color: #988E7E;
+			color: #494642;
+			display: none;
+			width: 0;
+			height: 0;
+		}
+		&-corner {
+			background-color: transparent;
+			color: #555555;
+		}
 	}
-	&-button {
-		background-color: #988E7E;
-		color: #494642;
-		display: none;
-		width: 0;
-		height: 0;
-	}
-	&-corner {
-		background-color: transparent;
-		color: #555555;
-	}
-}
 
 
 /*
 ##Tabs
 >>>>>>>>>>>>>>>>*/
 
-.pagename.redditname a { font-size: 14px; }
+	.pagename.redditname a { font-size: 14px; }
 
-.tabmenu,
-.pagename,
-ul.tabmenu li a
-{
-	border-color: #403C33 !important;
-	background-color: #221F1C !important;
-}
+	.tabmenu,
+	.pagename,
+	ul.tabmenu li a
+	{
+		border-color: #403C33 !important;
+		background-color: #221F1C !important;
+	}
 
 /*
 ##Stuff
@@ -392,96 +392,96 @@ ul.tabmenu li a
 ##Input
 >>>>>>>>>>>>>>>>*/
 
-/*
-###Text
->>>>>>>>>>>>>>>>*/
+	/*
+	###Text
+	>>>>>>>>>>>>>>>>*/
 
-	input,
-	textarea,
-	.login-form-side,
-	.linkinfo .shortlink input,
-	.linefield textarea,
-	.linefield input[type="text"],
-	.linefield input[type="password"],
-	.pretty-form input[type="text"],
-	.pretty-form input[type="password"],
-	.pretty-form textarea,
-	.login-form-side input,
-	#search input[type="text"],
-	.infobar,
-	.wiki-page .wiki-page-content #wiki_revision_reason,
-	.flairlist .flaircell input[type="text"]
-	{
-		color: #D3D7CF !important;
-		background-color: #221F1C !important;
-		border: 1px solid #403C33 !important;
-		border-radius: 7px;
-		-moz-border-radius: 7px;
-		-webkit-border-radius: 7px
-	}
+		input,
+		textarea,
+		.login-form-side,
+		.linkinfo .shortlink input,
+		.linefield textarea,
+		.linefield input[type="text"],
+		.linefield input[type="password"],
+		.pretty-form input[type="text"],
+		.pretty-form input[type="password"],
+		.pretty-form textarea,
+		.login-form-side input,
+		#search input[type="text"],
+		.infobar,
+		.wiki-page .wiki-page-content #wiki_revision_reason,
+		.flairlist .flaircell input[type="text"]
+		{
+			color: #D3D7CF !important;
+			background-color: #221F1C !important;
+			border: 1px solid #403C33 !important;
+			border-radius: 7px;
+			-moz-border-radius: 7px;
+			-webkit-border-radius: 7px
+		}
 
-	/* Search page */
-	.searchpane {
-		background-color: #221F1C !important;
-	}
+		/* Search page */
+		.searchpane {
+			background-color: #221F1C !important;
+		}
 
-/*
-###Check boxes and radio buttons
->>>>>>>>>>>>>>>>*/
+	/*
+	###Check boxes and radio buttons
+	>>>>>>>>>>>>>>>>*/
 
-	input[type="checkbox"],
-	input[type="radio"],
-	.pretty-form input[type="checkbox"],
-	.pretty-form input[type="radio"],
-	.pretty-form input[type="file"] {
-		color: #D3D7CF !important;
-		background-color: #221F1C !important;
-		border: 1px solid #403C33 !important;
-		border-radius: 7px;
-		-moz-border-radius: 7px;
-		-webkit-border-radius: 7px
-	}
+		input[type="checkbox"],
+		input[type="radio"],
+		.pretty-form input[type="checkbox"],
+		.pretty-form input[type="radio"],
+		.pretty-form input[type="file"] {
+			color: #D3D7CF !important;
+			background-color: #221F1C !important;
+			border: 1px solid #403C33 !important;
+			border-radius: 7px;
+			-moz-border-radius: 7px;
+			-webkit-border-radius: 7px
+		}
 
-/*
-###Combo boxes
->>>>>>>>>>>>>>>>*/
-	.pretty-form select,
-	.pretty-form b,
-	.linefield select {
-		color: #D3D7CF !important;
-		background-color: #221F1C !important;
-		border: 1px solid #403C33 !important;
-		border-radius: 7px;
-		-moz-border-radius: 7px;
-		-webkit-border-radius: 7px
-	}
+	/*
+	###Combo boxes
+	>>>>>>>>>>>>>>>>*/
+		.pretty-form select,
+		.pretty-form b,
+		.linefield select {
+			color: #D3D7CF !important;
+			background-color: #221F1C !important;
+			border: 1px solid #403C33 !important;
+			border-radius: 7px;
+			-moz-border-radius: 7px;
+			-webkit-border-radius: 7px
+		}
 
-/*
-###Buttons
->>>>>>>>>>>>>>>>*/
+	/*
+	###Buttons
+	>>>>>>>>>>>>>>>>*/
 
-	button,
-	.pretty-form button,
-	.flair-jump button,
-	.flairrow .flairdeletebtn,
-	#RESMenu li {
-		color: #D3D7CF !important;
-		background-color: #221F1C !important;
-		border: 1px solid #403C33 !important;
-		border-radius: 7px;
-		-moz-border-radius: 7px;
-		-webkit-border-radius: 7px
-	}
+		button,
+		.pretty-form button,
+		.flair-jump button,
+		.flairrow .flairdeletebtn,
+		#RESMenu li {
+			color: #D3D7CF !important;
+			background-color: #221F1C !important;
+			border: 1px solid #403C33 !important;
+			border-radius: 7px;
+			-moz-border-radius: 7px;
+			-webkit-border-radius: 7px
+		}
 
-	a.pretty-button.negative,
-	a.pretty-button.neutral,
-	a.pretty-button.positive,
-	.fancy-toggle-button .add .fancy-toggle-button .remove,
-	.fancy-toggle-button .active,
-	.RESshortcutside,
-	.RESDashboardToggle {
-		color: black !important;
-	}
+		a.pretty-button.negative,
+		a.pretty-button.neutral,
+		a.pretty-button.positive,
+		.fancy-toggle-button .add .fancy-toggle-button .remove,
+		.fancy-toggle-button .active,
+		.RESshortcutside,
+		.RESDashboardToggle {
+			color: black !important;
+		}
 
 /*
 ##Selected post highlight
@@ -657,31 +657,31 @@ ul.tabmenu li a
 		font-size: small;
 	}
 
-/*
-##Table
->>>>>>>>>>>>>>>>*/
+	/*
+	##Table
+	>>>>>>>>>>>>>>>>*/
 
-	.md table {
-		background-color: #221F1C;
-		border-radius: 7px;
-		-moz-border-radius: 7px;
-		-webkit-border-radius: 7px
-	}
-	.md th {
-		color: #F49500;
-	}
-	.md th, .md td {
-		border-color: #403C33;
-	}
+		.md table {
+			background-color: #221F1C;
+			border-radius: 7px;
+			-moz-border-radius: 7px;
+			-webkit-border-radius: 7px
+		}
+		.md th {
+			color: #F49500;
+		}
+		.md th, .md td {
+			border-color: #403C33;
+		}
 
-/*
-##Quote
->>>>>>>>>>>>>>>>*/
+	/*
+	##Quote
+	>>>>>>>>>>>>>>>>*/
 
-	.md blockquote, .help blockquote {
-		/*border: 1px solid #9D511B;*/
-		border-left-color: orange;
-	}
+		.md blockquote, .help blockquote {
+			/*border: 1px solid #9D511B;*/
+			border-left-color: orange;
+		}
 	
 /*
 #Misc

@@ -12,38 +12,44 @@ html:not([lang="ns"]) {
 ##Renamed posts
 >>>>>>>>>>>>>>>>*/
 
-@include rename('19z0dc', "Using 'toggle'");
-@include rename('17h5n1', 'Welcome to /r/tf2scripthelp');
+	@include rename('19z0dc', "Using 'toggle'");
+	@include rename('17h5n1', 'Welcome to /r/tf2scripthelp');
 
 /*
 ##User aliases
 >>>>>>>>>>>>>>>>*/
 
-.author[href$="/CAPSLOCK_USERNAME"] {
-	text-transform: lowercase;
-}
+	.author[href$="/CAPSLOCK_USERNAME"] {
+		text-transform: lowercase;
+	}
+
+/*
+##Contest winners
+>>>>>>>>>>>>>>>>*/
+
+	a.author[href$="/TimePath"] ~ .flair-medal:after { content: "0" }
 
 /*
 ##Wiki images
 >>>>>>>>>>>>>>>>*/
 
-@include image('viewmodel_fov_graph', '%%viewmodel-fov%%', 1231px, 556px);
-@include image('locate_1', '%%steampipe-1%%', 457px, 518px);
-@include image('locate_2', '%%steampipe-2%%', 616px, 400px);
-@include image('locate_3', '%%steampipe-3%%', 616px, 400px);
+	@include image('viewmodel_fov_graph', '%%viewmodel-fov%%', 1231px, 556px);
+	@include image('locate_1', '%%steampipe-1%%', 457px, 518px);
+	@include image('locate_2', '%%steampipe-2%%', 616px, 400px);
+	@include image('locate_3', '%%steampipe-3%%', 616px, 400px);
 
-@include image('fov_math_1', '%%fov-math-1%%', 231px, 41px) {
-	background-color: white;
-	border: 5px solid white;
-}
-@include image('fov_math_2', '%%fov-math-2%%', 231px, 41px) {
-	background-color: white;
-	border: 5px solid white;
-}
-@include image('fov_math_3', '%%fov-math-3%%', 251px, 41px) {
-	background-color: white;
-	border: 5px solid white;
-}
+	@include image('fov_math_1', '%%fov-math-1%%', 231px, 41px) {
+		background-color: white;
+		border: 5px solid white;
+	}
+	@include image('fov_math_2', '%%fov-math-2%%', 231px, 41px) {
+		background-color: white;
+		border: 5px solid white;
+	}
+	@include image('fov_math_3', '%%fov-math-3%%', 251px, 41px) {
+		background-color: white;
+		border: 5px solid white;
+	}
 
 /*
 ##Submission
@@ -187,12 +193,8 @@ html:not([lang="ns"]) {
 	}
 
 /*
-##Contest winners
+###Link flair
 >>>>>>>>>>>>>>>>*/
-
-	a.author[href$="/TimePath"] ~ .flair-medal:after { content: "0" }
-
-	/* Link flair */
 
 	.linkflairlabel:before, div.side a[href*="#flair"]:before {
 		background-image: url(%%sprite-reddit%%);
