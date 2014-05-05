@@ -1,0 +1,63 @@
+@import 'base';
+
+/*
+#Custom
+>>>>>>>>>>>>>>>>*/
+
+/*
+##Renamed posts
+>>>>>>>>>>>>>>>>*/
+
+@include rename('1f5t6w', "What's the crosshair syntax?");
+@include rename('1ynxfa', 'Shoot after switching weapons?');
+@include rename('1yoct5', 'A script for my spy that makes it so my revolver hides when I use Q to switch as well');
+@include rename('1yqsyq', 'Where to put my rocketreload.wav?');
+@include rename('1zuzft', 'Voice chat toggle');
+@include rename('1z188e', 'Crashing on weapon switch');
+@include rename('1znr2y', 'Scout script for swapping and firing weapons');
+@include rename('1zz24o', 'Offline training');
+@include rename('20cg8q', 'Demoman viewmodel script');
+@include rename('20fitm', 'A bunch of things');
+@include rename('20fj3p', 'Demoman charge turn script not working properly');
+@include rename('20hjeg', 'Pyro script bugging out');
+
+
+/*
+##Submission text
+>>>>>>>>>>>>>>>>*/
+
+.formtabs-content {
+	padding-top: 220px;
+}
+
+.submit_text {
+	top: 140px;
+	position: absolute;
+}
+
+
+/*
+##Search filters
+>>>>>>>>>>>>>>>>*/
+
+#header:target ~ .content {
+	.search-summary, .searchpane, .menuarea { display: none; }
+}
+
+
+/*
+##Sidebar
+>>>>>>>>>>>>>>>>*/
+
+.titlebox h1 a {
+	text-transform: lowercase;
+}
+
+
+/*
+##Auto linkflair
+>>>>>>>>>>>>>>>>*/
+
+#text-field, #BigEditor {
+	.submit-page & textarea:first-line { font-size: 0; }
+}
