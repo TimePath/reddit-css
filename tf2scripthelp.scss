@@ -5,7 +5,8 @@ $header-logo: url(%%logo%%);
 @import 'layouts/headstrong';
 
 html:not([lang="ns"]) {
-	& { @import 'themes/earth'; }
+	@import 'layouts/dual-column';
+	@import 'themes/earth';
 }
 
 /*
@@ -74,6 +75,61 @@ html:not([lang="ns"]) {
 	
 		.flair, .linkflairlabel, div.side a[href*="#flair"] {
 			padding: 2px 4px 6px 4px; /* tldr */
+		}
+		
+		/*
+		###Title colors
+		>>>>>>>>>>>>>>>>*/
+
+		.linkflair-processed.linkflair-question .title,
+		.title .linkflairlabel.linkflair-processed.linkflair-question + a, /* bugfix */
+		.post-linkflair-processed.linkflair-question .linklisting .title,
+
+		.linkflair-processed.linkflair-issue .title,
+		.title .linkflairlabel.linkflair-processed.linkflair-issue + a, /* bugfix */
+		.post-linkflair-processed.post-linkflair-issue .linklisting .title,
+
+		.linkflair-green .title,
+		.title .linkflairlabel.linkflair-green + a, /* bugfix */
+		.post-linkflair-green .linklisting .title
+		{
+			color: #8F8 !important;
+		}
+
+		.linkflair-resource .title,
+		.title .linkflairlabel.linkflair-resource + a, /* bugfix */
+		.post-linkflair-resource .linklisting .title
+		{
+			color: #F8F !important;
+		}
+
+		.linkflair-pending.linkflair-issue .title,
+		.title .linkflairlabel.linkflair-pending.linkflair-issue + a, /* bugfix */
+		.post-linkflair-pending.post-linkflair-issue .linklisting .title,
+
+		.linkflair-red .title,
+		.title .linkflairlabel.linkflair-red + a, /* bugfix */
+		.post-linkflair-red .linklisting .title
+		{
+			color: #F88 !important;
+		}
+
+		.linkflair-question .title,
+		.title .linkflairlabel.linkflair-question + a, /* bugfix */
+		.post-linkflair-question .linklisting .title {
+			color: #88F !important;
+		}
+
+		.linkflair-meta .title,
+		.title .linkflairlabel.linkflair-meta + a, /* bugfix */
+		.post-linkflair-meta .linklisting .title {
+			color: #FF0 !important;
+		}
+
+		.linkflair-archived .title,
+		.title .linkflairlabel.linkflair-archived + a, /* bugfix */
+		.post-linkflair-archived .linklisting .title {
+			color: #888 !important;
 		}
 
 		/*

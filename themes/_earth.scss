@@ -1,46 +1,67 @@
-
 /*
-##Markdown
+#Earthy theme
+Based on TF2 console color scheme
 >>>>>>>>>>>>>>>>*/
 
-	.md :not(pre) code { color: #F49500; border: none; background: none }
-	
-	.md pre {
-		border-color: #9D511B;
-		border-top-left-radius: 4px;
-		border-bottom-left-radius: 4px;
-	}
-	
-	.md pre::before {
-		color: white;
-	}
+	/*
+	##Post hover effect
+	>>>>>>>>>>>>>>>>*/
 
-	.titlebox .md a[href="#submit"] + a {
-		display: block;
-		width: 250px;
-		text-decoration: none;
-		font-size: 15px;
-		line-height: 29px;
-		text-align: center;
-		padding-left: 20px;
-		font-weight: bold;
-		height: 29px;
-		letter-spacing: -1px;
-		position: relative;
-		border: 1px solid #403C33  !important;
-		background-image: none !important;
-		background-color: #9D511B;
-		border-radius: 7px;
+		.listing-page .sitetable {
+			& > div.thing:nth-of-type(4n+1) {
+			}
+			& div.thing:nth-of-type(n) {
+				border-radius: 8px;
+				background: #403C33;
+				box-shadow: -3px 0 10px 3px #221F1C;
+			}
+			& > div.thing:nth-of-type(n):hover {
+				background: #6D655B;
+			}
+		}
+
+	/*
+	##Markdown
+	>>>>>>>>>>>>>>>>*/
+
+		.md :not(pre) code { color: #F49500; border: none; background: none }
 		
-		&:hover {
-			background-color: #F49500;
-			color: black !important;
+		.md pre {
+			border-color: #9D511B;
+			border-top-left-radius: 4px;
+			border-bottom-left-radius: 4px;
 		}
-		&:after {
-			display: none !important;
+		
+		.md pre::before {
+			color: white;
 		}
-	}
-	
+
+		.titlebox .md a[href="#submit"] + a {
+			display: block;
+			width: 250px;
+			text-decoration: none;
+			font-size: 15px;
+			line-height: 29px;
+			text-align: center;
+			padding-left: 20px;
+			font-weight: bold;
+			height: 29px;
+			letter-spacing: -1px;
+			position: relative;
+			border: 1px solid #403C33  !important;
+			background-image: none !important;
+			background-color: #9D511B;
+			border-radius: 7px;
+			
+			&:hover {
+				background-color: #F49500;
+				color: black !important;
+			}
+			&:after {
+				display: none !important;
+			}
+		}
+		
 	/*
 	##RES
 	>>>>>>>>>>>>>>>>*/
@@ -72,901 +93,657 @@
 			background-color: transparent !important;
 		}
 
-/*
-##Moderator box
->>>>>>>>>>>>>>>>*/
-
-	.side .helplink + .title:before { color: orange; }
-
-/*
-##Flair
->>>>>>>>>>>>>>>>*/
-
-	.flair, .res-nightmode .flair, .linkflairlabel {
-		background-color: #221F1C;
-		border: 1px solid #403C33;
-	}
-	
-/*
-##Flair selector
->>>>>>>>>>>>>>>>*/
-
-	.flairselector {
-		box-shadow: 4px 4px 4px #403C33;
-	}
-	.flairselector h2 {
-		background-color: #393532;
-	}
-	.flairselector li:hover {
-		background-color: #403C33;
-	}
-
-
-/*
-##Webkit scrollbar
->>>>>>>>>>>>>>>>*/
-
-	::-webkit-scrollbar {
-		background-color: #6D655B;
-		&-thumb {
-			background-color: #988E7E;
-		}
-		&-button {
-			background-color: #988E7E;
-			color: #494642;
-			display: none;
-			width: 0;
-			height: 0;
-		}
-		&-corner {
-			background-color: transparent;
-			color: #555555;
-		}
-	}
-
-
-/*
-##Tabs
->>>>>>>>>>>>>>>>*/
-
-	.pagename.redditname a { font-size: 14px; }
-
-	.tabmenu,
-	.pagename,
-	ul.tabmenu li a
-	{
-		border-color: #403C33 !important;
-		background-color: #221F1C !important;
-	}
-
-/*
-##Stuff
->>>>>>>>>>>>>>>>*/
-
-	.comment .expand:hover
-	{ color: #000; background-color: #F49500; }
-
-	body,
-	body.res-nightmode,
-	.user,
-	li.flat-vert.title,
-	.flair,
-	.linkflairlabel,
-	.linefield .title,
-	.roundfield .title,
-	label,
-	div,
-	p
-	{ color: #D9D9D9 !important; }
-
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6,
-	.trophy-name
-	{ color: #F49500 !important; }
-	
-	a,
-	a:link,
-	.RESDropdownList li,
-	.RESDropdownList li a
-	{ color: #EEDB00 !important; background-color: transparent }
-
-	a:active
-	{ color: #0000FF !important; background-color: transparent }
-
-	a:visited
-	{ color: #EEDB00 !important; background-color: transparent } /* FF9C00 */
-
-	a:hover,
-	.RESDropdownList li:hover,
-	.RESDropdownList li a:hover
-	{ color: #FF5A5A !important; background-color: transparent }
-
-	.link .title
-	{ color: #FFF !important }
-
-	.thing .title
-	{ color: #FFF !important }
-	
-/*
-##Header background
->>>>>>>>>>>>>>>>*/
-
-	#header,
-	body.res #header
-	{
-		background-color: #221F1C !important;
-		border-bottom: 1px solid #FF9C00;
-		background-color: #FF9C00;
-	}
-
-	.formtabs-content
-	{
-		border-color: #403C33 !important;
-	}
-	
-/*
-##Community settings page
->>>>>>>>>>>>>>>>*/
-	
-	.linefield,
-	.roundfield,
-	.content.submit .info-notice,
-	.tabpane-content
-	{
-		background-color: #221F1C;
-		border: 1px solid #403C33;
-		border-radius: 7px;
-		-moz-border-radius: 7px;
-		-webkit-border-radius: 7px
-	}
-	
-	.usertext .markhelp td  { /* TODO: for topmost rows only */
-		background-color: #272422;
-		border: 1px solid #403C33;
-	}
-	
-	.sidecontentbox .content {
-		border: none;
-	}
-	
-	.drop-choices {
-		background-color: #272422;
-		border-color: #403C33;
-	}
-	.srdrop .choice.bottom-option {
-		border-color: #403C33;
-	}
-	.drop-choices a.choice:hover {
-		background-color: #403C33;
-	}
-	
-/*
-##Wiki
->>>>>>>>>>>>>>>>*/
-
-	hr,
-	.wiki-page .pageactions,
-	.wiki-page .wiki-page-content .md.wiki > .toc > ul,
-	.wiki-page .wiki-page-content .md.wiki > .toc > ul ul
-	{ border-color: #403C33 !important }
-	
-	.wiki-page .pageactions
-	{ background-color: #221F1C; margin-left: 15px; }
-	
-	.wiki-page .pageactions .wikiaction:hover
-	{
-		color: #000 !important;
-		background-color: #F49500 !important;
-	}
-	
-	.wiki-page .pageactions .wikiaction-current
-	{
-		color: #000 !important;
-		background-color: #9D511B !important;
-	}
-	
-	.wiki-page .pageactions .wikiaction-current:hover
-	{
-		color: #FFF !important;
-		background-color: #9D511B !important;
-	}
-	
-	.wiki-page .wiki-page-content .md.wiki > .toc > ul
-	{
-		background-color: #221F1C;
-		border: 1px solid #403C33;
-		border-radius: 7px;
-		-moz-border-radius: 7px;
-		-webkit-border-radius: 7px
-	}
-	
-	.generic-table
-	{ color: #D9D9D9 !important; }
-
-/*
-##Submission buttons
->>>>>>>>>>>>>>>>*/
-	
-	.morelink .nub { display: none }
-
-	.morelink {
-		border-color: #403C33;
-		background-image: none;
-		background-color: #9D511B;
-		border-radius: 7px;
-		-moz-border-radius: 7px;
-		-webkit-border-radius: 7px
-	}
-
-	.submit .morelink:hover {
-		background-image: none;
-		background-color: #F49500;
-	}
-	.submit .morelink a:hover {
-		color: black !important;
-	}
-
-/*
-##Comments
->>>>>>>>>>>>>>>>*/
-	
-	div.child .comment,
-	div.child .comment .comment,
-	div.child .comment .comment .comment,
-	div.child .comment .comment .comment .comment,
-	div.child .comment .comment .comment .comment .comment,
-	div.child .comment .comment .comment .comment .comment .comment,
-	div.child .comment .comment .comment .comment .comment .comment .comment,
-	div.child .comment .comment .comment .comment .comment .comment .comment .comment,
-	div.child .comment .comment .comment .comment .comment .comment .comment .comment .comment,
-	div.child .comment .comment .comment .comment .comment .comment .comment .comment .comment .comment,
-	div.thing.comment,
-	div.comment,
-	.comment .child,
-	.comment .showreplies { 
-		border-color: #403C33 !important;
-		background-color: #221F1C !important;
-	}
-	.usertext-body,
-	.res-nightmode .RES-keyNav-activeElement .usertext-body .md,
-	.res-nightmode .RES-keyNav-activeElement .usertext-body .md p
-	{
-		border-radius: 2px;
-		-moz-border-radius: 2px;
-		-webkit-border-radius: 2px
-	}
-
-	div.titlebox .usertext-body {
-		background-color: transparent !important;
-	}
-	
-
-
-/*
-##Ad border
->>>>>>>>>>>>>>>>*/
-
-	#ad-frame {
-		background-color: #221F1C !important;
-		border: 1px solid #403C33 !important;
-		border-radius: 7px;
-		-moz-border-radius: 7px;
-		-webkit-border-radius: 7px;
-		height: 266px
-	}
-	div#adlink { background-color: transparent !important }
-	div#adlink a { color: #FF9C00 !important }
-
-/*
-##Top toolbar
->>>>>>>>>>>>>>>>*/
-
-	#RESShortcutsEditContainer {
-		min-height: 18px;
-	}
-
-	#srList {
-		position: fixed !important;
-	}
-
-	div#sr-header-area { background-color: #393532 !important; border-color: #403C33 }
-
-	#sr-more-link,
-	#RESShortcutsEditContainer,
-	#RESShortcutsRight,
-	#RESShortcutsLeft,
-	#RESShortcutsAdd,
-	#RESShortcutsTrash,
-	#RESShortcutsSort
-	{ background-color: #9D511B !important; color: #000 !important } 
-
-/*
-##Subreddit list
->>>>>>>>>>>>>>>>*/
-
-	.dropdown.srdrop .selected { color: #F49500 !important }
-
-	#srList tr,
-	.RESDropdownList li,
-	.RESDropdownList li a
-	{
-		border-color: #403C33 !important;
-		background-color: #272422 !important;
-	}
-	#srList tr:hover,
-	.RESDropdownList li:hover,
-	.RESDropdownList li a:hover {
-		background-color: #403C33 !important;
-	}
-
-/*
-##Sidebar
->>>>>>>>>>>>>>>>*/
-
-	.side {
-		background-color: #221F1C !important;
-		/*padding: 54px 4px 4px 8px;*/
-		padding: 4px 4px 4px 4px;
-		margin-right: 0;
-		border-left: 1px solid #403C33;
-		border-bottom: 1px solid #403C33;
-		-webkit-border-bottom-left-radius: 7px;
-		-moz-border-bottom-left-radius: 7px;
-		border-bottom-left-radius: 7px;
-	}
-
-/*
-###Curved borders
->>>>>>>>>>>>>>>>*/
-
-	.link .usertext .md,
-	.linkinfo,
-	.titlebox,
-	.sidebox.submit,
-	.sidecontentbox,
-	.user-form
-	{
-		padding: 10px;
-		color: #FFF;
-		background: #221F1C !important; /* background-color */
-		border: 1px solid #403C33;
-		border-radius: 7px;
-		-moz-border-radius: 7px;
-		-webkit-border-radius: 7px
-	}
-	
-/*
-###Title box
->>>>>>>>>>>>>>>>*/
-
-	.titlebox h1 {
-		padding: 10px;
-		font-size: 18px;
-		color: #FFFFFF;
-		z-index: 10;
-		background-color: #9D511B;
-		border: 1px solid #403C33;
-		border-radius: 7px;
-		-moz-border-radius: 7px;
-		-webkit-border-radius: 7px
-	}
-	.titlebox h1 a {
-		color: #000;
-		padding:8px;
-	}
-	
-
-	.sidecontentbox .collapse-button {
-		background-color: #A39884;
-		border-top-color: #807868;
-		color: #393532;
-	}
-
-	.titlebox form.toggle,
-	.leavemoderator {
-		background-color: #221F1C;
-	}
-
-	.sidebox.submit .spacer {
-		background-color: #221F1C;
-	}
-	
-
-/*
-##Input
->>>>>>>>>>>>>>>>*/
-
 	/*
-	###Text
+	##Moderator box
 	>>>>>>>>>>>>>>>>*/
 
-		input,
-		textarea,
-		.login-form-side,
-		.linkinfo .shortlink input,
-		.linefield textarea,
-		.linefield input[type="text"],
-		.linefield input[type="password"],
-		.pretty-form input[type="text"],
-		.pretty-form input[type="password"],
-		.pretty-form textarea,
-		.login-form-side input,
-		#search input[type="text"],
-		.infobar,
-		.wiki-page .wiki-page-content #wiki_revision_reason,
-		.flairlist .flaircell input[type="text"]
+		.side .helplink + .title:before { color: orange; }
+
+	/*
+	##Flair
+	>>>>>>>>>>>>>>>>*/
+
+		.flair, .res-nightmode .flair, .linkflairlabel {
+			background-color: #221F1C;
+			border: 1px solid #403C33;
+		}
+		
+	/*
+	##Flair selector
+	>>>>>>>>>>>>>>>>*/
+
+		.flairselector {
+			box-shadow: 4px 4px 4px #403C33;
+		}
+		.flairselector h2 {
+			background-color: #393532;
+		}
+		.flairselector li:hover {
+			background-color: #403C33;
+		}
+
+
+	/*
+	##Webkit scrollbar
+	>>>>>>>>>>>>>>>>*/
+
+		::-webkit-scrollbar {
+			background-color: #6D655B;
+			&-thumb {
+				background-color: #988E7E;
+			}
+			&-button {
+				background-color: #988E7E;
+				color: #494642;
+				display: none;
+				width: 0;
+				height: 0;
+			}
+			&-corner {
+				background-color: transparent;
+				color: #555555;
+			}
+		}
+
+
+	/*
+	##Tabs
+	>>>>>>>>>>>>>>>>*/
+
+		.pagename.redditname a { font-size: 14px; }
+
+		.tabmenu,
+		.pagename,
+		ul.tabmenu li a
 		{
-			color: #D3D7CF !important;
-			background-color: #221F1C !important;
-			border: 1px solid #403C33 !important;
-			border-radius: 7px;
-			-moz-border-radius: 7px;
-			-webkit-border-radius: 7px
-		}
-
-		/* Search page */
-		.searchpane {
+			border-color: #403C33 !important;
 			background-color: #221F1C !important;
 		}
 
+
+		
 	/*
-	###Check boxes and radio buttons
+	##Header background
 	>>>>>>>>>>>>>>>>*/
 
-		input[type="checkbox"],
-		input[type="radio"],
-		.pretty-form input[type="checkbox"],
-		.pretty-form input[type="radio"],
-		.pretty-form input[type="file"] {
-			color: #D3D7CF !important;
+		#header,
+		body.res #header
+		{
 			background-color: #221F1C !important;
-			border: 1px solid #403C33 !important;
-			border-radius: 7px;
-			-moz-border-radius: 7px;
-			-webkit-border-radius: 7px
+			border-bottom: 1px solid #FF9C00;
+			background-color: #FF9C00;
 		}
+
+		.formtabs-content
+		{
+			border-color: #403C33 !important;
+		}
+		
+	/*
+	##Community settings page
+	>>>>>>>>>>>>>>>>*/
+		
+		.linefield,
+		.roundfield,
+		.content.submit .info-notice,
+		.tabpane-content
+		{
+			background-color: #221F1C;
+			border: 1px solid #403C33;
+			border-radius: 7px;
+		}
+		
+		.usertext .markhelp td  { /* TODO: for topmost rows only */
+			background-color: #272422;
+			border: 1px solid #403C33;
+		}
+		
+		.sidecontentbox .content {
+			border: none;
+		}
+		
+		.drop-choices {
+			background-color: #272422;
+			border-color: #403C33;
+		}
+		.srdrop .choice.bottom-option {
+			border-color: #403C33;
+		}
+		.drop-choices a.choice:hover {
+			background-color: #403C33;
+		}
+		
+	/*
+	##Wiki
+	>>>>>>>>>>>>>>>>*/
+
+		hr,
+		.wiki-page .pageactions,
+		.wiki-page .wiki-page-content .md.wiki > .toc > ul,
+		.wiki-page .wiki-page-content .md.wiki > .toc > ul ul
+		{ border-color: #403C33 !important }
+		
+		.wiki-page .pageactions
+		{ background-color: #221F1C; margin-left: 15px; }
+		
+		.wiki-page .pageactions .wikiaction:hover
+		{
+			color: #000 !important;
+			background-color: #F49500 !important;
+		}
+		
+		.wiki-page .pageactions .wikiaction-current
+		{
+			color: #000 !important;
+			background-color: #9D511B !important;
+		}
+		
+		.wiki-page .pageactions .wikiaction-current:hover
+		{
+			color: #FFF !important;
+			background-color: #9D511B !important;
+		}
+		
+		.wiki-page .wiki-page-content .md.wiki > .toc > ul
+		{
+			background-color: #221F1C;
+			border: 1px solid #403C33;
+			border-radius: 7px;
+		}
+		
+		.generic-table
+		{ color: #D9D9D9 !important; }
 
 	/*
-	###Combo boxes
+	##Submission buttons
 	>>>>>>>>>>>>>>>>*/
-		.pretty-form select,
-		.pretty-form b,
-		.linefield select {
-			color: #D3D7CF !important;
-			background-color: #221F1C !important;
-			border: 1px solid #403C33 !important;
+		
+		.morelink .nub { display: none }
+
+		.morelink {
+			border-color: #403C33;
+			background-image: none;
+			background-color: #9D511B;
 			border-radius: 7px;
-			-moz-border-radius: 7px;
-			-webkit-border-radius: 7px
 		}
 
-	/*
-	###Buttons
-	>>>>>>>>>>>>>>>>*/
-
-		button,
-		.pretty-form button,
-		.flair-jump button,
-		.flairrow .flairdeletebtn,
-		#RESMenu li {
-			color: #D3D7CF !important;
-			background-color: #221F1C !important;
-			border: 1px solid #403C33 !important;
-			border-radius: 7px;
-			-moz-border-radius: 7px;
-			-webkit-border-radius: 7px
+		.submit .morelink:hover {
+			background-image: none;
+			background-color: #F49500;
 		}
-
-		a.pretty-button.negative,
-		a.pretty-button.neutral,
-		a.pretty-button.positive,
-		.fancy-toggle-button .add .fancy-toggle-button .remove,
-		.fancy-toggle-button .active,
-		.RESshortcutside,
-		.RESDashboardToggle {
+		.submit .morelink a:hover {
 			color: black !important;
 		}
 
-/*
-##Selected post highlight
->>>>>>>>>>>>>>>>*/
-
-	.keyHighlight,
-	.RES-keyNav-activeElement,
-	.RES-keyNav-activeElement .usertext-body,
-	.res-nightmode .RES-keyNav-activeElement,
-	.res-nightmode .RES-keyNav-activeElement .usertext-body {
-		background-color: #6D655B !important;
-		outline: none !important;
-	}
-	.commentarea .RES-keyNav-activeElement,
-	.commentarea .RES-keyNav-activeElement .md,
-	.commentarea .res-nightmode .RES-keyNav-activeElement,
-	.commentarea .res-nightmode .RES-keyNav-activeElement .md
-	{
-		background-color: #403C33 !important;
-		outline: none !important;
-	}
-
-	.commentarea .RES-keyNav-activeElement.entry .noncollapsed
-	{
-		background-color: #221F1C !important;
-		outline: 4px solid #F49500 !important;
-	}
-
-	.link.last-clicked
-	{ border: none !important; outline: none !important; }
-
-/*
-##User bar
->>>>>>>>>>>>>>>>*/
-
-	div#header-bottom-right {
-		background-color: #221F1C !important;
-		border-top: 1px solid #403C33;
-		border-left: 1px solid #403C33;
-		border-top-left-radius: 0px;
-		padding: 4px !important;
-		text-align: center
-	}
-
-	.separator { color: #FF9C00; }
-
-/*
-##Background
->>>>>>>>>>>>>>>>*/
-
-	html {
-		background-color: #272422 !important;
-	}
-
-	body,
-	body.res-nightmode {
-		background-color: #272422 !important;
-		background-repeat: no-repeat;
-		background-position: 0px 200px;
-		background-attachment: scroll;
-	}
-
-/*
-##Footer
->>>>>>>>>>>>>>>>*/
-
-	.footer,
-	.footer .col
-	{ border-color: #403C33; background-color: #221F1C; }
-
-/*
-##Other
->>>>>>>>>>>>>>>>*/
-
-
-	a.author.submitter { color: #FFF !important; }
-
-	a.author.friend { color: #0F0 !important; }
-
-	body.res a.author.friend { color: #000 !important; background-color: #0F0 !important; }
-
-	.tabmenu li a {
-		background-color: #393532 !important;
-		border-color: #c2dcf3 transparent !important;
-	}
-	.tabmenu li a:hover {
-		background-color: #F49500 !important;
-		color: #000 !important;
-	}
-	.tabmenu li.selected a {
-		background-color: #9D511B !important;
-		color: #000 !important;
-		border-color: #5f99cf transparent !important;
-		border-style: solid;
-		border-width: 1px
-	}
-	.tabmenu li.selected a:hover {
-		color: #FFFFFF !important;
-	}
-
-/*
-##RES Style
->>>>>>>>>>>>>>>>*/
-
-	/* Never ending reddit */
-	
-	.NERPageMarker {
-		color: #D9D9D9 !important;
-		background-color: #272422 !important;
-		border-color: #403C33 !important;
-	}
-
-	/* RES subscription button */
-
-	.RESSubscriptionButton {
-		border: 1px solid #403C33 !important;
-		background-color: #9D511B !important;
-		color: #000 !important;
-	}
-	.RESSubscriptionButton:hover {
-		background-color: #F49500 !important;
-		color: #000 !important;
-	}
-
-	#lightSwitchToggle.moduleToggle,
-	#lightSwitchToggle.toggleButton {
-		background-color: #221F1C !important;
-	}
-
-	#userbarToggle { min-height: 24px; }
-
-	#userbarToggle { color: #FF9C00 !important; background-color: #9D511B !important; border-color: #FF9C00 !important }
-
-	#RESAccountSwitcherIconOverlay,
-	#RESMainGearOverlay,
-	.RESDropdownList { background-color: #9D511B !important; border-color: #D9D9D9 !important; }
+	/*
+	##Comments
+	>>>>>>>>>>>>>>>>*/
 		
-	/* Dialogs */
-	/* Frames */
-	.RESDialogSmall, .RESNotification, #RESConsoleContent
-	{ background-color: #221F1C !important; border-color: #403C33 !important; color: #D9D9D9 !important; }
+		div.child .comment,
+		div.child .comment .comment,
+		div.child .comment .comment .comment,
+		div.child .comment .comment .comment .comment,
+		div.child .comment .comment .comment .comment .comment,
+		div.child .comment .comment .comment .comment .comment .comment,
+		div.child .comment .comment .comment .comment .comment .comment .comment,
+		div.child .comment .comment .comment .comment .comment .comment .comment .comment,
+		div.child .comment .comment .comment .comment .comment .comment .comment .comment .comment,
+		div.child .comment .comment .comment .comment .comment .comment .comment .comment .comment .comment,
+		div.thing.comment,
+		div.comment,
+		.comment .child,
+		.comment .showreplies { 
+			border-color: #403C33 !important;
+			background-color: #221F1C !important;
+		}
+		.usertext-body,
+		.res-nightmode .RES-keyNav-activeElement .usertext-body .md,
+		.res-nightmode .RES-keyNav-activeElement .usertext-body .md p
+		{
+			border-radius: 2px;
+		}
 
-	/* Containers */
-	.moduleHeader, .optionContainer, .guider, #RESShortcutsAddFormContainer, .RESNotificationContent, .aboutPanel, #DonateRES
-	{ background-color: #272422 !important; border-color: #403C33 !important; }
-
-	/* Headers */
-	.RESDialogSmall > h3, .RESNotificationHeader, .RESDialogTopBar, #RESConsole, #RESMenu, #moduleOptionsScrim
-	{ background-color: #403C33 !important; border-color: #403C33 !important; }
-
-	/* Close buttons */
-	.RESCloseButton, .x_button
-	{ background-color: #9D511B !important; }
-
-	/* RES settings console */
-	#modalOverlay { background-color: black !important; }
-	#RESConsole {
-		box-shadow: 10px 10px 10px black !important;
-		-moz-box-shadow: 10px 10px 10px black !important;
-		-webkit-box-shadow: 10px 10px 10px black !important;
-	}
+		div.titlebox .usertext-body {
+			background-color: transparent !important;
+		}
 		
-	a.guider_button, a.guider_button:hover { color: #000 !important; }
 
-/*
-#Markdown
->>>>>>>>>>>>>>>>*/
-
-	.md {
-		max-width: 60em;
-		overflow: auto;
-		font-size: small;
-	}
 
 	/*
-	##Table
+	##Ad border
 	>>>>>>>>>>>>>>>>*/
 
-		.md table {
-			background-color: #221F1C;
+		#ad-frame {
+			background-color: #221F1C !important;
+			border: 1px solid #403C33 !important;
 			border-radius: 7px;
-			-moz-border-radius: 7px;
-			-webkit-border-radius: 7px
+			height: 266px
 		}
-		.md th {
-			color: #F49500;
+		div#adlink { background-color: transparent !important }
+		div#adlink a { color: #FF9C00 !important }
+
+	/*
+	##Top toolbar
+	>>>>>>>>>>>>>>>>*/
+
+		#RESShortcutsEditContainer {
+			min-height: 18px;
 		}
-		.md th, .md td {
+
+		#srList {
+			position: fixed !important;
+		}
+
+		div#sr-header-area { background-color: #393532 !important; border-color: #403C33 }
+
+		#sr-more-link,
+		#RESShortcutsEditContainer,
+		#RESShortcutsRight,
+		#RESShortcutsLeft,
+		#RESShortcutsAdd,
+		#RESShortcutsTrash,
+		#RESShortcutsSort
+		{ background-color: #9D511B !important; color: #000 !important } 
+
+	/*
+	##Subreddit list
+	>>>>>>>>>>>>>>>>*/
+
+		.dropdown.srdrop .selected { color: #F49500 !important }
+
+		#srList tr,
+		.RESDropdownList li,
+		.RESDropdownList li a
+		{
+			border-color: #403C33 !important;
+			background-color: #272422 !important;
+		}
+		#srList tr:hover,
+		.RESDropdownList li:hover,
+		.RESDropdownList li a:hover {
+			background-color: #403C33 !important;
+		}
+
+	/*
+	##Sidebar
+	>>>>>>>>>>>>>>>>*/
+
+		.side {
+			background-color: #221F1C !important;
+			/*padding: 54px 4px 4px 8px;*/
+			padding: 4px 4px 4px 4px;
+			margin-right: 0;
+			border-left: 1px solid #403C33;
+			border-bottom: 1px solid #403C33;
+			border-bottom-left-radius: 7px;
+		}
+
+	/*
+	##Curved borders
+	>>>>>>>>>>>>>>>>*/
+
+		.link .usertext .md,
+		.linkinfo,
+		.titlebox,
+		.sidebox.submit,
+		.sidecontentbox,
+		.user-form
+		{
+			padding: 10px;
+			color: #FFF;
+			background: #221F1C !important; /* background-color */
+			border: 1px solid #403C33;
+			border-radius: 7px;
+		}
+		
+	/*
+	##Title box
+	>>>>>>>>>>>>>>>>*/
+
+		.titlebox h1 {
+			padding: 10px;
+			font-size: 18px;
+			color: #FFFFFF;
+			z-index: 10;
+			background-color: #9D511B;
+			border: 1px solid #403C33;
+			border-radius: 7px;
+		}
+		.titlebox h1 a {
+			color: #000;
+			padding:8px;
+		}
+		
+
+		.sidecontentbox .collapse-button {
+			background-color: #A39884;
+			border-top-color: #807868;
+			color: #393532;
+		}
+
+		.titlebox form.toggle,
+		.leavemoderator {
+			background-color: #221F1C;
+		}
+
+		.sidebox.submit .spacer {
+			background-color: #221F1C;
+		}
+		
+
+	/*
+	##Input
+	>>>>>>>>>>>>>>>>*/
+
+		/*
+		###Text
+		>>>>>>>>>>>>>>>>*/
+
+			input,
+			textarea,
+			.login-form-side,
+			.linkinfo .shortlink input,
+			.linefield textarea,
+			.linefield input[type="text"],
+			.linefield input[type="password"],
+			.pretty-form input[type="text"],
+			.pretty-form input[type="password"],
+			.pretty-form textarea,
+			.login-form-side input,
+			#search input[type="text"],
+			.infobar,
+			.wiki-page .wiki-page-content #wiki_revision_reason,
+			.flairlist .flaircell input[type="text"]
+			{
+				color: #D3D7CF !important;
+				background-color: #221F1C !important;
+				border: 1px solid #403C33 !important;
+				border-radius: 7px;
+			}
+
+			/* Search page */
+			.searchpane {
+				background-color: #221F1C !important;
+			}
+
+		/*
+		###Check boxes and radio buttons
+		>>>>>>>>>>>>>>>>*/
+
+			input[type="checkbox"],
+			input[type="radio"],
+			.pretty-form input[type="checkbox"],
+			.pretty-form input[type="radio"],
+			.pretty-form input[type="file"] {
+				color: #D3D7CF !important;
+				background-color: #221F1C !important;
+				border: 1px solid #403C33 !important;
+				border-radius: 7px;
+			}
+
+		/*
+		###Combo boxes
+		>>>>>>>>>>>>>>>>*/
+			.pretty-form select,
+			.pretty-form b,
+			.linefield select {
+				color: #D3D7CF !important;
+				background-color: #221F1C !important;
+				border: 1px solid #403C33 !important;
+				border-radius: 7px;
+			}
+
+		/*
+		###Buttons
+		>>>>>>>>>>>>>>>>*/
+
+			button,
+			.pretty-form button,
+			.flair-jump button,
+			.flairrow .flairdeletebtn,
+			#RESMenu li {
+				color: #D3D7CF !important;
+				background-color: #221F1C !important;
+				border: 1px solid #403C33 !important;
+				border-radius: 7px;
+			}
+
+			a.pretty-button.negative,
+			a.pretty-button.neutral,
+			a.pretty-button.positive,
+			.fancy-toggle-button .add .fancy-toggle-button .remove,
+			.fancy-toggle-button .active,
+			.RESshortcutside,
+			.RESDashboardToggle {
+				color: black !important;
+			}
+
+	/*
+	##Selected post highlight
+	>>>>>>>>>>>>>>>>*/
+
+		.keyHighlight,
+		.RES-keyNav-activeElement,
+		.RES-keyNav-activeElement .usertext-body,
+		.res-nightmode .RES-keyNav-activeElement,
+		.res-nightmode .RES-keyNav-activeElement .usertext-body {
+			background-color: #6D655B !important;
+			outline: none !important;
+		}
+		.commentarea .RES-keyNav-activeElement,
+		.commentarea .RES-keyNav-activeElement .md,
+		.commentarea .res-nightmode .RES-keyNav-activeElement,
+		.commentarea .res-nightmode .RES-keyNav-activeElement .md
+		{
+			background-color: #403C33 !important;
+			outline: none !important;
+		}
+
+		.commentarea .RES-keyNav-activeElement.entry .noncollapsed
+		{
+			background-color: #221F1C !important;
+			outline: 4px solid #F49500 !important;
+		}
+
+		.link.last-clicked
+		{ border: none !important; outline: none !important; }
+
+	/*
+	##User bar
+	>>>>>>>>>>>>>>>>*/
+
+		div#header-bottom-right {
+			background-color: #221F1C !important;
+			border-top: 1px solid #403C33;
+			border-left: 1px solid #403C33;
+			border-top-left-radius: 0px;
+			padding: 4px !important;
+			text-align: center
+		}
+
+		.separator { color: #FF9C00; }
+
+	/*
+	##Background
+	>>>>>>>>>>>>>>>>*/
+
+		html {
+			background-color: #272422 !important;
+		}
+
+		body,
+		body.res-nightmode {
+			background-color: #272422 !important;
+			background-repeat: no-repeat;
+			background-position: 0px 200px;
+			background-attachment: scroll;
+		}
+
+	/*
+	##Footer
+	>>>>>>>>>>>>>>>>*/
+
+		.footer,
+		.footer .col
+		{ border-color: #403C33; background-color: #221F1C; }
+
+
+	/*
+	##RES Style
+	>>>>>>>>>>>>>>>>*/
+
+		/* Never ending reddit */
+		
+		.NERPageMarker {
+			color: #D9D9D9 !important;
+			background-color: #272422 !important;
+			border-color: #403C33 !important;
+		}
+
+		/* RES subscription button */
+
+		.RESSubscriptionButton {
+			border: 1px solid #403C33 !important;
+			background-color: #9D511B !important;
+			color: #000 !important;
+		}
+		.RESSubscriptionButton:hover {
+			background-color: #F49500 !important;
+			color: #000 !important;
+		}
+
+		#lightSwitchToggle.moduleToggle,
+		#lightSwitchToggle.toggleButton {
+			background-color: #221F1C !important;
+		}
+
+		#userbarToggle { min-height: 24px; }
+
+		#userbarToggle { color: #FF9C00 !important; background-color: #9D511B !important; border-color: #FF9C00 !important }
+
+		#RESAccountSwitcherIconOverlay,
+		#RESMainGearOverlay,
+		.RESDropdownList { background-color: #9D511B !important; border-color: #D9D9D9 !important; }
+			
+		/* Dialogs */
+		/* Frames */
+		.RESDialogSmall, .RESNotification, #RESConsoleContent
+		{ background-color: #221F1C !important; border-color: #403C33 !important; color: #D9D9D9 !important; }
+
+		/* Containers */
+		.moduleHeader, .optionContainer, .guider, #RESShortcutsAddFormContainer, .RESNotificationContent, .aboutPanel, #DonateRES
+		{ background-color: #272422 !important; border-color: #403C33 !important; }
+
+		/* Headers */
+		.RESDialogSmall > h3, .RESNotificationHeader, .RESDialogTopBar, #RESConsole, #RESMenu, #moduleOptionsScrim
+		{ background-color: #403C33 !important; border-color: #403C33 !important; }
+
+		/* Close buttons */
+		.RESCloseButton, .x_button
+		{ background-color: #9D511B !important; }
+
+		/* RES settings console */
+		#modalOverlay { background-color: black !important; }
+		#RESConsole {
+			box-shadow: 10px 10px 10px black !important;
+		}
+			
+		a.guider_button, a.guider_button:hover { color: #000 !important; }
+
+	/*
+	##Markdown
+	>>>>>>>>>>>>>>>>*/
+
+		.md {
+			max-width: 60em;
+			overflow: auto;
+			font-size: small;
+		}
+
+		/*
+		###Table
+		>>>>>>>>>>>>>>>>*/
+
+			.md table {
+				background-color: #221F1C;
+				border-radius: 7px;
+			}
+			.md th {
+				color: #F49500;
+			}
+			.md th, .md td {
+				border-color: #403C33;
+			}
+
+		/*
+		###Quote
+		>>>>>>>>>>>>>>>>*/
+
+			.md blockquote, .help blockquote {
+				/*border: 1px solid #9D511B;*/
+				border-left-color: orange;
+			}
+
+	/*
+	##Multireddit creator
+	>>>>>>>>>>>>>>>>*/
+
+		.hover-bubble.multi-selector {
+			background-color: #221F1C;
 			border-color: #403C33;
 		}
 
+		.hover-bubble.multi-selector strong {
+			color: #EEDB00 !important;
+		}
+
+		.hover-bubble.multi-selector label:hover {
+			background-color: #403C33;
+		}
+
 	/*
-	##Quote
+	##Wiki diff
 	>>>>>>>>>>>>>>>>*/
 
-		.md blockquote, .help blockquote {
-			/*border: 1px solid #9D511B;*/
-			border-left-color: orange;
+		.diff_next,
+		.diff_header
+		{ background-color: #9D511B }
+
+		table.diff,
+		colgroup
+		{ border-color: #9D511B }
+
+		.diff_add,
+		.diff_chg,
+		.diff_sub
+		{ color: #000 }
+
+		.tagline .stickied-tagline {
+			color: #8F8;
 		}
-	
-/*
-#Misc
->>>>>>>>>>>>>>>>*/
 
-/* Colors */
+	/*
+	##Gold fixes
+	>>>>>>>>>>>>>>>>*/
 
-.linkflair-processed.linkflair-question .title,
-.title .linkflairlabel.linkflair-processed.linkflair-question + a, /* bugfix */
-.post-linkflair-processed.linkflair-question .linklisting .title,
+		.gold-accent { background-color: #6D655B }
 
-.linkflair-processed.linkflair-issue .title,
-.title .linkflairlabel.linkflair-processed.linkflair-issue + a, /* bugfix */
-.post-linkflair-processed.post-linkflair-issue .linklisting .title,
+		.new-comment .usertext-body { background-color: #8B7A4B } /* 9A7D2E */
 
-.linkflair-green .title,
-.title .linkflairlabel.linkflair-green + a, /* bugfix */
-.post-linkflair-green .linklisting .title
-{
-	color: #8F8 !important;
-}
-
-.linkflair-resource .title,
-.title .linkflairlabel.linkflair-resource + a, /* bugfix */
-.post-linkflair-resource .linklisting .title
-{
-	color: #F8F !important;
-}
-
-.linkflair-pending.linkflair-issue .title,
-.title .linkflairlabel.linkflair-pending.linkflair-issue + a, /* bugfix */
-.post-linkflair-pending.post-linkflair-issue .linklisting .title,
-
-.linkflair-red .title,
-.title .linkflairlabel.linkflair-red + a, /* bugfix */
-.post-linkflair-red .linklisting .title
-{
-	color: #F88 !important;
-}
-
-.linkflair-question .title,
-.title .linkflairlabel.linkflair-question + a, /* bugfix */
-.post-linkflair-question .linklisting .title {
-	color: #88F !important;
-}
-
-.linkflair-meta .title,
-.title .linkflairlabel.linkflair-meta + a, /* bugfix */
-.post-linkflair-meta .linklisting .title {
-	color: #FF0 !important;
-}
-
-.linkflair-archived .title,
-.title .linkflairlabel.linkflair-archived + a, /* bugfix */
-.post-linkflair-archived .linklisting .title {
-	color: #888 !important;
-}
-
-/* Multireddit creator */
-
-.hover-bubble.multi-selector {
-	background-color: #221F1C;
-	border-color: #403C33;
-}
-
-.hover-bubble.multi-selector strong {
-	color: #EEDB00 !important;
-}
-
-.hover-bubble.multi-selector label:hover {
-	background-color: #403C33;
-}
-
-/* Wiki diff */
-
-.diff_next,
-.diff_header
-{ background-color: #9D511B }
-
-table.diff,
-colgroup
-{ border-color: #9D511B }
-
-.diff_add,
-.diff_chg,
-.diff_sub
-{ color: #000 }
-
-.tagline .stickied-tagline {
-	color: #8F8;
-}
-
-/* Dual columns */
-	.stickied {
-		width: 96% !important;
-		max-width: none !important;
-	}
-
-	.clearleft,.rank {
-		display: none;
-	}
-
-.thing a.madeVisible {
-	position: absolute;
-	z-index: 99;
-}
-
-.link .buttons > .neutral {
-	white-space: pre;
-}
-
-.listing-page .link {
-	display: inline-block;
-	vertical-align: top;
-	padding: 1%;
-}
-
-.listing-page .link {
-	margin-left: 1%;
-}
-
-.listing-page .link {
-	max-width: 47%;
-	width: 47%;
-}
-
-.listing-page .link .buttons {
-	max-width: 90%;
-}
-
-.listing-page .link .buttons li:not(.first) {
-	white-space: normal;
-}
-
-.listing-page .content > .linklisting {
-	margin-right: 320px;
-}
-
-.listing-page .expando-button ~ .expando {
-	position: absolute;
-}
-
-.listing-page .linklisting {
-	padding: 12px 0 4px 4px;
-}
-
-.listing-page .sitetable>div:nth-of-type(4n+1) {
-}
-
-	.listing-page .sitetable > div:nth-of-type(n) {
-		border-radius: 8px;
-		background: #403C33;
-		box-shadow: -3px 0 10px 3px #221F1C;
-	}
-
-	.listing-page .sitetable>div:nth-of-type(n):hover {
-		background: #6D655B;
-	}
-
-.link .link .entry {
-	margin-right: 320px;
-}
-
-.link .thumbnail {
-	margin-left: 8px;
-}
-
-.linklisting .link,.listing-page .linklisting {
-	padding-left: 0;
-}
-
-.link .entry, .link .midcol {
-	padding-left: 8px;
-}
-
-/* Gold fixes */
-
-.gold-accent { background-color: #6D655B }
-
-.new-comment .usertext-body { background-color: #8B7A4B } /* 9A7D2E */
-
+	/*
+	##?
+	>>>>>>>>>>>>>>>>*/
 
 		.error {
 			color: #F00 !important;
 		}
 
-		
+
 		.searchfacets {
 			border: 1px solid #403C33;
 			box-shadow: none;/*0 4px 6px -1px #403C33 inset;*/
 			background-color: #221F1C;
 		}
-
-
-
-	/*
-	##?
-	>>>>>>>>>>>>>>>>*/
 
 		.usertext-edit .RESDialogSmall .md.RESDialogContents {
 			background-color: transparent !important;
@@ -988,3 +765,77 @@ colgroup
 		.divide { border-color: #403C33; }
 		
 		.traffic-table tbody tr:nth-child(even) { background-color: #403C33; }
+
+
+		.comment .expand:hover { color: #000; background-color: #F49500; }
+
+		body,
+		body.res-nightmode,
+		.user,
+		li.flat-vert.title,
+		.flair,
+		.linkflairlabel,
+		.linefield .title,
+		.roundfield .title,
+		label,
+		div,
+		p
+		{ color: #D9D9D9 !important; }
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		.trophy-name
+		{ color: #F49500 !important; }
+		
+		a,
+		a:link,
+		.RESDropdownList li,
+		.RESDropdownList li a
+		{ color: #EEDB00 !important; background-color: transparent }
+
+		a:active
+		{ color: #0000FF !important; background-color: transparent }
+
+		a:visited
+		{ color: #EEDB00 !important; background-color: transparent } /* FF9C00 */
+
+		a:hover,
+		.RESDropdownList li:hover,
+		.RESDropdownList li a:hover
+		{ color: #FF5A5A !important; background-color: transparent }
+
+		.link .title
+		{ color: #FFF !important }
+
+		.thing .title
+		{ color: #FFF !important }
+
+
+		a.author.submitter { color: #FFF !important; }
+
+		a.author.friend { color: #0F0 !important; }
+
+		body.res a.author.friend { color: #000 !important; background-color: #0F0 !important; }
+
+		.tabmenu li a {
+			background-color: #393532 !important;
+			border-color: #c2dcf3 transparent !important;
+		}
+		.tabmenu li a:hover {
+			background-color: #F49500 !important;
+			color: #000 !important;
+		}
+		.tabmenu li.selected a {
+			background-color: #9D511B !important;
+			color: #000 !important;
+			border-color: #5f99cf transparent !important;
+			border-style: solid;
+			border-width: 1px
+		}
+		.tabmenu li.selected a:hover {
+			color: #FFFFFF !important;
+		}

@@ -1,6 +1,7 @@
 @import 'modules/all';
 
 html:not([lang="ns"]) {
+	&[lang='dc'] { @import 'layouts/dual-column'; }
 	&[lang='dk'] { @import 'themes/earth'; }
 }
 

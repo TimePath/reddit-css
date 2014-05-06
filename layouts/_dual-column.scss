@@ -1,0 +1,72 @@
+/*
+#Dual columns
+>>>>>>>>>>>>>>>>*/
+
+	.stickied {
+		width: 96% !important;
+		max-width: none !important;
+	}
+
+	.clearleft,.rank {
+		display: none;
+	}
+
+	.thing a.madeVisible {
+		position: absolute;
+		z-index: 99;
+	}
+
+	.link .buttons > .neutral {
+		white-space: pre;
+	}
+
+	.listing-page .link {
+		display: inline-block;
+		vertical-align: top;
+		padding: 1%;
+	}
+
+	.listing-page .link {
+		margin-left: 1%;
+	}
+
+	.listing-page .link {
+		max-width: 47%;
+		width: 47%;
+	}
+
+	.listing-page .link .buttons {
+		max-width: 90%;
+	}
+
+	.listing-page .link .buttons li:not(.first) {
+		white-space: normal;
+	}
+
+	.listing-page .content > .linklisting {
+		margin-right: 320px;
+	}
+
+	.listing-page .expando-button ~ .expando {
+		position: absolute;
+	}
+
+	.listing-page .linklisting {
+		padding: 12px 0 4px 4px;
+	}
+
+	.link .link .entry {
+		margin-right: 320px;
+	}
+
+	.link .thumbnail {
+		margin-left: 8px;
+	}
+
+	.linklisting .link,.listing-page .linklisting {
+		padding-left: 0;
+	}
+
+	.link .entry, .link .midcol {
+		padding-left: 8px;
+	}
