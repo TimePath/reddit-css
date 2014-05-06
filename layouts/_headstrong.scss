@@ -209,7 +209,7 @@ $header-snoo-width: 40px !default;
 		}
 
 		// Push content out of header
-		.content { margin-top: $header-bar-height + 7px; }
+		body > .content { margin-top: $header-bar-height + 7px; }
 		
 		.listing-page:not(.profile-page) > .content {
 			margin-top: $header-bar-height;
@@ -350,10 +350,12 @@ $header-snoo-width: 40px !default;
 	##Move RES 'use subreddit style'
 	>>>>>>>>>>>>>>>>*/
 
-		body.res.loggedin .side .titlebox h1
-		{ margin-bottom: -1000px !important; }
-		body.res.loggedin .side .titlebox .subButtons, body.res.profile-page.loggedin .side .titlebox .subscribe-button
-		{ padding-top: 1000px; }
+		html:not([lang*='-']) {
+			body.res.loggedin .side .titlebox h1
+			{ margin-bottom: -1000px !important; }
+			body.res.loggedin .side .titlebox .subButtons, body.res.profile-page.loggedin .side .titlebox .subscribe-button
+			{ padding-top: 1000px; }
+		}
 
 		body.res.loggedin .side .titlebox .tagline {
 			margin-bottom: -131px !important;
