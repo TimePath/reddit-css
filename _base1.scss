@@ -1,6 +1,7 @@
 @import 'common';
 
-html[lang*='tb'] { @import 'layouts/headstrong'; }
+@import 'layouts/headstrong';
+
 html[lang*='dc'] { @import 'layouts/dual-column'; }
 html[lang*='dk'] { @import 'themes/earth'; }
 

@@ -271,14 +271,14 @@
 		>>>>>>>>>>>>>>>>*/
 			
 			.subscribers .word { display: none }  
-			.subscribers .number:after { content: ' scripters' }
+			.subscribers .number:before { content: 'scripters: ' }
 		
 		/*
 		###Users here now
 		>>>>>>>>>>>>>>>>*/
 		
 			.users-online .word { display: none }
-			.users-online .number:after { content: ' viewing' }
+			.users-online .number:before { content: 'viewing: ' }
 		
 		/*
 		###Created by

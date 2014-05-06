@@ -23,6 +23,58 @@ Based on TF2 console color scheme
 	/*
 	##Markdown
 	>>>>>>>>>>>>>>>>*/
+	
+		/*
+		##Menu style
+		>>>>>>>>>>>>>>>>*/
+		
+			.titlebox blockquote:last-child {
+				ul, ol {
+					background-color: #221F1C;
+					border-color: #403C33;
+				}
+			}
+		
+			.titlebox blockquote:last-child > ul > li:first-child,
+			.titlebox blockquote:last-child > ol > li:first-child
+			{
+				background-color: #393532;
+				color: #EEDB00;
+			}
+			
+			.titlebox blockquote:last-child li {
+				border-color: #403C33;
+			}
+
+			/* Text */
+
+			.titlebox blockquote:last-child li {
+				color: #fff;
+			}
+
+			/* Links */
+
+			.titlebox blockquote:last-child li a {
+				color: #fa0;
+			}
+
+			/* Hover */
+
+			.titlebox blockquote:last-child li:hover,
+			.titlebox blockquote:last-child li:hover > a
+			{
+				background-color: #F49500 !important;
+				color: #000 !important;
+			}
+
+			/* Click */
+
+			.titlebox blockquote:last-child li:active,
+			.titlebox blockquote:last-child li:active > a
+			{
+				background-color: orangered !important;
+				color: #000 !important;
+			}
 
 		.md :not(pre) code { color: #F49500; border: none; background: none }
 		

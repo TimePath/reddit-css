@@ -369,15 +369,14 @@
 
 		/* Turns lists into menus */
 
-		.titlebox blockquote:last-child ul,
-		.titlebox blockquote:last-child ol
-		{
-			background-color: #221F1C;
-			border: 1px solid #403C33;
-			margin: 0;
+		.titlebox blockquote:last-child {
+			ul, ol {
+				border: 1px solid;
+				margin: 0;
 
-			float: left;
-			list-style: none;
+				float: left;
+				list-style: none;
+			}
 		}
 
 		/* Menu title styling */
@@ -391,8 +390,6 @@
 			font-size: 12px;
 			font-weight: bold;
 			padding: 7px;
-			background-color: #393532;
-			color: #EEDB00;
 
 			cursor: default;
 			display: block;
@@ -402,44 +399,14 @@
 
 		.titlebox blockquote:last-child li {
 			padding: 2px;
-			border-bottom: solid 1px #403C33;
+			border-bottom: solid 1px;
 
 			display: none;
 			text-align: center;
 
 			/*min-width: 170px;*/ /* XXX: determined by the pixel length of the longest menu name */
 		}
-
-		/* Style text */
-
-		.titlebox blockquote:last-child li {
-			color: #fff;
-		}
-
-		/* Style links */
-
-		.titlebox blockquote:last-child li a {
-			color: #fa0;
-		}
-
-		/* Style hovered items */
-
-		.titlebox blockquote:last-child li:hover,
-		.titlebox blockquote:last-child li:hover > a
-		{
-			background-color: #F49500 !important;
-			color: #000 !important;
-		}
-
-		/* Style clicked items */
-
-		.titlebox blockquote:last-child li:active,
-		.titlebox blockquote:last-child li:active > a
-		{
-			background-color: orangered !important;
-			color: #000 !important;
-		}
-
+		
 		/* Probably best not to touch this */
 
 		/* Hack to enable positioning of child elements */
@@ -453,7 +420,7 @@
 		.titlebox blockquote:last-child > ul > li:nth-child(2),
 		.titlebox blockquote:last-child > ol > li:nth-child(2)
 		{
-			border-top: solid 2px #403C33;
+			border-top: solid 2px;
 		}
 
 		/* Show items on hover */
@@ -492,3 +459,55 @@
 		{
 			margin-top: -3px;
 		}
+		
+		/*
+		##Style
+		>>>>>>>>>>>>>>>>*/
+		
+			.titlebox blockquote:last-child {
+				ul, ol {
+					background-color: #221F1C;
+					border-color: #403C33;
+				}
+			}
+		
+			.titlebox blockquote:last-child > ul > li:first-child,
+			.titlebox blockquote:last-child > ol > li:first-child
+			{
+				background-color: #EFF7FF;
+				color: #336699;
+			}
+			
+			.titlebox blockquote:last-child li {
+				border-color: #403C33;
+			}
+
+			/* Text */
+
+			.titlebox blockquote:last-child li {
+				color: #000;
+			}
+
+			/* Links */
+
+			.titlebox blockquote:last-child li a {
+				color: #336699;
+			}
+
+			/* Hover */
+
+			.titlebox blockquote:last-child li:hover,
+			.titlebox blockquote:last-child li:hover > a
+			{
+				background-color: #FFFFFF !important;
+				color: #336699 !important;
+			}
+
+			/* Click */
+
+			.titlebox blockquote:last-child li:active,
+			.titlebox blockquote:last-child li:active > a
+			{
+				background-color: #FFFFFF !important;
+				color: #336699 !important;
+			}
