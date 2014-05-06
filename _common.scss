@@ -1,6 +1,6 @@
 @import 'modules/all';
 
-html:not([lang="ns"]) {
+html:not([lang='ns']) {
 	&[lang='dc'] { @import 'layouts/dual-column'; }
 	&[lang='dk'] { @import 'themes/earth'; }
 }
@@ -32,7 +32,9 @@ html:not([lang="ns"]) {
 	##Hide inactive mods
 	>>>>>>>>>>>>>>>>*/
 
-		.side a.author[href$="/AutoModerator"], .side a.author[href$="/AutoModerator"] ~ * { display: none !important; }
+		.side a.author[href$='/AutoModerator'] {
+			&, & ~ * { display: none !important; }
+		}
 		
 	/*
 	##Hide RES junk in moderator box
@@ -85,7 +87,7 @@ html:not([lang="ns"]) {
 			.wiki .toc { float: left; }
 			.wiki .toc + * { clear: left; }
 
-			body[class*="wiki-page-index"] .toc { display: none; }
+			body[class*='wiki-page-index'] .toc { display: none; }
 
 	/*
 	##High visibility unflaired posts
@@ -115,8 +117,8 @@ html:not([lang="ns"]) {
 
 		#header li {
 			a#viewImagesButton, /* Hide RES's view images */
-			a[href$="/controversial/"], /* Hide controversial tab */
-			a[href$="/wiki/"] /* Hide wiki tab (the menus do a better job) */
+			a[href$='/controversial/'], /* Hide controversial tab */
+			a[href$='/wiki/'] /* Hide wiki tab (the menus do a better job) */
 			{ display: none }
 		}
 		
@@ -134,7 +136,7 @@ html:not([lang="ns"]) {
 		
 			/*body.loggedin .option.active.add:before {
 				border-top: 1px solid black;
-				content: "Click here to subscribe!"; 
+				content: 'Click here to subscribe!'; 
 				padding: 5px 0;
 				text-align: center;
 				background-color: white; 
@@ -159,7 +161,7 @@ html:not([lang="ns"]) {
 			}
 			.edited-timestamp[title]:after {
 				visibility: visible;
-				content: "(" attr(title) ")";
+				content: '(' attr(title) ')';
 				font-size: x-small;
 			}
 		
@@ -183,14 +185,14 @@ html:not([lang="ns"]) {
 		>>>>>>>>>>>>>>>>*/
 			/*
 			.link .entry .tagline time:not(.edited-timestamp)::before {
-				content: "submitted ";
+				content: 'submitted ';
 				font-size: x-small;
 			}
 			.link .entry .tagline {
 				font-size: 0px !important;
 			}
 			.link .entry .tagline time:not(.edited-timestamp)::after {
-				content: " ago by ";
+				content: ' ago by ';
 				font-size: x-small;
 			}
 			.link .entry .tagline time, .entry .tagline a, .tagline span {
@@ -251,7 +253,7 @@ html:not([lang="ns"]) {
 				color: #000;
 				border: 1px solid #333;
 				background-color: #66B5FF;
-				content: "Downvoter, explain yourself!";
+				content: 'Downvoter, explain yourself!';
 				position: absolute;
 				display: block;
 				z-index: 1000;
@@ -296,17 +298,17 @@ html:not([lang="ns"]) {
 			}
 			.titlebox .bottom:before {
 				font-size: 10px;
-				content: "blame ";
+				content: 'blame ';
 			}
 			.titlebox .bottom:after {
 				font-size: 10px;
 				cursor: pointer;
-				content: "for this mess";
+				content: 'for this mess';
 			}*/
 			/*.titlebox .bottom .author { font-size: 0px; visibility: hidden; }
 			.titlebox .bottom .author:after {
 				font-size: 10px; visibility: visible;
-				content: "creator ";
+				content: 'creator ';
 			}*/
 		
 		/*
@@ -316,7 +318,7 @@ html:not([lang="ns"]) {
 			/*.titlebox .bottom .age { display: none }
 			.titlebox .bottom:before {
 				display: block;
-				content: "a community for X days";
+				content: 'a community for X days';
 				float: right
 			}*/
 		
@@ -339,7 +341,7 @@ html:not([lang="ns"]) {
 		>>>>>>>>>>>>>>>>*/
 
 			.titlebox h1 a:before {
-				content: "/r/";
+				content: '/r/';
 			}
 
 /*
@@ -364,7 +366,7 @@ html:not([lang="ns"]) {
 		.flat-list.buttons .flairselectbtn { visibility: hidden; font-size: 0px; }
 
 		.flat-list.buttons .flairselectbtn:before {
-			content: "tag";
+			content: 'tag';
 			visibility: visible;
 			font-size: 10px;
 			color: #f5f5f5;
@@ -373,7 +375,7 @@ html:not([lang="ns"]) {
 			border-radius: 5px;
 			background-color: #ef3d3d;
 			.linkflair & { // Post has flair
-				content: "change tag";
+				content: 'change tag';
 				color: #888;
 				background: #f5f5f5;
 				border: 0px;

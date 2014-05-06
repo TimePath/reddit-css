@@ -3,7 +3,7 @@
 	##Multiple submission buttons
 	>>>>>>>>>>>>>>>>*/
 
-		.titlebox .md a[href="#submit"] + a {
+		.titlebox .md a[href='#submit'] + a {
 			margin: 7px 0 12px 0;
 			display: block;
 			text-align: center;
@@ -46,7 +46,7 @@
 					background-repeat: repeat;
 				}
 				&:after { /* Nub */
-					content: "";
+					content: '';
 					display: inline-block;
 					float: right;
 					position: relative;
@@ -79,23 +79,24 @@
 	##Help cursor
 	>>>>>>>>>>>>>>>>*/
 		
-		.side .md blockquote a[href$="#ex"] { color: inherit; border-bottom: 1px dotted; }
-		.side .md blockquote a[href$="#ex"]:hover { cursor: help; }
-
+		.side .md blockquote a[href$='#ex'] {
+			& { color: inherit; border-bottom: 1px dotted; }
+			&:hover { cursor: help; }
+		}
 	/*
 	##Bind
 	>>>>>>>>>>>>>>>>*/
 
-		a[href="#bind"] {
+		a[href='#bind'] {
 			font-size: 0;
 			visibility: hidden;
 			cursor: default;
 			display: inline-block;
 		}
-		a[href="#bind"] + .keyNavAnnotation { display: none !important; }
+		a[href='#bind'] + .keyNavAnnotation { display: none !important; }
 
-		a[href="#bind"]::after {
-			/*font: normal .85em/1 "Lucida Grande", Lucida, Arial, sans-serif !important;*/
+		a[href='#bind']::after {
+			/*font: normal .85em/1 'Lucida Grande', Lucida, Arial, sans-serif !important;*/
 			content: attr(title);
 
 			background: rgb(80, 80, 80) !important;
@@ -113,58 +114,58 @@
 			cursor: default !important;
 		}
 		
-		a[title="capslock"]::after { content: "⇪ Caps"; }
-		a[title="shift"]::after { content: "⇧Shift"; }
-		a[title="rshift"]::after { content: "Shift⇧"; }
-		a[title="ctrl"]::after { content: "Ctrl"; }
-		a[title="rctrl"]::after { content: "Ctrl"; }
-		a[title="alt"]::after { content: "Alt"; }
-		a[title="ralt"]::after { content: "Alt"; }
-		a[title="lwin"]::after { content: "⊞"; }
-		a[title="rwin"]::after { content: "⊞"; }
-		a[title="space"]::after { content: "Spacebar"; }
-		a[title="menu"]::after { content: "≣ Menu"; }
-		a[title="backspace"]::after { content: "← Backspace"; }
-		a[title="tab"]::after { content: "Tab ↹"; }
-		a[title="app"]::after { content: "⌘"; }
-		a[title="enter"]::after { content: "↵ Enter"; }
+		a[title='capslock']::after { content: '⇪ Caps'; }
+		a[title='shift']::after { content: '⇧Shift'; }
+		a[title='rshift']::after { content: 'Shift⇧'; }
+		a[title='ctrl']::after { content: 'Ctrl'; }
+		a[title='rctrl']::after { content: 'Ctrl'; }
+		a[title='alt']::after { content: 'Alt'; }
+		a[title='ralt']::after { content: 'Alt'; }
+		a[title='lwin']::after { content: '⊞'; }
+		a[title='rwin']::after { content: '⊞'; }
+		a[title='space']::after { content: 'Spacebar'; }
+		a[title='menu']::after { content: '≣ Menu'; }
+		a[title='backspace']::after { content: '← Backspace'; }
+		a[title='tab']::after { content: 'Tab ↹'; }
+		a[title='app']::after { content: '⌘'; }
+		a[title='enter']::after { content: '↵ Enter'; }
 
-		a[title="semicolon"]::after { content: ";"; }
+		a[title='semicolon']::after { content: ';'; }
 
-		a[title="print"]::after { content: "PrtSc"; }
-		a[title="scrolllock"]::after { content: "ScrlLk"; }
-		a[title="pause"]::after { content: "Pause"; }
+		a[title='print']::after { content: 'PrtSc'; }
+		a[title='scrolllock']::after { content: 'ScrlLk'; }
+		a[title='pause']::after { content: 'Pause'; }
 
-		a[title="insert"]::after { content: "Ins"; }
-		a[title="home"]::after { content: "Home"; }
-		a[title="pgup"]::after { content: "PgUp"; }
-		a[title="del"]::after { content: "Del"; }
-		a[title="end"]::after { content: "End"; }
-		a[title="pgdn"]::after { content: "PgDn"; }
+		a[title='insert']::after { content: 'Ins'; }
+		a[title='home']::after { content: 'Home'; }
+		a[title='pgup']::after { content: 'PgUp'; }
+		a[title='del']::after { content: 'Del'; }
+		a[title='end']::after { content: 'End'; }
+		a[title='pgdn']::after { content: 'PgDn'; }
 
-		a[title="leftarrow"]::after { content: "←"; }
-		a[title="rightarrow"]::after { content: "→"; }
-		a[title="uparrow"]::after { content: "↑"; }
-		a[title="downarrow"]::after { content: "↓"; }
+		a[title='leftarrow']::after { content: '←'; }
+		a[title='rightarrow']::after { content: '→'; }
+		a[title='uparrow']::after { content: '↑'; }
+		a[title='downarrow']::after { content: '↓'; }
 
-		a[title="numlock"]::after { content: "N"; }
+		a[title='numlock']::after { content: 'N'; }
 
-		a[title="kp_slash"]::after { content: "/"; }
-		a[title="kp_multiply"]::after { content: "*"; }
-		a[title="kp_plus"]::after { content: "+"; }
-		a[title="kp_minus"]::after { content: "-"; }
-		a[title="kp_enter"]::after { content: "↵"; }
-		a[title="kp_del"]::after { content: "."; }
-		a[title="kp_ins"]::after { content: "0"; }
-		a[title="kp_end"]::after { content: "1"; }
-		a[title="kp_downarrow"]::after { content: "2"; }
-		a[title="kp_pgdn"]::after { content: "3"; }
-		a[title="kp_leftarrow"]::after { content: "4"; }
-		a[title="kp_5"]::after { content: "5"; }
-		a[title="kp_rightarrow"]::after { content: "6"; }
-		a[title="kp_home"]::after { content: "7"; }
-		a[title="kp_uparrow"]::after { content: "8"; }
-		a[title="kp_pgup"]::after { content: "9"; }
+		a[title='kp_slash']::after { content: '/'; }
+		a[title='kp_multiply']::after { content: '*'; }
+		a[title='kp_plus']::after { content: '+'; }
+		a[title='kp_minus']::after { content: '-'; }
+		a[title='kp_enter']::after { content: '↵'; }
+		a[title='kp_del']::after { content: '.'; }
+		a[title='kp_ins']::after { content: '0'; }
+		a[title='kp_end']::after { content: '1'; }
+		a[title='kp_downarrow']::after { content: '2'; }
+		a[title='kp_pgdn']::after { content: '3'; }
+		a[title='kp_leftarrow']::after { content: '4'; }
+		a[title='kp_5']::after { content: '5'; }
+		a[title='kp_rightarrow']::after { content: '6'; }
+		a[title='kp_home']::after { content: '7'; }
+		a[title='kp_uparrow']::after { content: '8'; }
+		a[title='kp_pgup']::after { content: '9'; }
 
 	/*
 	##Color
@@ -172,24 +173,24 @@
 
 		/* Colors / colours: http://www.w3schools.com/cssref/css_colornames.asp */
 		
-		a[href="#color"] + .keyNavAnnotation { display: none !important; }
-		a[href="#color"] { cursor: text; /*color: attr(title, color);*/ } /* Need CSS3 */
+		a[href='#color'] + .keyNavAnnotation { display: none !important; }
+		a[href='#color'] { cursor: text; /*color: attr(title, color);*/ } /* Need CSS3 */
 
-		a[href="#color"][title="red"] ~ * { color: red !important; }
-		a[href="#color"][title="orange"] + * { color: orange !important; }
-		a[href="#color"][title="yellow"] + * { color: yellow !important; }
-		a[href="#color"][title="green"] + * { color: green !important; }
-		a[href="#color"][title="blue"] + * { color: blue !important; }
-		a[href="#color"][title="purple"] + * { color: purple !important; }
-		a[href="#color"][title="pink"] + * { color: pink !important; }
-		a[href="#color"][title="black"] + * { color: black !important; }
-		a[href="#color"][title="white"] + * { color: white !important; }
-		a[href="#color"][title="brown"] + * { color: brown !important; }
-		a[href="#color"][title="gold"] ~ * { color: #9A7D2E !important; }
+		a[href='#color'][title='red'] ~ * { color: red !important; }
+		a[href='#color'][title='orange'] + * { color: orange !important; }
+		a[href='#color'][title='yellow'] + * { color: yellow !important; }
+		a[href='#color'][title='green'] + * { color: green !important; }
+		a[href='#color'][title='blue'] + * { color: blue !important; }
+		a[href='#color'][title='purple'] + * { color: purple !important; }
+		a[href='#color'][title='pink'] + * { color: pink !important; }
+		a[href='#color'][title='black'] + * { color: black !important; }
+		a[href='#color'][title='white'] + * { color: white !important; }
+		a[href='#color'][title='brown'] + * { color: brown !important; }
+		a[href='#color'][title='gold'] ~ * { color: #9A7D2E !important; }
 
 		/* Temporary / TODO wiki links */
 
-		a[href$="#todo"] { color: red !important; }
+		a[href$='#todo'] { color: red !important; }
 
 	/*
 	##Code
@@ -239,11 +240,11 @@
 			white-space: pre-wrap;
 			direction: rtl;
 			overflow: hidden;
-			$content: "#";
+			$content: '#';
 			@for $i from 1 to 100 {
 				$content: $content + str-pad(#{$i}, 4);
 			}
-			content: "#{$content}";
+			content: '#{$content}';
 		}
 
 

@@ -215,7 +215,7 @@ $header-banner: none !default;;
 			margin-right: 0px;
 		}
 
-		html:not([lang="ns"]) .listing-page:not(.profile-page) .side {
+		html:not([lang='ns']) .listing-page:not(.profile-page) .side {
 			margin-top: 180px; /* XXX: Banner height */
 		}
 
@@ -368,11 +368,11 @@ $header-banner: none !default;;
 	##Disable stylesheet
 	>>>>>>>>>>>>>>>>*/
 
-		div.side a[href^="http://ns."][href$="reddit.com"] {
+		div.side a[href^='http://ns.'][href$='reddit.com'] {
 			color: #D9D9D9 !important;
 		}
 
-		html:lang(ns) div.side a[href^="http://ns."][href$="reddit.com"] {
+		html:lang(ns) div.side a[href^='http://ns.'][href$='reddit.com'] {
 			display: none;
 			color: black !important;
 		}
@@ -381,7 +381,7 @@ $header-banner: none !default;;
 	##RES guider
 	>>>>>>>>>>>>>>>>*/
 
-		html:not([lang="mo"]) .guider { position: fixed !important }
+		html:not([lang='mo']) .guider { position: fixed !important }
 		
 	/*
 	##Post width
@@ -412,7 +412,7 @@ $header-banner: none !default;;
 			display: none;
 		}*/
 
-		/*div#header-bottom-left ul.tabmenu a[href*="hot"] {
+		/*div#header-bottom-left ul.tabmenu a[href*='hot'] {
 			display: none;
 		}*/
 
@@ -436,7 +436,7 @@ $header-banner: none !default;;
 			padding: 2px
 		}*/
 		/*.commentarea .menuarea:before {
-			content: "Sort by:";
+			content: 'Sort by:';
 			padding-right: 10px
 		}*/
 		/* 'Sorted by:' text */

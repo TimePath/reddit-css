@@ -36,7 +36,7 @@ Based on TF2 console color scheme
 			color: white;
 		}
 
-		.titlebox .md a[href="#submit"] + a {
+		.titlebox .md a[href='#submit'] + a {
 			display: block;
 			width: 250px;
 			text-decoration: none;
@@ -444,16 +444,16 @@ Based on TF2 console color scheme
 			.login-form-side,
 			.linkinfo .shortlink input,
 			.linefield textarea,
-			.linefield input[type="text"],
-			.linefield input[type="password"],
-			.pretty-form input[type="text"],
-			.pretty-form input[type="password"],
+			.linefield input[type='text'],
+			.linefield input[type='password'],
+			.pretty-form input[type='text'],
+			.pretty-form input[type='password'],
 			.pretty-form textarea,
 			.login-form-side input,
-			#search input[type="text"],
+			#search input[type='text'],
 			.infobar,
 			.wiki-page .wiki-page-content #wiki_revision_reason,
-			.flairlist .flaircell input[type="text"]
+			.flairlist .flaircell input[type='text']
 			{
 				color: #D3D7CF !important;
 				background-color: #221F1C !important;
@@ -470,11 +470,11 @@ Based on TF2 console color scheme
 		###Check boxes and radio buttons
 		>>>>>>>>>>>>>>>>*/
 
-			input[type="checkbox"],
-			input[type="radio"],
-			.pretty-form input[type="checkbox"],
-			.pretty-form input[type="radio"],
-			.pretty-form input[type="file"] {
+			input[type='checkbox'],
+			input[type='radio'],
+			.pretty-form input[type='checkbox'],
+			.pretty-form input[type='radio'],
+			.pretty-form input[type='file'] {
 				color: #D3D7CF !important;
 				background-color: #221F1C !important;
 				border: 1px solid #403C33 !important;
