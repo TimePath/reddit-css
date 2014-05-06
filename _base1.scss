@@ -1,5 +1,11 @@
 @import 'common';
 
+html:not([lang='ns']) {
+	&[lang='tb'] { @import 'layouts/headstrong'; }
+	&[lang='dc'] { @import 'layouts/dual-column'; }
+	&[lang='dk'] { @import 'themes/earth'; }
+}
+
 /*
 #Config
 >>>>>>>>>>>>>>>>*/

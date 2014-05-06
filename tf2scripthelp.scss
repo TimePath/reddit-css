@@ -1,7 +1,9 @@
 @import 'common';
 
 $header-banner: url(%%banner%%) black;
+$header-banner-height: 180px;
 $header-logo: url(%%logo%%);
+$header-logo-width: 70px;
 @import 'layouts/headstrong';
 
 /*
@@ -259,6 +261,8 @@ $header-logo: url(%%logo%%);
 	html:not([lang='ns']) {
 		@import 'layouts/dual-column';
 		@import 'themes/earth';
+		
+		a.thumbnail.self { display: none; }
 		
 		/*
 		##Background

@@ -1,3 +1,3 @@
 #!/bin/bash
-sass --update .:out
-sed -i -e 's/^@charset.*$//g' out/*.css
+sass --update .:out --style compact
+sed -i -e 's/@charset[^;]*;//' out/*.css

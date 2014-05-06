@@ -1,5 +1,9 @@
-$header-logo: none !default;;
-$header-banner: none !default;;
+$header-bar-height: 96px !default;
+$header-banner: none !default;
+$header-banner-height: 1px !default;
+$header-logo: none !default;
+$header-logo-width: 0px !default;
+$header-snoo-width: 40px !default;
 
 /*
 #Layout
@@ -125,7 +129,7 @@ $header-banner: none !default;;
 	>>>>>>>>>>>>>>>>*/
 
 		#header {
-			height: 96px; /* XXX: Header height + 1 */
+			height: $header-bar-height;
 
 			position: fixed;
 			top: -1px;
@@ -135,10 +139,10 @@ $header-banner: none !default;;
 
 		#header-bottom-left:after {
 			content: '';
-			height: 32px; /* XXX: Header height - 64 */
+			height: $header-bar-height - 64px;
 			background-color: transparent;
 			position: fixed;
-			top: 63px; /* XXX: Header height - this height */
+			top: 64px;
 			left: 0px;
 			width: 100%;
 			z-index: 100;
@@ -156,7 +160,7 @@ $header-banner: none !default;;
 			margin: 0;
 			margin-bottom: 7px;
 			width: 100%;
-			height: 180px;
+			height: $header-banner-height;
 		}
 
 		/* Push content down */
@@ -204,19 +208,17 @@ $header-banner: none !default;;
 			background-clip: padding-box;*/
 		}
 
-
-		.content {
-			margin-top: 103px; /* XXX: Header height + 7 */
-		}
-
+		// Push content out of header
+		.content { margin-top: $header-bar-height + 7px; }
+		
 		.listing-page:not(.profile-page) > .content {
-			margin-top: 96px; /* XXX: Header height */
+			margin-top: $header-bar-height;
 			margin-left: 0px;
 			margin-right: 0px;
 		}
 
-		html:not([lang='ns']) .listing-page:not(.profile-page) .side {
-			margin-top: 180px; /* XXX: Banner height */
+		.listing-page:not(.profile-page) .side {
+			margin-top: $header-banner-height; // ?
 		}
 
 		/*#siteTable {
@@ -224,73 +226,97 @@ $header-banner: none !default;;
 			z-index: -1;
 		}*/
 
+		/*
+		###Tab menu
+		>>>>>>>>>>>>>>>>*/
 
-		/* Tab menu */
+			#header-img.default-header {
+				margin-right: 0px;
+			}
 
-		#header-img.default-header {
-			margin-right: 0px;
-		}
+			.pagename a { padding-left: $header-logo-width; }
 
-		.pagename a { padding-left: 70px; }
+			.pagename {
+				background-image: $header-logo;
+				background-repeat: no-repeat;
+				background-position: -10px 50%;
+				
+				min-width: 100px;
+				display: inline-block;
+				
+				padding-top: 16px;
+				padding-bottom: 14px;
+				
+				margin-right: 0ex;
+				
+				padding-right: 1ex;
+				padding-left: 1ex;
+				
+				border-left: 1px solid;
+				border-right: 1px solid;
+			}
+			
+			/*
+			###Subscriber info
+			>>>>>>>>>>>>>>>>*/
 
-		.pagename {
-			background-image: $header-logo;
-			background-repeat: no-repeat;
-			background-position: -10px 50%;
-			position: relative;
-			top: -14px;
-			padding-top: 14px;
-			padding-bottom: 14px;
-			margin-right: 0ex;
-			padding-right: 1ex;
-			padding-left: 1ex;
-			border-left: 1px solid;
-			border-right: 1px solid;
-		}
+				.subscribers {
+					position: fixed;
+					top: 20px;
+					z-index: 100;
+					left: $header-snoo-width + $header-logo-width;
+				}
 
-		.tabmenu {
-			top: -15px;
-			position: relative;
-		}
+				html:lang(mo) .subscribers { position: absolute; }
 
-		.tabmenu li {
-			margin: 0px 0px;
-		}
+				.users-online:before { display: none; }
 
-		#header-bottom-left ul.tabmenu li a,
-		#header-bottom-left ul.tabmenu li.selected a
-		{
-			padding-top: 16px !important;
-			padding-bottom: 15px !important;
-			padding-left: 10px;
-			padding-right: 10px;
-			border-style: solid;
-			border-width: 0px;
-		}
+				.users-online .number {
+					position: fixed;
+					top: 47px;
+					z-index: 100;
+					left: $header-snoo-width + $header-logo-width;
+				}
 
-		/* To the left */
-		#header-bottom-left ul.tabmenu li a {
-			border-left: 1px solid #369; /* Can't inherit, can't use border-left-width, wtf reddit? */
-		}
+				html:lang(mo) .users-online .number { position: absolute; }
 
-		/* First left */
-		#header-bottom-left ul.tabmenu li:first-child a,
-		#header-bottom-left ul.tabmenu li.selected:first-child a
-		{
-			border-left: 0px solid #369; /* Can't inherit, can't use border-left-width, wtf reddit? */
-		}
+			.tabmenu {
+				top: -15px;
+				position: relative;
+			}
 
-		/* Selected */
-		#header-bottom-left ul.tabmenu li.selected a {
-			border-left: 1px solid #FF4500; /* Can't inherit, can't use border-left-width, wtf reddit? */
-			border-right: 1px solid #FF4500; /* Can't inherit, can't use border-right-width, wtf reddit? */
-		}
+			.tabmenu li {
+				margin: 0px 0px;
+			}
 
-		/* To the right */
-		#header-bottom-left ul.tabmenu li.selected ~ li a {
-			border-left: 0px solid #369; /* Can't inherit, can't use border-left-width, wtf reddit? */
-			border-right: 1px solid #369; /* Can't inherit, can't use border-right-width, wtf reddit? */
-		}
+			#header-bottom-left ul.tabmenu li a,
+			#header-bottom-left ul.tabmenu li.selected a
+			{
+				padding-top: 16px !important;
+				padding-bottom: 15px !important;
+				padding-left: 10px;
+				padding-right: 10px;
+				border-style: solid;
+				border-width: 0px;
+			}
+
+			#header-bottom-left ul.tabmenu li {
+				/* To the left */
+				a { border-left: 1px solid #369; } /* Can't inherit, can't use border-left-width, wtf reddit? */
+				a:hover { background-color: white; }
+				/* First left */
+				&.selected:first-child a, &:first-child a { border-left: 0px solid #369; } /* Can't inherit, can't use border-left-width, wtf reddit? */
+				/* Selected */
+				&.selected a {
+					border-left: 1px solid #FF4500; /* Can't inherit, can't use border-left-width, wtf reddit? */
+					border-right: 1px solid #FF4500; /* Can't inherit, can't use border-right-width, wtf reddit? */
+				}
+				/* To the right */
+				&.selected ~ li a {
+					border-left: 0px solid #369; /* Can't inherit, can't use border-left-width, wtf reddit? */
+					border-right: 1px solid #369; /* Can't inherit, can't use border-right-width, wtf reddit? */
+				}
+			}
 
 
 		/* Search bar */
@@ -319,33 +345,6 @@ $header-banner: none !default;;
 			position: relative;
 			float: right;
 		}
-		
-		/*
-		###Subscriber info
-		>>>>>>>>>>>>>>>>*/
-
-			.subscribers {
-				position: fixed;
-				top: 20px;
-				z-index: 100;
-				left: 120px;
-			}
-
-			html:lang(mo) .subscribers { position: absolute; }
-
-			.users-online:before { display: none; }
-
-			.users-online .number {
-				position: fixed;
-				top: 47px;
-				z-index: 100;
-				left: 120px;
-			}
-
-			html:lang(mo) .users-online .number { position: absolute; }
-
-			
-			
 			
 	/*
 	##Move RES 'use subreddit style'
@@ -391,8 +390,6 @@ $header-banner: none !default;;
 			max-width: 800px;
 		}
 		
-	.thumbnail.nsfw { display: none }
-	a.thumbnail.self { display: none; }
 	.redditSingleClick {
 		display: none;
 	}
