@@ -1,0 +1,112 @@
+/*
+#Helpers
+>>>>>>>>>>>>>>>>*/
+
+	@function str-pad($string, $len, $pad: " ") {
+		$ret: $string;
+		$idx: 0;
+		@while(str-length($ret) < $len) {
+			$rem: $len - str-length($ret);
+			/* Slice $pad to fit */
+			$pad: if($rem < str-length($pad), str-slice($pad, 1, $rem), $pad);
+			$ret: str-insert($ret, $pad, $idx);
+			$idx: $idx + str-length($pad);
+		}
+		@return $ret;
+	}
+
+	@mixin rename($id, $text) {
+		.id-t3_#{$id} a.title {
+			font-size: 0;
+			visibility: hidden;
+			&:after {
+				font-size: medium;
+				visibility: visible;
+				content: $text;
+			}
+		}
+	}
+
+
+	a[href='#img'] {
+		content: ' ';
+		display: inline-block;
+		cursor: default;
+	}
+
+	@mixin image($id, $url, $width, $height) {
+		a[href='#img'][title='#{$id}'] {
+			background-image: url(#{$url});
+			width: $width;
+			height: $height;
+			@content
+		}
+	}
+	
+	
+	.flair, .linkflairlabel, div.side a[href*="#flair"] {
+		padding: 2px 4px 6px 4px; /* tldr */
+		text-transform: uppercase;
+		line-height: 18px;
+		
+		&:before, &:after {
+			content: '';
+			display: inline-block;
+			margin-right: 5px;
+			background-repeat: no-repeat;
+			vertical-align: middle;
+		}
+	}
+	
+	.linkflairlabel {
+		font-size: x-small;
+		max-width: none;
+		overflow: hidden;
+		white-space: nowrap;
+	}
+
+	@mixin flair($tags, $x: 0, $y: 0) {
+		$selector: '';
+		@each $item in $tags {
+			$selector: unquote('#{$selector}.flair-#{$item}');
+		}
+		.flair#{$selector}:before {
+			background-position: (-$x+0px) (-$y+0px);
+			@content;
+		}
+	}
+	
+	@mixin flair2($tags, $x: 0, $y: 0) {
+		$selector: '';
+		@each $item in $tags {
+			$selector: unquote('#{$selector}.flair-#{$item}');
+		}
+		.flair#{$selector}:after {
+			background-position: (-$x+0px) (-$y+0px);
+			@content;
+		}
+	}
+	
+	@mixin linkflairlabel($tags, $x: 0, $y: 0) {
+		$selector: '';
+		@each $item in $tags {
+			$selector: unquote('#{$selector}.flair-#{$item}');
+		}
+		.linkflairlabel#{$selector}:before {
+			background-position: (-$x+0px) (-$y+0px);
+			@content;
+		}
+	}
+	
+	@mixin linkflairthumb($tags, $x, $y) {
+		$selector: '';
+		@each $item in $tags {
+			$selector: unquote('#{$selector}.linkflair-#{$item}');
+		}
+		.linkflair#{$selector} .thumbnail {
+			&, .self {
+				background-position: (-$x+0px) (-$y+0px);
+				@content;
+			}
+		}
+	}

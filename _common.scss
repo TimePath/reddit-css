@@ -1,0 +1,101 @@
+@import 'base';
+
+/*
+#Config
+>>>>>>>>>>>>>>>>*/
+
+	/*
+	##Flair
+	>>>>>>>>>>>>>>>>*/
+
+		/*
+		###Thumbnails: https://www.iconfinder.com/search/?q=iconset%3Anuvola2
+		>>>>>>>>>>>>>>>>*/
+
+		@include linkflairthumb((), 80px, 300px) {
+			background: url(%%sprites-linkflair%%) no-repeat scroll transparent;
+			width: 80px; height: 50px;
+			margin-left: 0; margin-right: 15px;
+			img {
+				display: none;
+			}
+		};
+
+		@include linkflairthumb((request, pending), 0, 0);
+		@include linkflairthumb((request, processed), 80px, 0);
+
+		@include linkflairthumb((issue, pending), 0, 100px);
+		@include linkflairthumb((issue, processed), 80px, 100px);
+
+		@include linkflairthumb((question, pending), 0, 200px);
+		@include linkflairthumb((question, processed), 80px, 200px);
+
+		@include linkflairthumb((resource), 80px, 300px);
+
+		@include linkflairthumb((meta), 80px, 400px);
+
+		@include linkflairthumb((archived), 0, 400px);
+
+
+	/*
+	##Hide submit buttons
+	>>>>>>>>>>>>>>>>*/
+
+		.sidebox.submit { display: none; }
+
+	/*
+	##Search filters
+	>>>>>>>>>>>>>>>>*/
+
+		#header:target ~ .content {
+			.search-summary, .searchpane, .menuarea { display: none; }
+		}
+
+	/*
+	##Hide archived posts
+	>>>>>>>>>>>>>>>>*/
+
+		body:not(.moderator) .linklisting .thing.linkflair-archived { display: none; }
+
+	/*
+	##Hide flair templates
+	>>>>>>>>>>>>>>>>*/
+
+		body:not(.moderator) .flairoptionpane {
+			.linkflair-archived { display: none; }
+		}
+
+	/*
+	##High visibility unflaired posts
+	>>>>>>>>>>>>>>>>*/
+
+		body.moderator .linklisting .thing:not(.linkflair):not(.comment) {
+			& { background-color: #FA8072; }
+			:root.res-nightmode & { background-color: #623D39; }
+		}
+
+	/*
+	##Normalised titles
+	>>>>>>>>>>>>>>>>*/
+
+		.title::first-letter { text-transform: uppercase; }
+
+	/*
+	##Sidebar title
+	>>>>>>>>>>>>>>>>*/
+
+		.titlebox h1 a:before {
+			content: "/r/";
+		}
+
+/*
+#Style
+>>>>>>>>>>>>>>>>*/
+
+	/*
+	##Code blocks
+	>>>>>>>>>>>>>>>>*/
+
+		.md pre {
+			background: url(%%codebg%%) top left repeat;
+		}

@@ -1,2 +1,3 @@
 #!/bin/bash
-sass --watch .:out
+sass --update .:out
+sed -i -e 's/^@charset.*$//g' out/*.css
