@@ -1,101 +1,300 @@
-@import 'base';
+@import 'modules/all';
+
+html:not([lang="ns"]) {
+	&[lang='dk'] { @import 'themes/earth'; }
+}
 
 /*
-#Config
+#Function
 >>>>>>>>>>>>>>>>*/
 
 	/*
-	##Flair
+	##Hide clutter
 	>>>>>>>>>>>>>>>>*/
+	
+		/* 'Create your own subreddit' */
+		.sidebox.create, .sidebox.create .spacer { visibility: hidden; display: none; }
 
-		/*
-		###Thumbnails: https://www.iconfinder.com/search/?q=iconset%3Anuvola2
-		>>>>>>>>>>>>>>>>*/
+		/* domain */
 
-		@include linkflairthumb((), 80px, 300px) {
-			background: url(%%sprites-linkflair%%) no-repeat scroll transparent;
-			width: 80px; height: 50px;
-			margin-left: 0; margin-right: 15px;
-			img {
+		.title .domain, #reddit-field { display: none }
+
+		#header li {
+			a#viewImagesButton, /* Hide RES's view images */
+			a[href$="/controversial/"], /* Hide controversial tab */
+			a[href$="/wiki/"] /* Hide wiki tab (the menus do a better job) */
+			{
 				display: none;
 			}
-		};
-
-		@include linkflairthumb((request, pending), 0, 0);
-		@include linkflairthumb((request, processed), 80px, 0);
-
-		@include linkflairthumb((issue, pending), 0, 100px);
-		@include linkflairthumb((issue, processed), 80px, 100px);
-
-		@include linkflairthumb((question, pending), 0, 200px);
-		@include linkflairthumb((question, processed), 80px, 200px);
-
-		@include linkflairthumb((resource), 80px, 300px);
-
-		@include linkflairthumb((meta), 80px, 400px);
-
-		@include linkflairthumb((archived), 0, 400px);
-
-
-	/*
-	##Hide submit buttons
-	>>>>>>>>>>>>>>>>*/
-
-		.sidebox.submit { display: none; }
-
-	/*
-	##Search filters
-	>>>>>>>>>>>>>>>>*/
-
-		#header:target ~ .content {
-			.search-summary, .searchpane, .menuarea { display: none; }
 		}
-
+		
 	/*
-	##Hide archived posts
+	##Misc
 	>>>>>>>>>>>>>>>>*/
-
-		body:not(.moderator) .linklisting .thing.linkflair-archived { display: none; }
-
+	
+		/*
+		###Subscribe bar
+		>>>>>>>>>>>>>>>>*/
+		
+			/*body.loggedin .option.active.add:before {
+				border-top: 1px solid black;
+				content: "Click here to subscribe!"; 
+				padding: 5px 0;
+				text-align: center;
+				background-color: white; 
+				font-size: 16px;
+				color: black !important;
+				
+				position: fixed;
+				display: block;
+				z-index: 1000;
+				bottom: 0px; 
+				left: 0px; 
+				width: 100%;
+				cursor: text !important;
+			}*/
+		
+		/*
+		###Last edited timestamps without hovering
+		>>>>>>>>>>>>>>>>*/
+		
+			.edited-timestamp[title] {
+				visibility: hidden;
+			}
+			.edited-timestamp[title]:after {
+				visibility: visible;
+				content: "(" attr(title) ")";
+				font-size: x-small;
+			}
+		
+		/*
+		###Alert when not browsing new
+		>>>>>>>>>>>>>>>>*/
+		
+			/*body.listing-page:not(.new-page):not(.single-page):not(.profile-page) #siteTable:before {
+				content: "You aren't browsing new. Why not?";
+				display: block;
+				max-width: 800px;
+				background-color: #222;
+				padding: 5px 10px;
+				margin: 5px 305px 5px 0px;
+				border: 1px solid orange;
+				font-size: small;
+			}*/
+		
+		/*
+		###Change submission information text
+		>>>>>>>>>>>>>>>>*/
+			/*
+			.link .entry .tagline time:not(.edited-timestamp)::before {
+				content: "submitted ";
+				font-size: x-small;
+			}
+			.link .entry .tagline {
+				font-size: 0px !important;
+			}
+			.link .entry .tagline time:not(.edited-timestamp)::after {
+				content: " ago by ";
+				font-size: x-small;
+			}
+			.link .entry .tagline time, .entry .tagline a, .tagline span {
+				font-size: x-small;
+			}
+			*/
+		
 	/*
-	##Hide flair templates
+	##Voting
 	>>>>>>>>>>>>>>>>*/
-
-		body:not(.moderator) .flairoptionpane {
-			.linkflair-archived { display: none; }
+	
+		/* Hides the upvote arrow */
+		
+		/*.arrow.up {
+			visibility: hidden;
+			display: none;
+		}*/
+		
+		/* Makes the upvote arrow visible on comments */  
+		
+		/*.comment .arrow.up {
+			visibility: visible;
+			display: block;
+		}*/
+		
+		/* Hides the downvote arrow */  
+		
+		/*.arrow.down {
+			visibility: hidden;
+			display: none;
+		}*/
+		
+		/* Makes the downvote arrow visible on comments */  
+		
+		/*.comment .arrow.down {
+			visibility: visible;
+			display: block;
+		}*/
+		
+		/* Hide vote weight */
+		
+		a.voteWeight {
+			background-color: transparent !important;
 		}
-
+		
+		/* Hides post popularity */
+		
+		/*.link .rank, .link .score {
+			visibility: hidden;
+			display: none
+		}*/
+	
+		/*
+		###Warning
+		>>>>>>>>>>>>>>>>*/
+			
+			.comment .arrow.down:hover:before {
+				color: #000;
+				border: 1px solid #333;
+				background-color: #66B5FF;
+				content: "Downvoter, explain yourself!";
+				position: absolute;
+				display: block;
+				z-index: 1000;
+				width: 100px;
+				padding: 5px;
+				text-align: center;
+				font-size: x-small;
+				font-weight: bold;
+				margin-left: 25px;
+				margin-top: 5px;
+				border-radius: 4px;
+			}
+		
 	/*
-	##High visibility unflaired posts
+	##Change text
 	>>>>>>>>>>>>>>>>*/
-
-		body.moderator .linklisting .thing:not(.linkflair):not(.comment) {
-			& { background-color: #FA8072; }
-			:root.res-nightmode & { background-color: #623D39; }
-		}
-
-	/*
-	##Normalised titles
-	>>>>>>>>>>>>>>>>*/
-
-		.title::first-letter { text-transform: uppercase; }
-
-	/*
-	##Sidebar title
-	>>>>>>>>>>>>>>>>*/
-
-		.titlebox h1 a:before {
-			content: "/r/";
-		}
+	
+		/*
+		###Readers
+		>>>>>>>>>>>>>>>>*/
+			
+			.subscribers .word { display: none }  
+			.subscribers .number:after { content: ' scripters' }
+		
+		/*
+		###Users here now
+		>>>>>>>>>>>>>>>>*/
+		
+			.users-online .word { display: none }
+			.users-online .number:after { content: ' currently in queue' }
+		
+		/*
+		###Created by
+		>>>>>>>>>>>>>>>>*/
+		
+			/*.titlebox .bottom {
+				font-size: 0px;
+				cursor: text;
+			}
+			.titlebox .bottom .author, .titlebox .bottom .age {
+				font-size: 10px;
+			}
+			.titlebox .bottom:before {
+				font-size: 10px;
+				content: "blame ";
+			}
+			.titlebox .bottom:after {
+				font-size: 10px;
+				cursor: pointer;
+				content: "for this mess";
+			}*/
+			/*.titlebox .bottom .author { font-size: 0px; visibility: hidden; }
+			.titlebox .bottom .author:after {
+				font-size: 10px; visibility: visible;
+				content: "creator ";
+			}*/
+		
+		/*
+		###Date of creation
+		>>>>>>>>>>>>>>>>*/
+			
+			/*.titlebox .bottom .age { display: none }
+			.titlebox .bottom:before {
+				display: block;
+				content: "a community for X days";
+				float: right
+			}*/
+		
+		/*
+		###Moderator box
+		>>>>>>>>>>>>>>>>*/
+		
+			.side .helplink + .title h1 { display: none; }
+			
+			.side .helplink + .title:before { 
+				content: 'Scripters';
+				display: block;
+				color: gray;
+				font-size: 130%;
+				text-transform: uppercase;
+			}
 
 /*
 #Style
 >>>>>>>>>>>>>>>>*/
 
 	/*
-	##Code blocks
+	##Reword link flair
 	>>>>>>>>>>>>>>>>*/
 
-		.md pre {
-			background: url(%%codebg%%) top left repeat;
+		.flat-list.buttons .flairselectbtn { visibility: hidden; font-size: 0px; }
+
+		.flat-list.buttons .flairselectbtn:before {
+			content: "tag";
+			visibility: visible;
+			font-size: 10px;
+			color: #f5f5f5;
+			padding: 2px 4px 2px 4px;
+			border: 1px solid #494848;
+			border-radius: 5px;
+			background-color: #ef3d3d;
+			.linkflair & { // Post has flair
+				content: "change tag";
+				color: #888;
+				background: #f5f5f5;
+				border: 0px;
+			}
+		}
+
+
+	/*
+	##Link flair alignment
+	>>>>>>>>>>>>>>>>*/
+
+		.linkflairlabel {
+			min-width: 5em;
+			text-align: center;
+		}
+
+
+	/*
+	##Hide post title in flair selector
+	>>>>>>>>>>>>>>>>*/
+
+		.flairselector .title {
+			visibility: hidden;
+			// font-size: 0;
+		}
+
+
+	/*
+	##Inline code
+	>>>>>>>>>>>>>>>>*/
+
+		.md :not(pre) code {
+			color: #080;
+			border: 1px solid #eaeaea;
+			background-color: #f6f6f6;
+			border-radius: 3px;
+			margin: 0 2px;
+			padding: 0px 5px
 		}

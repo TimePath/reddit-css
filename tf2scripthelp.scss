@@ -180,6 +180,18 @@ html:not([lang="ns"]) {
 >>>>>>>>>>>>>>>>*/
 
 	/*
+	##Background
+	>>>>>>>>>>>>>>>>*/
+
+	body,
+	body.res-nightmode {
+		background-image: url(%%console0%%) !important;
+		background-repeat: no-repeat;
+		background-position: 0px 200px;
+		background-attachment: scroll;
+	}
+
+	/*
 	##Submissions
 	>>>>>>>>>>>>>>>>*/
 
