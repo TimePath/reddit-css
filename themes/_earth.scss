@@ -40,6 +40,37 @@
 			display: none !important;
 		}
 	}
+	
+	/*
+	##RES
+	>>>>>>>>>>>>>>>>*/
+		
+		#REScommentNavToggle .commentNavSortType {
+			color: lightgray !important;
+		}
+		
+		#REScommentNavToggle .commentNavSortTypeDisabled {
+			color: gray !important;
+		}
+		
+	/*
+	##Dark theme fixes
+	>>>>>>>>>>>>>>>>*/
+		
+		.leavemoderator,
+		form.leavecontributor-button,
+		.titlebox blockquote,
+		.sidecontentbox .content,
+		.icon-menu a,
+		form.leavemoderator-button,
+		.expando-button,
+		#header-bottom-left,
+		body.res #header-bottom-left,
+		pre,
+		html div.content
+		{
+			background-color: transparent !important;
+		}
 
 /*
 ##Moderator box
@@ -918,3 +949,42 @@ colgroup
 .gold-accent { background-color: #6D655B }
 
 .new-comment .usertext-body { background-color: #8B7A4B } /* 9A7D2E */
+
+
+		.error {
+			color: #F00 !important;
+		}
+
+		
+		.searchfacets {
+			border: 1px solid #403C33;
+			box-shadow: none;/*0 4px 6px -1px #403C33 inset;*/
+			background-color: #221F1C;
+		}
+
+
+
+	/*
+	##?
+	>>>>>>>>>>>>>>>>*/
+
+		.usertext-edit .RESDialogSmall .md.RESDialogContents {
+			background-color: transparent !important;
+		}
+		
+		.usertext.border .usertext-body {
+			background-color: #6D655B;
+		}
+		
+		#img-preview-container { border-color: #403C33 }
+		
+		#progressIndicator {
+			background-color: #272422 !important;
+			border-color: #403C33 !important;
+		}
+
+		#alert_message, html div.popup { background-color: #221F1C !important; }
+
+		.divide { border-color: #403C33; }
+		
+		.traffic-table tbody tr:nth-child(even) { background-color: #403C33; }

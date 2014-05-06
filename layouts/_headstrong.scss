@@ -6,6 +6,108 @@ $header-banner: none !default;;
 >>>>>>>>>>>>>>>>*/
 
 	/*
+	##Markdown
+	>>>>>>>>>>>>>>>>*/
+
+		/* Big posts */
+		.usertext-body .md {
+			max-width: none !important;
+		}
+		
+		.titlebox .md { font-size: 90% !important }
+		
+	/*
+	##Link info
+	>>>>>>>>>>>>>>>>*/
+
+		.linkinfo {
+			text-align: center;
+			font-size: 11px;
+			padding: 10px 0px 5px 0px;
+			/*
+			width: 290px;
+			margin-top: 5px;
+			margin-bottom: 10px;
+			margin-left: -1px;
+			margin-right: 1px;
+			*/
+			/*
+			border-radius: 0px !important;
+			*/
+		}
+		.linkinfo .date {
+			color: #EEDB00 !important;
+			background-color: #9D511B;
+		}
+		
+		.linkinfo .date {
+			padding: 8px;
+			margin: 10px;
+			margin-top: 0px;
+			margin-bottom: 7px;
+			font-size: 12px;
+			border-radius: 7px;
+		}
+
+		.linkinfo .score .word {
+			display: none
+		}
+
+		.linkinfo .score .number, .linkinfo .upvotes .number, .linkinfo .downvotes .number {
+			font-size: 18px !important;
+			display: block;
+			font-weight: normal !important
+		}
+
+		/* sub */
+
+		.linkinfo .score, .linkinfo .upvotes .word, .linkinfo .downvotes .word {
+			font-size: 9px;
+		}
+
+		/* ??? */
+
+		.linkinfo .upvotes, .linkinfo .downvotes, .linkinfo .score {
+			float: left;
+			padding: 5px 9px 5px 0;
+			margin: 8px 9px 10px 0;
+			text-align: center
+		}
+
+		.linkinfo .score {
+			display: block;
+			min-width: 80px;
+			margin-left: 30px !important
+		}
+
+		/* Borders */
+
+		.linkinfo .score, .linkinfo .upvotes {
+			border-color: #403C33;
+		}
+		.linkinfo .score, .linkinfo .upvotes {
+			border-right: 1px solid;
+		}
+
+		/* Link */
+
+		.linkinfo .shortlink {
+			clear: both !important;
+			font-size: 10px;
+			margin: 0px 20px 0px 20px;
+			border: 0px solid #c2c2c2;
+			text-align:center;
+		}
+		.linkinfo .shortlink input {
+			background: transparent;
+			border: 0px ;
+			padding-left: 8px;
+			font-size: 12px;
+			margin-left: auto;
+			margin-right: auto
+		}
+
+	/*
 	##Mobile fixes
 	>>>>>>>>>>>>>>>>*/
 
@@ -241,3 +343,194 @@ $header-banner: none !default;;
 			}
 
 			html:lang(mo) .users-online .number { position: absolute; }
+
+			
+			
+			
+	/*
+	##Move RES 'use subreddit style'
+	>>>>>>>>>>>>>>>>*/
+
+		body.res.loggedin .side .titlebox h1
+		{ margin-bottom: -1000px !important; }
+		body.res.loggedin .side .titlebox .subButtons, body.res.profile-page.loggedin .side .titlebox .subscribe-button
+		{ padding-top: 1000px; }
+
+		body.res.loggedin .side .titlebox .tagline {
+			margin-bottom: -131px !important;
+		}
+		body.res.loggedin .side .titlebox .md hr:nth-of-type(1) {
+			padding-top: 131px !important;
+			border-color: transparent !important;
+		}
+		
+	/*
+	##Disable stylesheet
+	>>>>>>>>>>>>>>>>*/
+
+		div.side a[href^="http://ns."][href$="reddit.com"] {
+			color: #D9D9D9 !important;
+		}
+
+		html:lang(ns) div.side a[href^="http://ns."][href$="reddit.com"] {
+			display: none;
+			color: black !important;
+		}
+
+	/*
+	##RES guider
+	>>>>>>>>>>>>>>>>*/
+
+		html:not([lang="mo"]) .guider { position: fixed !important }
+		
+	/*
+	##Post width
+	>>>>>>>>>>>>>>>>*/
+
+		.commentarea .menuarea {
+			max-width: 800px;
+		}
+		
+	.thumbnail.nsfw { display: none }
+	a.thumbnail.self { display: none; }
+	.redditSingleClick {
+		display: none;
+	}
+	
+/*
+#Other
+>>>>>>>>>>>>>>>>*/
+
+		/*#header-bottom-left {
+			height: 100% !important;
+		}*/
+
+		/* Disable hot */
+
+		/* Page header, http://www.reddit.com/r/cssnews/comments/197jhi/css_change_new_body_classes_for_pages/ */
+		/*body.hot-page > div.content {
+			display: none;
+		}*/
+
+		/*div#header-bottom-left ul.tabmenu a[href*="hot"] {
+			display: none;
+		}*/
+
+		/*body.hot-page > div.content:before {
+			display: inline !important;
+			visibility: visible !important;
+			content: "there doesn't seem to be anything here";
+		}*/
+
+		
+
+
+		/*
+		http://signaltower.co/2013/03/29/april-fools-pranks-for-developers/
+		https://github.com/wesbos/aprilFools.css/blob/master/aprilFools.css
+		*/
+
+
+		/* sorting options */
+		/*.commentarea .menuarea {
+			padding: 2px
+		}*/
+		/*.commentarea .menuarea:before {
+			content: "Sort by:";
+			padding-right: 10px
+		}*/
+		/* 'Sorted by:' text */
+		/*.commentarea .menuarea .dropdown-title {
+			display: none
+		}*/
+
+		/* Spacer */
+		.commentarea .menuarea .spacer {
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		/* Selected item */
+		.dropdown.lightdrop .selected {
+			display: none;
+		}
+		/* Menu container */
+		.drop-choices.lightdrop {
+			display: table;
+			visibility: visible;
+			border-left: none;
+			position: static;
+			border-radius: 5px;
+			background: #221F1C;
+			border: 1px solid #403C33 !important;
+			padding: 5px 0px;
+		}
+		/* Menu item container */
+		.commentarea .menuarea form {
+			display: inline-block;
+		}
+		/* Text */
+		.drop-choices.lightdrop a.choice {
+			display: inline;
+			padding: 0 5px;
+
+			margin: 2px;
+			padding-top: 2px;
+			padding-bottom: 3px;
+			border-radius: 3px;
+			padding-right: 10px;
+			padding-left: 10px;
+		}
+		.drop-choices.lightdrop a.choice:hover {
+			color: #000 !important;
+			background-color: #F49500 !important;
+		}
+		/* Selected Text */
+		.drop-choices.lightdrop a.choice.selected {
+			color: #000 !important;
+			background-color: #9D511B;
+			text-decoration: none !important;
+			cursor: default;
+		}
+
+		.commentarea .menuarea form {
+			padding-left: 0px;
+		}
+
+		/* Contest mode help */
+		.commentarea .menuarea .help-hoverable {
+			display: none;
+		}
+
+		#REScommentNavToggle {
+			padding: 5px;
+			margin-left: -5px;
+			background: #221F1C;
+			border: 1px solid #403C33;
+			border-radius: 5px;
+			width: auto !important;
+		}
+
+		#REScommentNavToggle span {
+			display: none;
+		}
+		.user .userkarma {
+			cursor: default;
+		}
+		
+	/*
+	##Community settings page
+	>>>>>>>>>>>>>>>>*/
+	
+		/* Thread actions */
+		html body .content .commentarea .spacer:nth-of-type(2) {
+			background-color: #272422;
+			border: 1px solid #403C33;
+			border-radius: 5px;
+			float: right;
+			font-size: 0;
+			padding: 5px;
+		}
+		
+		.commentarea .menuarea .toggle {
+			display: block !important;
+		}
