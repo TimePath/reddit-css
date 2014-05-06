@@ -29,17 +29,19 @@ $header-logo: url(%%logo%%);
 		@include image('locate_2', '%%steampipe-2%%', 616px, 400px);
 		@include image('locate_3', '%%steampipe-3%%', 616px, 400px);
 
-		@include image('fov_math_1', '%%fov-math-1%%', 231px, 41px) {
+		%math {
 			background-color: white;
 			border: 5px solid white;
+		}
+		
+		@include image('fov_math_1', '%%fov-math-1%%', 231px, 41px) {
+			@extend %math;
 		}
 		@include image('fov_math_2', '%%fov-math-2%%', 231px, 41px) {
-			background-color: white;
-			border: 5px solid white;
+			@extend %math;
 		}
 		@include image('fov_math_3', '%%fov-math-3%%', 251px, 41px) {
-			background-color: white;
-			border: 5px solid white;
+			@extend %math;
 		}
 
 	/*
@@ -80,16 +82,15 @@ $header-logo: url(%%logo%%);
 				background-image: url(%%sprite-reddit%%);
 				width: 16px; height: 16px;
 			};
-
-			@include flair((scripter), 85, 582);
-			@include flair((scripter-cs), 85, 582); // TODO: merge
+			
+			@include flair((scripter), 44, 752);
 
 			@include flair((batman), 0, 0) {
 				background-image: url(%%bat-signal%%);
 				width: 24px; height: 13px;
 			};
 
-			@include flair2((medal), 65, 615) {
+			@include flair2((medal), -2, 816) {
 				background-image: url(%%sprite-reddit%%);
 				width: 11px; height: 16px;
 				border-left: 5px solid; // Push icon
@@ -98,85 +99,92 @@ $header-logo: url(%%logo%%);
 				content: '0'; // Default count
 			};
 
-			.flair-scripter-cs {
+			.flair-cs {
 				font-family: 'Comic Sans MS', cursive, sans-serif;
 			}
 
 		/*
 		###Link
 		>>>>>>>>>>>>>>>>*/
-
-			@include linkflairlabel((), 0, 599) { // TODO: div.side a[href*='#flair']
+		
+			%icons-reddit {
 				background-image: url(%%sprite-reddit%%);
 				width: 16px; height: 16px;
 			}
-
-			@include linkflairlabel((pending, issue), 102, 582); // red, div.side a[href*='=issue']
-			@include linkflairlabel((pending, question), 16, 120) { // div.side a[href*='=question']
+			
+			%icons-reddit2 {
 				background-image: url(%%thumbs-reddit%%);
+				width: 16px; height: 16px;
 			}
-			@include linkflairlabel((processed, issue), 54, 528); // green, div.side a[href*='=resolved']
-			@include linkflairlabel((processed, question), 54, 528); // green, div.side a[href*='=answered']
-
-			@include linkflairlabel((discussion), 88, 528);
-			@include linkflairlabel((tutorial), 88, 528);
-			@include linkflairlabel((explanation), 88, 528);
-
-			@include linkflairlabel((resource), 17, 599);
-
-			@include linkflairlabel((wiki), 52, 583);
-
-			@include linkflairlabel((challenge), 65, 615) { // div.side a[href*='=challenge']
-				width: 11px;
-			}
-
-			@include linkflairlabel((archived), 0, 599);
-
-			@include linkflairlabel((meta), 68, 599); // div.side a[href*='=meta']
-
-			%tf2classicons {
+		
+			%icons-tf2 {
 				background-image: url(%%classes%%);
 				width: 20px; height: 20px;
 			}
 
+			@include linkflairlabel((), 0, 599) { // TODO: div.side a[href*='#flair']
+				@extend %icons-reddit;
+			}
+
+			@include linkflairlabel((pending, issue), 65, 752); // red, div.side a[href*='=issue']
+			@include linkflairlabel((pending, question), 16, 120) { // div.side a[href*='=question']
+				@extend %icons-reddit2;
+			}
+			@include linkflairlabel((processed, issue), 44, 642); // green, div.side a[href*='=resolved']
+			@include linkflairlabel((processed, question), 44, 642); // green, div.side a[href*='=answered']
+
+			@include linkflairlabel((discussion), 0, 664);
+			@include linkflairlabel((tutorial), 0, 664);
+			@include linkflairlabel((explanation), 0, 664);
+
+			@include linkflairlabel((resource), 0, 774);
+
+			@include linkflairlabel((wiki), 0, 752);
+
+			@include linkflairlabel((challenge), -2, 816); // div.side a[href*='=challenge']
+
+			@include linkflairlabel((archived), 88, 752);
+
+			@include linkflairlabel((meta), 66, 774); // div.side a[href*='=meta']
+
 			@include linkflairlabel((scout), 0, 0) {
-				@extend %tf2classicons;
+				@extend %icons-tf2;
 			}
 
 			@include linkflairlabel((soldier), 20, 0) {
-				@extend %tf2classicons;
+				@extend %icons-tf2;
 			}
 
 			@include linkflairlabel((pyro), 40, 0) {
-				@extend %tf2classicons;
+				@extend %icons-tf2;
 			}
 
 			@include linkflairlabel((demoman), 60, 0) {
-				@extend %tf2classicons;
+				@extend %icons-tf2;
 			}
 
 			@include linkflairlabel((heavy), 80, 0) {
-				@extend %tf2classicons;
+				@extend %icons-tf2;
 			}
 
 			@include linkflairlabel((engineer), 100, 0) {
-				@extend %tf2classicons;
+				@extend %icons-tf2;
 			}
 
 			@include linkflairlabel((medic), 120, 0) {
-				@extend %tf2classicons;
+				@extend %icons-tf2;
 			}
 
 			@include linkflairlabel((sniper), 140, 0) {
-				@extend %tf2classicons;
+				@extend %icons-tf2;
 			}
 
 			@include linkflairlabel((spy), 160, 0) {
-				@extend %tf2classicons;
+				@extend %icons-tf2;
 			}
 
 			@include linkflairlabel((multi), 180, 0) {
-				@extend %tf2classicons;
+				@extend %icons-tf2;
 			}
 			
 	/*
