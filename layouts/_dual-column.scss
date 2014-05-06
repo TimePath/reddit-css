@@ -2,71 +2,49 @@
 #Dual columns
 >>>>>>>>>>>>>>>>*/
 
-	.stickied {
-		width: 96% !important;
-		max-width: none !important;
-	}
+	/* Disable things to make it work */
 
-	.clearleft,.rank {
+	.clearleft, .rank {
 		display: none;
 	}
 
-	.thing a.madeVisible {
-		position: absolute;
-		z-index: 99;
-	}
-
-	.link .buttons > .neutral {
-		white-space: pre;
-	}
-
-	.listing-page .link {
-		display: inline-block;
-		vertical-align: top;
-		padding: 1%;
-	}
-
-	.listing-page .link {
-		margin-left: 1%;
-	}
-
-	.listing-page .link {
-		max-width: 47%;
-		width: 47%;
-	}
-
-	.listing-page .link .buttons {
-		max-width: 90%;
-	}
-
-	.listing-page .link .buttons li:not(.first) {
-		white-space: normal;
-	}
+	/* Pages */
 
 	.listing-page .content > .linklisting {
 		margin-right: 320px;
 	}
 
-	.listing-page .expando-button ~ .expando {
-		position: absolute;
-	}
+	/* Page */
 
 	.listing-page .linklisting {
-		padding: 12px 0 4px 4px;
+		padding: 12px 0 4px 0;
 	}
 
-	.link .link .entry {
-		margin-right: 320px;
-	}
+	/* Posts */
 
-	.link .thumbnail {
-		margin-left: 8px;
-	}
-
-	.linklisting .link,.listing-page .linklisting {
+	.listing-page .link {
+		display: inline-block;
+		vertical-align: top;
+		padding: 1%;
 		padding-left: 0;
+		margin-left: 1%;
+		max-width: 47%;
+		width: 47%;
+
+		&.stickied {
+			width: 96% !important;
+			max-width: none !important;
+		}
+		.buttons { /* For wrapping */
+			max-width: 90%;
+		}
+		.midcol { /* Pull closer */
+			margin-right: -5px;
+		}
 	}
 
-	.link .entry, .link .midcol {
-		padding-left: 8px;
+	/* Float self text */
+
+	.listing-page .expando-button ~ .expando {
+		position: absolute;
 	}
