@@ -5,8 +5,101 @@ html:not([lang="ns"]) {
 }
 
 /*
+#DEADB33F modtools
+>>>>>>>>>>>>>>>>*/
+
+	/*
+	<removereasons>
+
+		<reason>Your {kind} has been removed because it is not related to TF2 scripting. This should instead be posted to
+			<select id="selectbox">
+				<option>/r/tf2sprays</option>
+				<option>/r/tf2huds</option>
+			</select>.
+		</reason>
+
+		<reason>Your {kind} was removed because <textarea id="textarea2" placeholder="Enter Custom reason" /></reason>
+
+	</removereasons>
+	*/
+
+/*
 #Function
 >>>>>>>>>>>>>>>>*/
+
+	/*
+	##Hide inactive mods
+	>>>>>>>>>>>>>>>>*/
+
+		.side a.author[href$="/AutoModerator"], .side a.author[href$="/AutoModerator"] ~ * { display: none !important; }
+		
+	/*
+	##Hide RES junk in moderator box
+	>>>>>>>>>>>>>>>>*/
+	
+		.side a.author ~ *:not(.flair):not(.flairselectbtn) { display: none !important; }
+
+	/*
+	##Reddit companion fix
+	Doesn't yet work on the main site, only the mobile version
+	>>>>>>>>>>>>>>>>*/
+
+		html { position: relative; }
+		
+	/*
+	##Search filters
+	>>>>>>>>>>>>>>>>*/
+
+		#header:target ~ .content {
+			.search-summary, .searchpane, .menuarea { display: none; }
+		}
+
+	/*
+	##Hide archived posts
+	>>>>>>>>>>>>>>>>*/
+
+		body:not(.moderator) .linklisting .thing.linkflair-archived { display: none; }
+
+	/*
+	##Hide flair templates
+	>>>>>>>>>>>>>>>>*/
+
+		body:not(.moderator) .flairoptionpane {
+			.linkflair-archived { display: none; }
+		}
+		
+	/*
+	##Wiki
+	>>>>>>>>>>>>>>>>*/
+	
+		/*.wiki-page .wikititle { text-transform: capitalize; }*/
+		
+		.wiki-page .wikititle
+		{ display: none; }
+		
+		/*
+		###TOC
+		>>>>>>>>>>>>>>>>*/
+
+			.wiki .toc { float: left; }
+			.wiki .toc + * { clear: left; }
+
+			body[class*="wiki-page-index"] .toc { display: none; }
+
+	/*
+	##High visibility unflaired posts
+	>>>>>>>>>>>>>>>>*/
+
+		body.moderator .linklisting .thing:not(.linkflair):not(.comment) {
+			& { background-color: #FA8072; }
+			:root.res-nightmode & { background-color: #623D39; }
+		}
+
+	/*
+	##Normalised titles
+	>>>>>>>>>>>>>>>>*/
+
+		.title::first-letter { text-transform: uppercase; }
 
 	/*
 	##Hide clutter
@@ -23,10 +116,12 @@ html:not([lang="ns"]) {
 			a#viewImagesButton, /* Hide RES's view images */
 			a[href$="/controversial/"], /* Hide controversial tab */
 			a[href$="/wiki/"] /* Hide wiki tab (the menus do a better job) */
-			{
-				display: none;
-			}
+			{ display: none }
 		}
+		
+		/* Submit buttons */
+
+		.sidebox.submit { display: none }
 		
 	/*
 	##Misc
@@ -170,7 +265,7 @@ html:not([lang="ns"]) {
 			}
 		
 	/*
-	##Change text
+	##Sidebar text
 	>>>>>>>>>>>>>>>>*/
 	
 		/*
@@ -237,10 +332,29 @@ html:not([lang="ns"]) {
 				font-size: 130%;
 				text-transform: uppercase;
 			}
+			
+		/*
+		###Subreddit name
+		>>>>>>>>>>>>>>>>*/
+
+			.titlebox h1 a:before {
+				content: "/r/";
+			}
 
 /*
 #Style
 >>>>>>>>>>>>>>>>*/
+
+	/*
+	##Gold
+	>>>>>>>>>>>>>>>>*/
+		
+		html body a.give-gold,
+		html body a.give-gold:link,
+		html body a.give-gold:visited
+		{ color: #9A7D2E !important; }
+		
+		.user-gilded > .entry span.gilded-comment-icon:before { width:16px; }
 
 	/*
 	##Reword link flair

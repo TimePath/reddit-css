@@ -1,4 +1,7 @@
 @import 'base2';
+$header-banner: url(%%banner%%) black;
+$header-logo: url(%%logo%%);
+@import 'layouts/headstrong';
 
 html:not([lang="ns"]) {
 	& { @import 'themes/earth'; }
@@ -183,13 +186,13 @@ html:not([lang="ns"]) {
 	##Background
 	>>>>>>>>>>>>>>>>*/
 
-	body,
-	body.res-nightmode {
-		background-image: url(%%console0%%) !important;
-		background-repeat: no-repeat;
-		background-position: 0px 200px;
-		background-attachment: scroll;
-	}
+		body,
+		body.res-nightmode {
+			background-image: url(%%console0%%) !important;
+			background-repeat: no-repeat;
+			background-position: 0px 200px;
+			background-attachment: scroll;
+		}
 
 	/*
 	##Submissions

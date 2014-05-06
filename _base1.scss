@@ -36,58 +36,6 @@
 
 		@include linkflairthumb((archived), 0, 400px);
 
-
-	/*
-	##Hide submit buttons
-	>>>>>>>>>>>>>>>>*/
-
-		.sidebox.submit { display: none; }
-
-	/*
-	##Search filters
-	>>>>>>>>>>>>>>>>*/
-
-		#header:target ~ .content {
-			.search-summary, .searchpane, .menuarea { display: none; }
-		}
-
-	/*
-	##Hide archived posts
-	>>>>>>>>>>>>>>>>*/
-
-		body:not(.moderator) .linklisting .thing.linkflair-archived { display: none; }
-
-	/*
-	##Hide flair templates
-	>>>>>>>>>>>>>>>>*/
-
-		body:not(.moderator) .flairoptionpane {
-			.linkflair-archived { display: none; }
-		}
-
-	/*
-	##High visibility unflaired posts
-	>>>>>>>>>>>>>>>>*/
-
-		body.moderator .linklisting .thing:not(.linkflair):not(.comment) {
-			& { background-color: #FA8072; }
-			:root.res-nightmode & { background-color: #623D39; }
-		}
-
-	/*
-	##Normalised titles
-	>>>>>>>>>>>>>>>>*/
-
-		.title::first-letter { text-transform: uppercase; }
-
-	/*
-	##Sidebar title
-	>>>>>>>>>>>>>>>>*/
-
-		.titlebox h1 a:before {
-			content: "/r/";
-		}
-
 /*
 #Style
 >>>>>>>>>>>>>>>>*/
