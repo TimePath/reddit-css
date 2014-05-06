@@ -4,11 +4,6 @@ $header-banner: url(%%banner%%) black;
 $header-logo: url(%%logo%%);
 @import 'layouts/headstrong';
 
-html:not([lang="ns"]) {
-	@import 'layouts/dual-column';
-	@import 'themes/earth';
-}
-
 /*
 #Config
 >>>>>>>>>>>>>>>>*/
@@ -75,61 +70,6 @@ html:not([lang="ns"]) {
 	
 		.flair, .linkflairlabel, div.side a[href*="#flair"] {
 			padding: 2px 4px 6px 4px; /* tldr */
-		}
-		
-		/*
-		###Title colors
-		>>>>>>>>>>>>>>>>*/
-
-		.linkflair-processed.linkflair-question .title,
-		.title .linkflairlabel.linkflair-processed.linkflair-question + a, /* bugfix */
-		.post-linkflair-processed.linkflair-question .linklisting .title,
-
-		.linkflair-processed.linkflair-issue .title,
-		.title .linkflairlabel.linkflair-processed.linkflair-issue + a, /* bugfix */
-		.post-linkflair-processed.post-linkflair-issue .linklisting .title,
-
-		.linkflair-green .title,
-		.title .linkflairlabel.linkflair-green + a, /* bugfix */
-		.post-linkflair-green .linklisting .title
-		{
-			color: #8F8 !important;
-		}
-
-		.linkflair-resource .title,
-		.title .linkflairlabel.linkflair-resource + a, /* bugfix */
-		.post-linkflair-resource .linklisting .title
-		{
-			color: #F8F !important;
-		}
-
-		.linkflair-pending.linkflair-issue .title,
-		.title .linkflairlabel.linkflair-pending.linkflair-issue + a, /* bugfix */
-		.post-linkflair-pending.post-linkflair-issue .linklisting .title,
-
-		.linkflair-red .title,
-		.title .linkflairlabel.linkflair-red + a, /* bugfix */
-		.post-linkflair-red .linklisting .title
-		{
-			color: #F88 !important;
-		}
-
-		.linkflair-question .title,
-		.title .linkflairlabel.linkflair-question + a, /* bugfix */
-		.post-linkflair-question .linklisting .title {
-			color: #88F !important;
-		}
-
-		.linkflair-meta .title,
-		.title .linkflairlabel.linkflair-meta + a, /* bugfix */
-		.post-linkflair-meta .linklisting .title {
-			color: #FF0 !important;
-		}
-
-		.linkflair-archived .title,
-		.title .linkflairlabel.linkflair-archived + a, /* bugfix */
-		.post-linkflair-archived .linklisting .title {
-			color: #888 !important;
 		}
 
 		/*
@@ -238,23 +178,7 @@ html:not([lang="ns"]) {
 			@include linkflairlabel((multi), 180, 0) {
 				@extend %tf2classicons;
 			}
-
-/*
-#Style
->>>>>>>>>>>>>>>>*/
-
-	/*
-	##Background
-	>>>>>>>>>>>>>>>>*/
-
-		body,
-		body.res-nightmode {
-			background-image: url(%%console0%%) !important;
-			background-repeat: no-repeat;
-			background-position: 0px 200px;
-			background-attachment: scroll;
-		}
-
+			
 	/*
 	##Submissions
 	>>>>>>>>>>>>>>>>*/
@@ -319,3 +243,43 @@ html:not([lang="ns"]) {
 		.submit-page #text-field .title:after {
 			content:" Provide as much information about your question/problem as possible. Include the relevant parts of your script, and flair your post accordingly after submitting it.";
 		}
+
+/*
+#Style
+>>>>>>>>>>>>>>>>*/
+
+	html:not([lang='ns']) {
+		@import 'layouts/dual-column';
+		@import 'themes/earth';
+		
+		/*
+		##Background
+		>>>>>>>>>>>>>>>>*/
+
+			body,
+			body.res-nightmode {
+				background-image: url(%%console0%%) !important;
+				background-repeat: no-repeat;
+				background-position: 0px 200px;
+				background-attachment: scroll;
+			}
+			
+		/*
+		###Title colors
+		>>>>>>>>>>>>>>>>*/
+		
+			@include titlecolor(#88F, (pending, question));
+			
+			@include titlecolor(#F88, (pending, issue));
+			@include titlecolor(#F88, (red));
+			// #282, #8F8
+			@include titlecolor(#8F8, (processed, question));
+			@include titlecolor(#8F8, (processed, issue));
+			@include titlecolor(#8F8, (green));
+			
+			@include titlecolor(#F8F, (resource));
+			
+			@include titlecolor(#FF8, (meta));
+			
+			@include titlecolor(#888, (archived));
+	}

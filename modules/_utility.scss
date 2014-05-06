@@ -15,6 +15,18 @@
 		@return $ret;
 	}
 
+	@mixin text-outline($color) {
+		text-shadow:
+			1px 1px 0 $color,
+			-1px -1px 0 $color,
+			1px -1px 0 $color,
+			-1px 1px 0 $color,
+			0px 1px 0 $color,
+			1px 0px 0 $color,
+			0px -1px 0 $color,
+			-1px 0px 0 $color;
+	}
+
 	@mixin rename($id, $text) {
 		.id-t3_#{$id} a.title {
 			font-size: 0;
@@ -110,5 +122,16 @@
 				background-position: (-$x+0px) (-$y+0px);
 				@content;
 			}
+		}
+	}
+	
+	@mixin titlecolor($color, $tags) {
+		$selector: '';
+		@each $item in $tags {
+			$selector: unquote('#{$selector}.linkflair-#{$item}');
+		}
+		.linkflair#{$selector} a.title {
+			color: $color !important;
+			@content;
 		}
 	}
