@@ -19,9 +19,17 @@ $header-logo-width: 70px;
 			top: 130px;
 		}
 		.formtabs-content {
-			padding-top: 150px;
+			padding-top: 200px;
 		}
 
+	/*
+	##Auto linkflair
+	>>>>>>>>>>>>>>>>*/
+
+		#text-field, #BigEditor {
+			.submit-page & textarea:first-line { font-size: 0; }
+		}
+	
 	/*
 	##Wiki images
 	>>>>>>>>>>>>>>>>*/
