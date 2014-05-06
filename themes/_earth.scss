@@ -3,7 +3,7 @@
 ##Markdown
 >>>>>>>>>>>>>>>>*/
 
-	.md code { color: #F49500; }
+	.md :not(pre) code { color: #F49500; border: none; background: none }
 	
 	.md pre {
 		border-color: #9D511B;

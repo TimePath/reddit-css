@@ -90,11 +90,14 @@
 	@mixin linkflairlabel($tags, $x: 0, $y: 0) {
 		$selector: '';
 		@each $item in $tags {
-			$selector: unquote('#{$selector}.flair-#{$item}');
+			$selector: unquote('#{$selector}.linkflair-#{$item}');
 		}
-		.linkflairlabel#{$selector}:before {
-			background-position: (-$x+0px) (-$y+0px);
-			@content;
+		 .linkflairlabel:before {
+			.linkflair#{$selector} .title &,
+			.flairselector .linkflair#{$selector} & {
+				background-position: (-$x+0px) (-$y+0px);
+				@content;
+			}
 		}
 	}
 	
