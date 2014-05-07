@@ -110,41 +110,28 @@ $header-snoo-width: 42px !default;
 			margin-left: auto;
 			margin-right: auto
 		}
-
+		
 	/*
-	##Mobile fixes
+	##Header
 	>>>>>>>>>>>>>>>>*/
-
-		#header:lang(mo),
-		#header-bottom-left:lang(mo):after,
-		.side form#search:lang(mo),
-		.titlebox blockquote:last-child:lang(mo),
-		#srList:lang(mo)
-		{
-			position: absolute !important;
-		}
-
-	/*
-	##Floating header
-	>>>>>>>>>>>>>>>>*/
-
+		
 		#header {
-			height: $header-bar-height;
-
-			position: fixed;
+			position: absolute;
 			top: -1px;
 			width: 100%;
+			height: $header-bar-height;
 			z-index: 100;
 		}
 
 		#header-bottom-left:after {
 			content: '';
-			height: $header-bar-height - 64px;
 			background-color: transparent;
-			position: fixed;
+			
+			position: absolute;
 			top: 64px;
 			left: 0px;
 			width: 100%;
+			height: $header-bar-height - 64px;
 			z-index: 100;
 		}
 
@@ -163,54 +150,6 @@ $header-snoo-width: 42px !default;
 			height: $header-banner-height;
 		}
 
-		/* Push content down */
-		
-		/*:target {
-		padding-top: 96px;
-		}*/
-
-		/* Hack to restore anchors */
-
-		.wiki-page .wiki-page-content .md.wiki h1,
-		.wiki-page .wiki-page-content .md.wiki h2,
-		.wiki-page .wiki-page-content .md.wiki h3,
-		.wiki-page .wiki-page-content .md.wiki h4,
-		.wiki-page .wiki-page-content .md.wiki h5,
-		.wiki-page .wiki-page-content .md.wiki h6
-		{
-			border-top: solid 96px;
-			border-color: transparent;
-			margin: -96px 0 0;
-			/*-webkit-background-clip: padding-box;
-			-moz-background-clip: padding;
-			background-clip: padding-box;*/
-		}
-
-		/* Same thing for posts and RES searching */
-		/*.comments-page .commentarea a.author { border-top: 104px solid red !important; border-color: transparent !important }*/
-		/*.comments-page a.author { padding-top: 96px !important }*/
-		/* And accompanying RES tooltip */
-		/*.comments-page .commentarea #authorInfoToolTip { margin-top: 104px !important }*/
-		
-
-		.wiki-page .wiki-page-content .md.wiki h1:lang(mo),
-		.wiki-page .wiki-page-content .md.wiki h2:lang(mo),
-		.wiki-page .wiki-page-content .md.wiki h3:lang(mo),
-		.wiki-page .wiki-page-content .md.wiki h4:lang(mo),
-		.wiki-page .wiki-page-content .md.wiki h5:lang(mo),
-		.wiki-page .wiki-page-content .md.wiki h6:lang(mo)
-		{
-			border-top: solid 0px;
-			border-color: transparent;
-			margin: 0px 0 0;
-			/*-webkit-background-clip: padding-box;
-			-moz-background-clip: padding;
-			background-clip: padding-box;*/
-		}
-
-		// Push content out of header
-		body > .content { margin-top: $header-bar-height + 7px; }
-		
 		.listing-page:not(.profile-page) > .content {
 			margin-top: $header-bar-height;
 			margin-left: 0px;
@@ -225,7 +164,37 @@ $header-snoo-width: 42px !default;
 			position: relative;
 			z-index: -1;
 		}*/
+		
+		// Push content down
+		
+		/*:target {
+		padding-top: 96px;
+		}*/
+		
+		// Push content out of header
+		
+		body > .content { margin-top: $header-bar-height + 7px; }
+		
+		// Hack to restore anchors
 
+		.wiki-page .wiki-page-content .md.wiki {
+			h1, h2, h3, h4, h5, h6 {
+				border-top: solid 96px;
+				border-color: transparent;
+				margin: -96px 0 0;
+				/*-webkit-background-clip: padding-box;
+				-moz-background-clip: padding;
+				background-clip: padding-box;*/
+			}
+		}
+		
+		// Same thing for posts and RES searching
+		
+		/*.comments-page .commentarea a.author { border-top: 104px solid red !important; border-color: transparent !important }*/
+		/*.comments-page a.author { padding-top: 96px !important }*/
+		/* And accompanying RES tooltip */
+		/*.comments-page .commentarea #authorInfoToolTip { margin-top: 104px !important }*/
+		
 		/*
 		###Tab menu
 		>>>>>>>>>>>>>>>>*/
@@ -255,30 +224,6 @@ $header-snoo-width: 42px !default;
 				border-left: 1px solid;
 				border-right: 1px solid;
 			}
-			
-			/*
-			###Subscriber info
-			>>>>>>>>>>>>>>>>*/
-
-				.subscribers {
-					position: fixed;
-					top: 20px;
-					z-index: 100;
-					left: $header-snoo-width + $header-logo-width;
-				}
-
-				html:lang(mo) .subscribers { position: absolute; }
-
-				.users-online:before { display: none; }
-
-				.users-online .number {
-					position: fixed;
-					top: 47px;
-					z-index: 100;
-					left: $header-snoo-width + $header-logo-width;
-				}
-
-				html:lang(mo) .users-online .number { position: absolute; }
 
 			.tabmenu {
 				top: -15px;
@@ -302,50 +247,85 @@ $header-snoo-width: 42px !default;
 
 			#header-bottom-left ul.tabmenu li {
 				/* To the left */
-				a { border-left: 1px solid #369; } /* Can't inherit, can't use border-left-width, wtf reddit? */
+				a { border-left-width: 1px; }
 				a:hover { background-color: white; }
 				/* First left */
-				&.selected:first-child a, &:first-child a { border-left: 0px solid #369; } /* Can't inherit, can't use border-left-width, wtf reddit? */
+				&.selected:first-child a, &:first-child a { border-left-width: 0px; }
 				/* Selected */
 				&.selected a {
-					border-left: 1px solid #FF4500; /* Can't inherit, can't use border-left-width, wtf reddit? */
-					border-right: 1px solid #FF4500; /* Can't inherit, can't use border-right-width, wtf reddit? */
+					border-left-width: 1px;
+					border-right-width: 1px;
 				}
 				/* To the right */
 				&.selected ~ li a {
-					border-left: 0px solid #369; /* Can't inherit, can't use border-left-width, wtf reddit? */
-					border-right: 1px solid #369; /* Can't inherit, can't use border-right-width, wtf reddit? */
+					border-left-width: 0px;
+					border-right-width: 1px;
 				}
 			}
+		
+		/*
+		###Subscriber info
+		>>>>>>>>>>>>>>>>*/
 
+			.subscribers {
+				position: absolute;
+				top: 20px;
+				z-index: 100;
+				left: $header-snoo-width + $header-logo-width;
+			}
 
-		/* Search bar */
+			.users-online:before { display: none; }
 
+			.users-online .number {
+				position: absolute;
+				top: 47px;
+				z-index: 100;
+				left: $header-snoo-width + $header-logo-width;
+			}
 
-		.side form#search {
-			top: 26px;
+		/*
+		###Search bar
+		>>>>>>>>>>>>>>>>*/
 
-			position: fixed;
-			z-index: 100;
+			.side form#search {
+				position: absolute;
+				top: 26px;
+				z-index: 100;
+			}
+
+			#search input[type=text] {
+				height: 21px;
+			}
+
+		/*
+		###User bar
+		>>>>>>>>>>>>>>>>*/
+
+			div#header-bottom-right {
+				position: relative;
+				top: 0px;
+				/*right: 320px;*/
+				z-index: 101;
+				
+				float: right;
+			}
+	
+		/*
+		###Static
+		>>>>>>>>>>>>>>>>*/
+		@media (min-width: 960px) and (min-height: 540px)  {
+			#header,
+			#header-bottom-left:after,
+			.subscribers,
+			.users-online .number,
+			.side form#search,
+			.titlebox blockquote:last-child
+			{
+				position: fixed;
+			}
 		}
-
-		#search input[type=text] {
-			height: 21px;
-		}
-
-
-		/* User bar */
-
-
-		div#header-bottom-right {
-			top: 0px;
-			/*right: 320px;*/
-			z-index: 101;
-
-			position: relative;
-			float: right;
-		}
-			
+	
+	
 	/*
 	##Move RES 'use subreddit style'
 	>>>>>>>>>>>>>>>>*/
@@ -373,16 +353,10 @@ $header-snoo-width: 42px !default;
 			color: #D9D9D9 !important;
 		}
 
-		html:lang(ns) div.side a[href^='http://ns.'][href$='reddit.com'] {
+		html[lang*=ns] div.side a[href^='http://ns.'][href$='reddit.com'] {
 			display: none;
 			color: black !important;
 		}
-
-	/*
-	##RES guider
-	>>>>>>>>>>>>>>>>*/
-
-		html:not([lang='mo']) .guider { position: fixed !important }
 		
 	/*
 	##Post width
