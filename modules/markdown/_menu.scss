@@ -1,0 +1,113 @@
+$menu-root: '.titlebox blockquote:last-child' !default;
+$menu-container: 'em, a' !default;
+
+$menu-color-border-main: transparent !default;
+$menu-color-border-child: #336699 !default;
+
+$menu-color: #EFF7FF !default;
+$menu-color-fg: #336699 !default;
+
+$menu-color-hover: #FFF !default;
+$menu-color-hover-fg: initial !default;
+
+$menu-color-active: $menu-color-hover !default;
+$menu-color-active-fg: $menu-color-hover-fg !default;
+
+// http://markable.in/editor/
+
+//>
+//* >This format if possible
+//    * _Fallback non-link_
+//        * [one](#)
+//        * [two](#)
+
+// Undo fallback markup effects
+#{$menu-root} #{$menu-container} {
+	font-style: normal;
+}
+
+// Position menu
+#{$menu-root} {
+	position: absolute;
+	top: 64px;
+	left: 0px;
+	z-index: 100;
+}
+
+#{$menu-root} {
+	&, ul {
+		margin: 0; padding: 0; border: 0;
+	}
+	> ul {
+		> li {
+			border-color: $menu-color-border-main;
+			//color: $menu-color-fg;
+			> #{$menu-container} {
+				font-family: verdana, arial, helvetica, sans-serif;
+				font-size: 12px;
+				font-weight: bold;
+			}
+		}
+	}
+	ul {
+		background: $menu-color;
+		list-style: none;
+		position: relative;
+		display: inline-table;
+		cursor: default;
+
+		li {
+			float: left;
+			#{$menu-container} {
+				display: block; padding: 8px 20px;
+			}
+		}
+
+		li:hover {
+			background: $menu-color-hover;
+			> {
+				//ul > * {
+				//	max-height: 500px;
+				//}
+				ul {
+					display: block;
+				}
+			
+				#{$menu-container} {
+					color: $menu-color-hover-fg;
+				}
+			}
+		}
+		
+		li:active {
+			background: $menu-color-active;
+			> {
+				#{$menu-container} {
+					color: $menu-color-active-fg;
+				}
+			}
+		}
+
+		ul {
+			position: absolute;
+			top: 100%;
+			background: $menu-color;
+			border-color: $menu-color-border-child;
+			
+			//* {
+			//	max-height: 0px;
+			//	overflow: hidden;
+			//	-webkit-transition: max-height 0.8s;
+			//}
+			display: none;
+			
+			li {
+				float: none; 
+				position: relative;
+			}
+			ul {
+				left: 100%; top: 0;
+			}
+		}
+	}
+}

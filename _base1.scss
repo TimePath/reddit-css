@@ -1,10 +1,5 @@
 @import 'common';
 
-@import 'layouts/headstrong';
-
-html[lang*='dc'] { @import 'layouts/dual-column'; }
-html[lang*='dk'] { @import 'themes/earth'; }
-
 /*
 #Config
 >>>>>>>>>>>>>>>>*/
@@ -44,6 +39,9 @@ html[lang*='dk'] { @import 'themes/earth'; }
 /*
 #Style
 >>>>>>>>>>>>>>>>*/
+
+	@import 'layouts/headstrong';
+	html[lang*='dc'] { @import 'layouts/dual-column'; }
 
 	/*
 	##Code blocks

@@ -309,6 +309,10 @@ $header-snoo-width: 42px !default;
 				
 				float: right;
 			}
+			
+			.user .userkarma {
+				cursor: default;
+			}
 	
 		/*
 		###Static
@@ -371,40 +375,38 @@ $header-snoo-width: 42px !default;
 	}
 	
 /*
-#Other
+#Post
 >>>>>>>>>>>>>>>>*/
 
-		/*#header-bottom-left {
-			height: 100% !important;
-		}*/
+	.commentarea .menuarea form {
+		padding-left: 0px;
+	}
 
-		/* Disable hot */
-
-		/* Page header, http://www.reddit.com/r/cssnews/comments/197jhi/css_change_new_body_classes_for_pages/ */
-		/*body.hot-page > div.content {
-			display: none;
-		}*/
-
-		/*div#header-bottom-left ul.tabmenu a[href*='hot'] {
-			display: none;
-		}*/
-
-		/*body.hot-page > div.content:before {
-			display: inline !important;
-			visibility: visible !important;
-			content: "there doesn't seem to be anything here";
-		}*/
-
+	/*
+	##Actions
+	>>>>>>>>>>>>>>>>*/
+	
+		html body .content .commentarea .spacer:nth-of-type(2) {
+			background-color: #272422;
+			border: 1px solid #403C33;
+			border-radius: 5px;
+			float: right;
+			font-size: 0;
+			padding: 5px;
+		}
 		
+		.commentarea .menuarea .toggle {
+			display: block !important;
+		}
+		
+		.commentarea .menuarea .help-hoverable {
+			display: none;
+		}
 
-
-		/*
-		http://signaltower.co/2013/03/29/april-fools-pranks-for-developers/
-		https://github.com/wesbos/aprilFools.css/blob/master/aprilFools.css
-		*/
-
-
-		/* sorting options */
+	/*
+	##Sort options
+	>>>>>>>>>>>>>>>>*/
+	
 		/*.commentarea .menuarea {
 			padding: 2px
 		}*/
@@ -422,25 +424,32 @@ $header-snoo-width: 42px !default;
 			margin-top: 10px;
 			margin-bottom: 10px;
 		}
+		
 		/* Selected item */
 		.dropdown.lightdrop .selected {
 			display: none;
 		}
+		
 		/* Menu container */
 		.drop-choices.lightdrop {
 			display: table;
 			visibility: visible;
-			border-left: none;
 			position: static;
+			
+			border: 1px solid;
 			border-radius: 5px;
-			background: #221F1C;
-			border: 1px solid #403C33 !important;
+			
 			padding: 5px 0px;
+			
+			background: #FFFFFF;
+			border-color: #8D9CAA;
 		}
+		
 		/* Menu item container */
 		.commentarea .menuarea form {
 			display: inline-block;
 		}
+		
 		/* Text */
 		.drop-choices.lightdrop a.choice {
 			display: inline;
@@ -452,58 +461,44 @@ $header-snoo-width: 42px !default;
 			border-radius: 3px;
 			padding-right: 10px;
 			padding-left: 10px;
-		}
-		.drop-choices.lightdrop a.choice:hover {
-			color: #000 !important;
-			background-color: #F49500 !important;
-		}
-		/* Selected Text */
-		.drop-choices.lightdrop a.choice.selected {
-			color: #000 !important;
-			background-color: #9D511B;
-			text-decoration: none !important;
-			cursor: default;
-		}
-
-		.commentarea .menuarea form {
-			padding-left: 0px;
-		}
-
-		/* Contest mode help */
-		.commentarea .menuarea .help-hoverable {
-			display: none;
-		}
-
-		#REScommentNavToggle {
-			padding: 5px;
-			margin-left: -5px;
-			background: #221F1C;
-			border: 1px solid #403C33;
-			border-radius: 5px;
-			width: auto !important;
-		}
-
-		#REScommentNavToggle span {
-			display: none;
-		}
-		.user .userkarma {
-			cursor: default;
+			&:hover { background-color: #CEE3F8; }
+			&.selected {
+				font-weight: normal;
+				text-decoration: none;
+				
+				color: #FFF;
+				background-color: #5F99CF;
+			}
 		}
 		
-	/*
-	##Community settings page
-	>>>>>>>>>>>>>>>>*/
+		/*
+		###RES tempory toggle
+		>>>>>>>>>>>>>>>>*/
 	
-		/* Thread actions */
-		html body .content .commentarea .spacer:nth-of-type(2) {
-			background-color: #272422;
-			border: 1px solid #403C33;
-			border-radius: 5px;
-			float: right;
-			font-size: 0;
-			padding: 5px;
-		}
-		
-		.commentarea .menuarea .toggle {
-			display: block !important;
-		}
+			/* TODO */
+			
+			.drop-choices .RES-sort-button {
+				display: none;
+			}
+
+			.drop-choices .choice:hover .RES-sort-button {
+				
+				/*display: block;*/
+			}
+			
+		/*
+		###RES comment sort
+		>>>>>>>>>>>>>>>>*/
+			
+			#REScommentNavToggle {
+				padding: 5px;
+				border: 1px solid;
+				border-radius: 5px;
+				width: auto !important;
+				background: #FFF;
+				border-color: #8D9CAA;
+			}
+
+			#REScommentNavToggle span {
+				display: none;
+			}

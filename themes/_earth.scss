@@ -19,6 +19,30 @@ Based on TF2 console color scheme
 				background: #6D655B;
 			}
 		}
+		
+	/*
+	##Post sort colors
+	>>>>>>>>>>>>>>>>*/
+	
+		.drop-choices.lightdrop {
+			background: #221F1C;
+			border-color: #403C33;
+		}
+		
+		.drop-choices.lightdrop a.choice:hover {
+			color: #000;
+			background-color: #F49500;
+		}
+		
+		.drop-choices.lightdrop a.choice.selected {
+			color: #000;
+			background-color: #9D511B;
+		}
+		
+		#REScommentNavToggle {
+			background: #221F1C;
+			border-color: #403C33;
+		}
 
 	/*
 	##Markdown
@@ -28,53 +52,15 @@ Based on TF2 console color scheme
 		##Menu style
 		>>>>>>>>>>>>>>>>*/
 		
-			.titlebox blockquote:last-child {
-				ul, ol {
-					background-color: #221F1C;
-					border-color: #403C33;
-				}
-			}
-		
-			.titlebox blockquote:last-child > ul > li:first-child,
-			.titlebox blockquote:last-child > ol > li:first-child
-			{
-				background-color: #393532;
-				color: #EEDB00;
-			}
+			$menu-color: #393532 !global;
+			$menu-color-fg: #EEDB00 !global;
+			$menu-color-border-main: #FF9C00 !global;
+			$menu-color-border-child: #403C33 !global;
+
+			$menu-color-hover: #F49500 !global;
+			$menu-color-hover-fg: #000 !important !global;
 			
-			.titlebox blockquote:last-child li {
-				border-color: #403C33;
-			}
-
-			/* Text */
-
-			.titlebox blockquote:last-child li {
-				color: #fff;
-			}
-
-			/* Links */
-
-			.titlebox blockquote:last-child li a {
-				color: #fa0;
-			}
-
-			/* Hover */
-
-			.titlebox blockquote:last-child li:hover,
-			.titlebox blockquote:last-child li:hover > a
-			{
-				background-color: #F49500 !important;
-				color: #000 !important;
-			}
-
-			/* Click */
-
-			.titlebox blockquote:last-child li:active,
-			.titlebox blockquote:last-child li:active > a
-			{
-				background-color: orangered !important;
-				color: #000 !important;
-			}
+			$menu-color-active: orangered !global;
 
 		.md :not(pre) code { color: #F49500; border: none; background: none }
 		
