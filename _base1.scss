@@ -32,6 +32,15 @@
 
 		@include linkflairthumb((resource), 80px, 300px);
 
+	        /*
+	        ##Display resource thumbnails
+	        >>>>>>>>>>>>>>>>*/
+
+                .link.linkflair-resource .thumbnail {
+                        height: auto;
+                        img { display: inline; }
+                }
+
 		@include linkflairthumb((meta), 80px, 400px);
 
 		@include linkflairthumb((archived), 0, 400px);
