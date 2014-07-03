@@ -429,9 +429,16 @@ Based on TF2 console color scheme
 		{
 			padding: 10px;
 			color: #FFF;
+			border-radius: 7px;
+		}
+		.link .usertext .md,
+		.linkinfo,
+		.sidebox.submit,
+		.sidecontentbox,
+		.user-form
+		{
 			background: #221F1C !important; /* background-color */
 			border: 1px solid #403C33;
-			border-radius: 7px;
 		}
 		
 	/*
