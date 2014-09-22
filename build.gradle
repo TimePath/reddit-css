@@ -1,0 +1,38 @@
+import groovy.io.FileType
+
+apply plugin: 'compass'
+
+buildscript {
+    repositories {
+        mavenCentral()
+        maven { url 'http://dl.bintray.com/robfletcher/gradle-plugins' }
+    }
+    dependencies {
+        classpath 'org.gradle.plugins:gradle-compass:1.0.7'
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+compass {
+    sassDir = file('src')
+    cssDir = file('target')
+    outputStyle = 'compact'
+    boring = true
+    environment = 'production'
+    debugInfo = false
+}
+
+compileSass.doLast {
+    println 'stripping @charset declarations'
+    compass.cssDir.with {
+        mkdirs()
+        eachFileRecurse(FileType.FILES) { File f ->
+            if (f.name.endsWith('.css')) {
+                f.text = f.text.replaceFirst(/^@charset[^;]*;\n/, '')
+            }
+        }
+    }
+}
